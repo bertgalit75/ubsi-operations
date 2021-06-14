@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UBSI-Ops.server</name>
+    </assembly>
+    <members>
+        <member name="T:UBSI_Ops.server.Core.Files.MemoryFileSystem">
+            <summary>
+            This is only for testing. Do not use in production.
+            </summary>
+        </member>
+        <member name="T:UBSI_Ops.server.Core.Files.S3Filesystem">
+            <summary>
+            File service used to connect to AWS S3 service.
+            </summary>
+        </member>
+        <member name="M:UBSI_Ops.server.Services.Services.TokenService.Serialize(System.IdentityModel.Tokens.Jwt.JwtSecurityToken)">
+            <summary>
+            Serializes a JwtSecurityToken object into an encoded jwt token string.
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UBSI_Ops.server.Services.Services.UserTokenService.CreateAccessToken(UBSI_Ops.server.Entities.Identity.User,UBSI_Ops.server.Entities.UserOrganization)">
+            <summary>
+            Create a token from a user.
+            The token service does not ensure that user is to be given a token.
+            </summary>
+            <param name="user"></param>
+            <param name="userOrganization"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
