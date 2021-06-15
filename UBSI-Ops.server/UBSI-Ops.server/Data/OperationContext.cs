@@ -1,6 +1,10 @@
 
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Oracle.ManagedDataAccess.Client;
+using UBSI_Ops.server.Entities;
 
 namespace UBSI_Ops.server.Data
 {
@@ -14,10 +18,11 @@ namespace UBSI_Ops.server.Data
     //        UserLogin,
     //        RoleClaim,
     //        UserToken>
-    
-    public class OperationContext: DbContext
+
+    public class OperationContext : DbContext
     {
-        
+        public DbSet<RadioStation> RadioStations { get; set; }
+
         public OperationContext(DbContextOptions<OperationContext> options) : base(options)
         {
         }
@@ -28,4 +33,5 @@ namespace UBSI_Ops.server.Data
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(OperationContext).Assembly);
         }
     }
+
 }

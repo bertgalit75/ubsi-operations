@@ -72,8 +72,8 @@ namespace UBSI_Ops.server
             //    x => !x.Request.Path.Value.StartsWith("/api"),
             //    builder => builder.UseSpa(spa => { }));
 
-            app.UseHangfireServer();
-            app.UseHangfireDashboard();
+            //app.UseHangfireServer();
+            //app.UseHangfireDashboard();
         }
     }
 }

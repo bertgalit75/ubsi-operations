@@ -17,6 +17,11 @@ const menuItems: MenuItem[] = [
     label: 'Report',
     icon: 'summarize',
   },
+   {
+    route: 'stations',
+    label: 'Radio Stations',
+    icon: 'radio',
+  },
   
 ];
 
