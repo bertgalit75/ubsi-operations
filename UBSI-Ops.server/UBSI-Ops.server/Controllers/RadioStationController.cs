@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Oracle.ManagedDataAccess.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Paging;
 using UBSI_Ops.server.Data;
 using UBSI_Ops.server.Entities;
+using UBSI_Ops.server.RadioStations.Models;
 using UBSI_Ops.server.Services.Intefaces;
 
 namespace UBSI_Ops.server.Controllers
@@ -18,10 +16,13 @@ namespace UBSI_Ops.server.Controllers
     {
         private readonly OperationContext _operationContext;
         private readonly IRadioStationRepository _radioStationRepository;
-        public RadioStationController(OperationContext operationContext, IRadioStationRepository radioStationRepository)
+        private readonly IMapper _mapper;
+        public RadioStationController(OperationContext operationContext, IRadioStationRepository radioStationRepository, IMapper mapper)
         {
             _operationContext = operationContext;
             _radioStationRepository = radioStationRepository;
+            _mapper = mapper;
+
         }
         [HttpGet]
         public async Task<ActionResult<PaginatedList<RadioStation>>> List([FromQuery] PageOptions options)
@@ -32,10 +33,18 @@ namespace UBSI_Ops.server.Controllers
         }
         [HttpGet]
         [Route("{id}")]
-        public async Task<ActionResult<RadioStation>> View(string id)
+        public async Task<ActionResult<RadioStationDto>> View(string id)
         {
             var radioStations = await _radioStationRepository.View(id);
-            return radioStations;
+            if (radioStations is null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return _mapper.Map<RadioStationDto>(radioStations);
+            }
+            
         }
 
     }

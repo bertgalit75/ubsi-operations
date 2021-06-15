@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{56EEF13F-E9C6-4FFF-B6A3-8A5E7E3AA8BB}"
+	ProjectSection(SolutionItems) = preProject
+		.runsettings = .runsettings
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UBSI-Ops.server", "UBSI-Ops.server\UBSI-Ops.server\UBSI-Ops.server.csproj", "{82EA9FA5-A8B3-4E65-9F52-D742057806AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UBSI-Ops.server.FunctionalTests", "UBSI-Ops.server.FunctionalTests\UBSI-Ops.server.FunctionalTests.csproj", "{125B0737-7420-4C19-87F5-7E4F4B2FB684}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82EA9FA5-A8B3-4E65-9F52-D742057806AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82EA9FA5-A8B3-4E65-9F52-D742057806AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82EA9FA5-A8B3-4E65-9F52-D742057806AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82EA9FA5-A8B3-4E65-9F52-D742057806AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{125B0737-7420-4C19-87F5-7E4F4B2FB684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125B0737-7420-4C19-87F5-7E4F4B2FB684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125B0737-7420-4C19-87F5-7E4F4B2FB684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125B0737-7420-4C19-87F5-7E4F4B2FB684}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5AAE09E-1F51-4B7E-AA46-659D24330B8F}
+	EndGlobalSection
+EndGlobal

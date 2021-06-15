@@ -39,7 +39,7 @@ namespace UBSI_Ops.server.Services
         }
         public async Task<RadioStation> View(string STN_CODE)
         {
-            return _context.RadioStations.FirstOrDefault(x => x.STN_CODE == STN_CODE);
+            return await _context.RadioStations.Where(x=>x.STN_CODE==STN_CODE).FirstOrDefaultAsync();
         }
     }
 }

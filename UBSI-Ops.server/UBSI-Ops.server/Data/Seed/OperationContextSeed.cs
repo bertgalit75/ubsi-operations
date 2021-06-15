@@ -10,7 +10,6 @@ namespace UBSI_Ops.server.Data.Seed
         public async Task Seed(OperationContext context)
         {
             
-
             await context.SaveChangesAsync();
         }
 
