@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { auditTime } from 'rxjs/operators';
 import { PageOptions } from 'src/app/core/pageoptions/PageOptions';
-import { RadioStationModel } from 'src/app/models/RadioStationModel';
+import { IRadioStation } from 'src/app/models/RadioStationModel';
 import { RadioStationService } from 'src/app/services/radio-station.service';
 @Component({
   selector: 'app-radio-station',
@@ -13,7 +13,7 @@ import { RadioStationService } from 'src/app/services/radio-station.service';
   styleUrls: ['./radio-station.component.css']
 })
 export class RadioStationComponent implements OnInit {
-  dataSource:MatTableDataSource<RadioStationModel>;
+  dataSource:MatTableDataSource<IRadioStation>;
   constructor(private radionStationService:RadioStationService) { }
   displayedColumns=["code","name"];
   
@@ -48,7 +48,7 @@ export class RadioStationComponent implements OnInit {
       this.sort.direction
     );
     this.radionStationService.list(options).subscribe(data=>{
-      this.dataSource=new MatTableDataSource<RadioStationModel>(data.items);
+      this.dataSource=new MatTableDataSource<IRadioStation>(data.items);
       this.totalCount = data.totalCount;
     })
   }

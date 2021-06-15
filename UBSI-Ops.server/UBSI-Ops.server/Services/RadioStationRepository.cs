@@ -37,5 +37,9 @@ namespace UBSI_Ops.server.Services
 
             return new PaginatedList<RadioStation>(radioStations, total);
         }
+        public async Task<RadioStation> View(string STN_CODE)
+        {
+            return _context.RadioStations.FirstOrDefault(x => x.STN_CODE == STN_CODE);
+        }
     }
 }

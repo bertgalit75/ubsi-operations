@@ -1,5 +1,4 @@
 import { NgModule } from "@angular/core";
-import { RadioStationModel } from "../models/RadioStationModel";
 import { MaterialModule } from "../shared/angular-material.module";
 import { SharedModule } from "../shared/shared.module";
 import { AdminRoutingModule } from "./admin-routing.module";

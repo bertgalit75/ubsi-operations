@@ -3,7 +3,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PageOptions } from '../core/pageoptions/PageOptions';
 import { PaginatedList } from '../core/paging/PaginatedList';
-import { RadioStationModel } from '../models/RadioStationModel';
+import { IRadioStation } from '../models/RadioStationModel';
 
 @Injectable({
   providedIn: 'root',
@@ -18,11 +18,14 @@ export class RadioStationService {
     this.api = 'api/radiostation';
   }
   
-  list(options: PageOptions): Observable<PaginatedList<RadioStationModel>> {
+  list(options: PageOptions): Observable<PaginatedList<IRadioStation>> {
     const params = options.toObject();
 
-    return this.http.get<PaginatedList<RadioStationModel>>(`${this.api}`, {
+    return this.http.get<PaginatedList<IRadioStation>>(`${this.api}`, {
       params,
     });
+  }
+  view(stn_code: string):Observable<IRadioStation>{
+    return this.http.get<IRadioStation>(`${this.api}/${stn_code}`);
   }
 }

@@ -30,7 +30,13 @@ namespace UBSI_Ops.server.Controllers
 
             return radioStations.Select(r => r);
         }
-
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<ActionResult<RadioStation>> View(string id)
+        {
+            var radioStations = await _radioStationRepository.View(id);
+            return radioStations;
+        }
 
     }
 }
