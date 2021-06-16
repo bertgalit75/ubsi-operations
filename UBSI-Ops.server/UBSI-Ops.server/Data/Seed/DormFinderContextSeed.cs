@@ -9,11 +9,26 @@ namespace UBSI_Ops.server.Data.Seed
     {
         public async Task Seed(OperationContext context)
         {
+            context.Customers.AddRange(GetCustomers());
             
 
             await context.SaveChangesAsync();
         }
 
+        public Collection<Customer> GetCustomers()
+        {
+            return new Collection<Customer>()
+            {
+                new Customer()
+                {
+                    Name = "John Doe"
+                },
+                new Customer()
+                {
+                    Name = "Jane Doe"
+                }
+            };
+        }
        
     }
 }

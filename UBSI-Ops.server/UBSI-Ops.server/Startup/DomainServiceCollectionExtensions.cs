@@ -5,6 +5,7 @@ using UBSI_Ops.server.Services;
 using UBSI_Ops.server.Services.Services;
 using HashidsNet;
 using Microsoft.Extensions.DependencyInjection;
+using UBSI_Ops.server.Services.Intefaces;
 
 namespace UBSI_Ops.server
 {
@@ -13,7 +14,7 @@ namespace UBSI_Ops.server
         public static IServiceCollection AddDomainServices(this IServiceCollection services)
         {
             //Repositories
-         
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
 
             services.AddScoped<LoginService>();
             services.AddScoped<JwtConfiguration>();
