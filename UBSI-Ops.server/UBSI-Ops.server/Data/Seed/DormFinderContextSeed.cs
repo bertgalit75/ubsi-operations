@@ -22,12 +22,44 @@ namespace UBSI_Ops.server.Data.Seed
                 new Customer()
                 {
                     Code = "00000001",
-                    Name = "John Doe"
+                    Name = "John Doe",
+                    BillingAddress = "Quezon City",
+                    RegionCode = "LOC",
+                    AreaCode = "MLA",
+                    CreditLimit = 0,
+                    IsVatInclusive = true,
+                    CreditStatus = "GD",
+                    IsActive = true,
+                    AECode = "606012",
+                    AEName = "John",
+                    Telephone = "09150000000",
+                    Fax = "",
+                    ContactPerson = "John",
+                    CreditTermsCode = "COD",
+                    GroupCode = "",
+                    Type = "",
+                    TIN = "",
                 },
                 new Customer()
                 {
                     Code = "00000002",
-                    Name = "Jane Doe"
+                    Name = "Jane Doe",
+                    BillingAddress = "Mandaluyong",
+                    RegionCode = "PBB",
+                    AreaCode = "NAT",
+                    CreditLimit = 0,
+                    IsVatInclusive = true,
+                    CreditStatus = "GD",
+                    IsActive = true,
+                    AECode = "606013",
+                    AEName = "John",
+                    Telephone = "09150000001",
+                    Fax = "",
+                    ContactPerson = "John",
+                    CreditTermsCode = "COD",
+                    GroupCode = "",
+                    Type = "",
+                    TIN = "",
                 }
             };
         }
