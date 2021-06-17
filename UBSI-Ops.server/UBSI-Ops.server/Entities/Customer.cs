@@ -2,7 +2,7 @@
 {
     public class Customer : BaseEntity
     {
-        public int Id { get; private set; }
+        public string Code { get; set; }
 
         public string Name { get; set; }
     }

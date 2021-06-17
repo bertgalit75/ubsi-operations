@@ -21,10 +21,12 @@ namespace UBSI_Ops.server.Data.Seed
             {
                 new Customer()
                 {
+                    Code = "00000001",
                     Name = "John Doe"
                 },
                 new Customer()
                 {
+                    Code = "00000002",
                     Name = "Jane Doe"
                 }
             };
