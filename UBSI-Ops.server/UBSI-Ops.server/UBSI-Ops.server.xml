@@ -4,6 +4,30 @@
         <name>UBSI-Ops.server</name>
     </assembly>
     <members>
+        <member name="M:UBSI_Ops.server.Controllers.CustomerController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+            <summary>
+            List all customers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UBSI_Ops.server.Controllers.CustomerController.SearchList(UBSI_Ops.server.Core.Paging.PageOptions,System.String)">
+            <summary>
+            List all customers that matches the search
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UBSI_Ops.server.Controllers.RadioStationController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+            <summary>
+            List all RadioStations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UBSI_Ops.server.Controllers.RadioStationController.View(System.String)">
+            <summary>
+            View RadioStation
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:UBSI_Ops.server.Core.Files.MemoryFileSystem">
             <summary>
             This is only for testing. Do not use in production.

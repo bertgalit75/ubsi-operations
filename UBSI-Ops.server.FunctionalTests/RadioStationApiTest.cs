@@ -1,12 +1,12 @@
 using System.Net.Http;
-using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Entities;
 using FluentAssertions;
 using Xunit;
 using System;
 using UBSI_Ops.server.RadioStations.Models;
+using System.Text.Json;
+using UBSI_Ops.server.Services.Intefaces;
 
 namespace UBSI_Ops.server.FunctionalTests
 {
@@ -21,17 +21,20 @@ namespace UBSI_Ops.server.FunctionalTests
 
 
         [Fact]
-        public async Task ShouldRetrieveRadioStation()
+        public async Task ShouldRetrieveRadioStationDetails()
         {
+            // Arrange
             var client = _factory.CreateClient();
 
-            var response = await client.GetAsync("/api/radiostation/NAG");
-            response.EnsureSuccessStatusCode();
+            // Act
+            var response = await client.GetStringAsync("/api/radiostation");
+            response.Should().BeNull();
+            // Assert
+            //var radioStation = JsonSerializer.Deserialize<RadioStationDto>(response);
 
-            var responseContent = await response.Content.ReadAsStringAsync();
-            var property = JsonSerializer.Deserialize<RadioStationDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            //radioStation.stn_code.Should().Be("NAG");
 
-            property.Should().NotBeNull();
+
         }
 
         [Fact]

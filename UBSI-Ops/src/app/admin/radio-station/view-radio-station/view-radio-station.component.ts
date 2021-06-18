@@ -18,8 +18,8 @@ export class ViewRadioStationComponent implements OnInit {
   }
   public getRadioStationDetails() {
     this.radioStationService.view(this.stn_code).subscribe(data=>{
-      console.log(data);
       this.radioStation=data;
+      console.log(this.radioStation);
     })
     
   }

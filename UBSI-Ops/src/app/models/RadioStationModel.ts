@@ -1,4 +1,4 @@
 export interface IRadioStation{
-    stN_NAME:string,
-    stN_CODE:string,
+    stn_name:string,
+    stn_code:string,
 }
