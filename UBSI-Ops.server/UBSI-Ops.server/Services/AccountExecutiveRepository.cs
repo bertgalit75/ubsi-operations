@@ -34,5 +34,9 @@ namespace UBSI_Ops.server.Services
 
             return new PaginatedList<AccountExecutive>(accountExecutives, total);
         }
+        public async Task<AccountExecutive> View(string code)
+        {
+            return await _context.AccountExecutives.Where(x => x.Code == code).FirstOrDefaultAsync();
+        }
     }
 }

@@ -10,6 +10,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:UBSI_Ops.server.Controllers.AccountExecutiveController.View(System.String)">
+            <summary>
+            View Account Executive
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:UBSI_Ops.server.Controllers.CustomerController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
             <summary>
             List all customers

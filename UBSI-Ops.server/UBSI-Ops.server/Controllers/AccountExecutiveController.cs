@@ -33,5 +33,23 @@ namespace UBSI_Ops.server.Controllers
 
             return accountExecutives.Select(r => _mapper.Map<AccountExecutiveDto>(r));
         }
+        /// <summary>
+        /// View Account Executive
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("{code}")]
+        public async Task<ActionResult<AccountExecutiveDto>> View(string code)
+        {
+            _logger.LogInformation("Get Radiostation with code #{id}", code);
+            var accountExecutive = await _accountExecutiveRepository.View(code);
+            if (accountExecutive is null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return _mapper.Map<AccountExecutiveDto>(accountExecutive);
+            }
+        }
     }
 }
