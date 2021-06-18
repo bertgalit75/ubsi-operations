@@ -11,6 +11,7 @@ namespace UBSI_Ops.server.Data.Seed
         {
             context.Customers.AddRange(GetCustomers());
             context.RadioStations.AddRange(GetRadioStations());
+            context.Vendors.AddRange(GetVendors());
             await context.SaveChangesAsync();
         }
 
@@ -42,6 +43,23 @@ namespace UBSI_Ops.server.Data.Seed
                 {
                    StationCode="DIP",
                    StationName="Dipolog 103.7",
+                }
+            };
+        }
+
+        public Collection<Vendor> GetVendors()
+        {
+            return new Collection<Vendor>()
+            {
+                new Vendor()
+                {
+                    VendorCode="8530220",
+                    VendorName="SALER SH..x",
+                },
+                new Vendor()
+                {
+                   VendorCode="6513969",
+                   VendorName="SALDEPAR..x",
                 }
             };
         }

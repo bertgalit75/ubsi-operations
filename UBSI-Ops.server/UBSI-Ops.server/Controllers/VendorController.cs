@@ -44,7 +44,7 @@ namespace UBSI_Ops.server.Controllers
         [HttpGet("{vendorCode}")]
         public async Task<ActionResult<VendorDto>> View(string vendorCode)
         {
-            _logger.LogInformation("Get Radiostation with code #{id}", vendorCode);
+            _logger.LogInformation("Get Vendor with code #{id}", vendorCode);
             var vendor = await _vendorRepository.View(vendorCode);
             if (vendor is null)
             {
