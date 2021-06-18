@@ -7,9 +7,9 @@ using UBSI_Ops.server.Entities;
 
 namespace UBSI_Ops.server.Services.Intefaces
 {
-    public interface IRadioStationRepository
+    public interface IVendorRepository
     {
-        Task<PaginatedList<RadioStation>> List(PageOptions _options);
-        Task<RadioStation> View(string _stationCode);
+        Task<PaginatedList<Vendor>> List(PageOptions _options);
+        Task<Vendor> View(string _vendorCode);
     }
 }

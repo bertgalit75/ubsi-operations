@@ -37,11 +37,11 @@ namespace UBSI_Ops.server.Controllers
         /// View RadioStation
         /// </summary>
         /// <returns></returns>
-        [HttpGet("{code}")]
-        public async Task<ActionResult<RadioStationDto>> View(string code)
+        [HttpGet("{stationCode}")]
+        public async Task<ActionResult<RadioStationDto>> View(string stationCode)
         {
-            _logger.LogInformation("Get Radiostation with code #{id}", code);
-            var radioStation = await _radioStationRepository.View(code);
+            _logger.LogInformation("Get Radiostation with code #{id}", stationCode);
+            var radioStation = await _radioStationRepository.View(stationCode);
             if(radioStation is null)
             {
                 return NotFound();
@@ -50,8 +50,6 @@ namespace UBSI_Ops.server.Controllers
             {
                 return _mapper.Map<RadioStationDto>(radioStation);
             }
-
-
         }
 
     }

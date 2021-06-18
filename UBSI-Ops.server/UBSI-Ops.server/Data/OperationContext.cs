@@ -21,6 +21,7 @@ namespace UBSI_Ops.server.Data
     {
         public DbSet<RadioStation> RadioStations { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Vendor> Vendors { get; set; }
 
         public OperationContext(DbContextOptions<OperationContext> options) : base(options)
         {
