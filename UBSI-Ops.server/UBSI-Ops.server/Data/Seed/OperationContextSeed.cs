@@ -1,5 +1,4 @@
-using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Entities;
 
@@ -12,6 +11,7 @@ namespace UBSI_Ops.server.Data.Seed
             context.Customers.AddRange(GetCustomers());
             context.RadioStations.AddRange(GetRadioStations());
             context.Vendors.AddRange(GetVendors());
+            context.AccountExecutives.AddRange(GetAccountExecutives());
             await context.SaveChangesAsync();
         }
 
@@ -60,6 +60,27 @@ namespace UBSI_Ops.server.Data.Seed
                 {
                    VendorCode="6513969",
                    VendorName="SALDEPAR..x",
+                }
+            };
+        }
+
+        public Collection<AccountExecutive> GetAccountExecutives()
+        {
+            return new Collection<AccountExecutive>()
+            {
+                new AccountExecutive()
+                {
+                    Code="606006",
+                    LastName="X",
+                    FirstName="Y",
+                    AreaCode="DAG"
+                },
+                new AccountExecutive()
+                {
+                   Code="602022",
+                    LastName="X",
+                    FirstName="Y",
+                    AreaCode="MLA"
                 }
             };
         }
