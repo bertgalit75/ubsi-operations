@@ -4,6 +4,12 @@
         <name>UBSI-Ops.server</name>
     </assembly>
     <members>
+        <member name="M:UBSI_Ops.server.Controllers.AccountExecutiveController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+            <summary>
+            List all Account Executives
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:UBSI_Ops.server.Controllers.CustomerController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
             <summary>
             List all customers

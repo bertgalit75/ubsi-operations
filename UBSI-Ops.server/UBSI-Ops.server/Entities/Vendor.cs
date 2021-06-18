@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace UBSI_Ops.server.Entities
+﻿namespace UBSI_Ops.server.Entities
 {
     public class Vendor
     {
@@ -15,7 +10,7 @@ namespace UBSI_Ops.server.Entities
         public string VendorFAX { get; set; }
         public string VendorContact { get; set; }
         public string VendorTIN { get; set; }
-        public string VendorCO { get; set; }
+        public string VendorCompany { get; set; }
         public string VendorPAYTO { get; set; }
         public string IsUtility { get; set; }
     }

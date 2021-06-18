@@ -1,7 +1,4 @@
-
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using UBSI_Ops.server.Entities;
 
 namespace UBSI_Ops.server.Data
@@ -22,6 +19,7 @@ namespace UBSI_Ops.server.Data
         public DbSet<RadioStation> RadioStations { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
+        public DbSet<AccountExecutive> AccountExecutives { get; set; }
 
         public OperationContext(DbContextOptions<OperationContext> options) : base(options)
         {

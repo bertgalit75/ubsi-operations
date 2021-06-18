@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using UBSI_Ops.server.Entities;
 
 namespace UBSI_Ops.server.Data.Configuration
@@ -32,7 +28,7 @@ namespace UBSI_Ops.server.Data.Configuration
 
             builder.Property(t => t.VendorTIN).HasColumnName("VTIN").HasMaxLength(20);
 
-            builder.Property(t => t.VendorCO).HasColumnName("CO").HasMaxLength(1);
+            builder.Property(t => t.VendorCompany).HasColumnName("CO").HasMaxLength(1);
 
             builder.Property(t => t.VendorPAYTO).HasColumnName("PAYTO").HasMaxLength(40)
                 ;

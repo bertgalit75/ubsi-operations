@@ -1,7 +1,8 @@
-using AutoMapper;
+﻿using AutoMapper;
+using UBSI_Ops.server.AccountExecutives.Models;
+using UBSI_Ops.server.Customers.Models;
 using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.RadioStations.Models;
-using UBSI_Ops.server.Customers.Models;
 using UBSI_Ops.server.Vendors.Models;
 
 namespace UBSI_Ops.server.AutoMapperProfile
@@ -17,6 +18,7 @@ namespace UBSI_Ops.server.AutoMapperProfile
             CreateMap<RadioStation, RadioStationDto>();
             CreateMap<Customer, CustomerDto>();
             CreateMap<Vendor, VendorDto>();
+            CreateMap<AccountExecutive, AccountExecutiveDto>();
         }
     }
 }
