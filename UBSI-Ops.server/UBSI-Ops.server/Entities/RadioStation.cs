@@ -8,7 +8,7 @@ namespace UBSI_Ops.server.Entities
 {
     public class RadioStation
     {
-        public string stn_code { get; set; }
-        public string stn_name { get; set; }
+        public string StationName { get; set; }
+        public string StationCode { get; set; }
     }
 }

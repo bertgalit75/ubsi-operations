@@ -13,9 +13,12 @@ namespace UBSI_Ops.server.Data.Configuration
         public void Configure(EntityTypeBuilder<RadioStation> builder)
         {
             builder.ToTable("EZ_STATIONS");
-            builder.HasKey(t => t.stn_code);
-            builder.Property(t=>t.stn_code).HasColumnName("STN_CODE").HasMaxLength(10);
-            builder.Property(t => t.stn_name).HasColumnName("STN_NAME").HasMaxLength(60);
+
+            builder.HasKey(t => t.StationCode);
+
+            builder.Property(t=>t.StationCode).HasColumnName("STN_CODE").HasMaxLength(10);
+
+            builder.Property(t => t.StationName).HasColumnName("STN_NAME").HasMaxLength(60);
         }
     }
 }

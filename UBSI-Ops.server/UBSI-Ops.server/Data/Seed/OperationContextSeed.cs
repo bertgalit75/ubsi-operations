@@ -35,13 +35,13 @@ namespace UBSI_Ops.server.Data.Seed
             {
                 new RadioStation()
                 {
-                    stn_code="NAG",
-                    stn_name="NAGA",
+                    StationCode="NAG",
+                    StationName="Naga 106.3",
                 },
                 new RadioStation()
                 {
-                   stn_code="DIP",
-                   stn_name="DIPOLOG",
+                   StationCode="DIP",
+                   StationName="Dipolog 103.7",
                 }
             };
         }

@@ -50,7 +50,8 @@ namespace UBSI_Ops.server.FunctionalTests
             var responseContent = await response.Content.ReadAsStringAsync();
             var radioStation = JsonSerializer.Deserialize<RadioStationDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
-            radioStation.stn_code.Should().Be("NAG");
+            radioStation.StationCode.Should().Be("NAG");
+            radioStation.StationName.Should().Be("Naga 106.3");
         }
     }
 }

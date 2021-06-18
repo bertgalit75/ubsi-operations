@@ -7,7 +7,7 @@ namespace UBSI_Ops.server.RadioStations.Models
 {
     public class RadioStationDto
     {
-        public string stn_code { get; set; }
-        public string stn_name { get; set; }
+        public string StationName { get; set; }
+        public string StationCode { get; set; }
     }
 }
