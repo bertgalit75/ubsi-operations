@@ -30,9 +30,9 @@ namespace UBSI_Ops.server.FunctionalTests
             response.EnsureSuccessStatusCode();
 
             var responseContent = await response.Content.ReadAsStringAsync();
-            var customers = JsonSerializer.Deserialize<PaginatedListTest<RadioStationDto>>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            var radiosStations = JsonSerializer.Deserialize<PaginatedListTest<RadioStationDto>>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
-            customers.Items.Should().NotBeEmpty();
+            radiosStations.Items.Should().NotBeEmpty();
         }
 
         [Fact]
@@ -48,9 +48,9 @@ namespace UBSI_Ops.server.FunctionalTests
             response.EnsureSuccessStatusCode();
 
             var responseContent = await response.Content.ReadAsStringAsync();
-            var customers = JsonSerializer.Deserialize<RadioStationDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            var radioStation = JsonSerializer.Deserialize<RadioStationDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
-            customers.stn_code.Should().Be("NAG");
+            radioStation.stn_code.Should().Be("NAG");
         }
     }
 }
