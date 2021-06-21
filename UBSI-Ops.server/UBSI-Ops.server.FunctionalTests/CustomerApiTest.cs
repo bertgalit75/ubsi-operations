@@ -1,10 +1,7 @@
-﻿using System.Net.Http;
-using System.Text;
+﻿using DormFinder.Web.FunctionalTests;
+using FluentAssertions;
 using System.Text.Json;
 using System.Threading.Tasks;
-using DormFinder.Web.FunctionalTests;
-using FluentAssertions;
-using UBSI_Ops.server.Core.Paging;
 using UBSI_Ops.server.Customers.Models;
 using Xunit;
 
@@ -26,7 +23,7 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/customer");
+            var response = await client.GetAsync("/api/customers");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -44,7 +41,7 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/customer/Jane");
+            var response = await client.GetAsync("/api/customers/Jane");
 
             // Assert
             response.EnsureSuccessStatusCode();
