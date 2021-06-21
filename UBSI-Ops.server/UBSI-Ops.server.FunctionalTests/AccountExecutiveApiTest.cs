@@ -22,7 +22,7 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/account-executive");
+            var response = await client.GetAsync("/api/account-executives");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -32,6 +32,7 @@ namespace UBSI_Ops.server.FunctionalTests
 
             accountExecutives.Items.Should().NotBeNull();
         }
+
         [Fact]
         public async Task ShouldRetrieveSpecificAccountExecutive()
         {
@@ -39,7 +40,7 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/account-executive/606006");
+            var response = await client.GetAsync("/api/account-executives/606006");
 
             // Assert
             response.EnsureSuccessStatusCode();

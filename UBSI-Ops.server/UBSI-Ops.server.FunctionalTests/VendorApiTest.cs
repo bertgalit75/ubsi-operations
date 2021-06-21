@@ -1,7 +1,4 @@
 ﻿using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Vendors.Models;
@@ -17,6 +14,7 @@ namespace UBSI_Ops.server.FunctionalTests
         {
             _factory = factory;
         }
+
         [Fact]
         public async Task ShouldRetrieveVendorList()
         {
@@ -24,7 +22,7 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/vendor");
+            var response = await client.GetAsync("/api/vendors");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -42,7 +40,7 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/vendor/8530220");
+            var response = await client.GetAsync("/api/vendors/8530220");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -50,8 +48,8 @@ namespace UBSI_Ops.server.FunctionalTests
             var responseContent = await response.Content.ReadAsStringAsync();
             var vendor = JsonSerializer.Deserialize<VendorDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
-            vendor.VendorCode.Should().Be("8530220");
-            vendor.VendorName.Should().Be("SALER SH..x");
+            vendor.Code.Should().Be("8530220");
+            vendor.Name.Should().Be("SALER SH..x");
         }
     }
 }

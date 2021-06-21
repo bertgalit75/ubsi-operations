@@ -8,7 +8,7 @@ using UBSI_Ops.server.Services.Intefaces;
 
 namespace UBSI_Ops.server.Controllers
 {
-    [Route("api/account-executive")]
+    [Route("api/account-executives")]
     [ApiController]
     [Produces("application/json")]
     public class AccountExecutiveController : ControllerBase
@@ -16,12 +16,14 @@ namespace UBSI_Ops.server.Controllers
         private readonly ILogger<AccountExecutiveController> _logger;
         private readonly IMapper _mapper;
         private readonly IAccountExecutiveRepository _accountExecutiveRepository;
+
         public AccountExecutiveController(IAccountExecutiveRepository accountExecutiveRepository, IMapper mapper, ILogger<AccountExecutiveController> logger)
         {
             _accountExecutiveRepository = accountExecutiveRepository;
             _logger = logger;
             _mapper = mapper;
         }
+
         /// <summary>
         /// List all Account Executives
         /// </summary>
@@ -33,6 +35,7 @@ namespace UBSI_Ops.server.Controllers
 
             return accountExecutives.Select(r => _mapper.Map<AccountExecutiveDto>(r));
         }
+
         /// <summary>
         /// View Account Executive
         /// </summary>

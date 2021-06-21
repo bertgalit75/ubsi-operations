@@ -24,8 +24,8 @@ namespace UBSI_Ops.server.Services
 
             query = options.Sort switch
             {
-                "code" => query.OrderBy(t => t.StationCode, options.Direction),
-                "name" => query.OrderBy(t => t.StationName, options.Direction),
+                "code" => query.OrderBy(t => t.Code, options.Direction),
+                "name" => query.OrderBy(t => t.Name, options.Direction),
                 _ => query
             };
 
@@ -39,7 +39,7 @@ namespace UBSI_Ops.server.Services
         }
         public async Task<RadioStation> View(string stationCode)
         {
-            return await _context.RadioStations.Where(x=>x.StationCode== stationCode).FirstOrDefaultAsync();
+            return await _context.RadioStations.Where(x=>x.Code== stationCode).FirstOrDefaultAsync();
         }
     }
 }

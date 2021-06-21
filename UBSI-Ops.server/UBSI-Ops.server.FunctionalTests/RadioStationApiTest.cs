@@ -1,7 +1,4 @@
 ﻿using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using UBSI_Ops.server.RadioStations.Models;
@@ -9,7 +6,7 @@ using Xunit;
 
 namespace UBSI_Ops.server.FunctionalTests
 {
-    public class RadioStationApiTest: IClassFixture<CustomWebApplicationFactory>
+    public class RadioStationApiTest : IClassFixture<CustomWebApplicationFactory>
     {
         private readonly CustomWebApplicationFactory _factory;
 
@@ -17,6 +14,7 @@ namespace UBSI_Ops.server.FunctionalTests
         {
             _factory = factory;
         }
+
         [Fact]
         public async Task ShouldRetrieveRadioStationList()
         {
@@ -24,7 +22,7 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/radiostation");
+            var response = await client.GetAsync("/api/radio-stations");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -42,7 +40,7 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/radiostation/NAG");
+            var response = await client.GetAsync("/api/radio-stations/NAG");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -50,8 +48,8 @@ namespace UBSI_Ops.server.FunctionalTests
             var responseContent = await response.Content.ReadAsStringAsync();
             var radioStation = JsonSerializer.Deserialize<RadioStationDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
-            radioStation.StationCode.Should().Be("NAG");
-            radioStation.StationName.Should().Be("Naga 106.3");
+            radioStation.Code.Should().Be("NAG");
+            radioStation.Name.Should().Be("Naga 106.3");
         }
     }
 }

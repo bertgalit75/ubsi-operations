@@ -1,10 +1,6 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Paging;
 using UBSI_Ops.server.Services.Intefaces;
@@ -12,7 +8,7 @@ using UBSI_Ops.server.Vendors.Models;
 
 namespace UBSI_Ops.server.Controllers
 {
-    [Route("api/vendor")]
+    [Route("api/vendors")]
     [ApiController]
     [Produces("application/json")]
     public class VendorController : ControllerBase
@@ -20,12 +16,14 @@ namespace UBSI_Ops.server.Controllers
         private readonly ILogger<VendorController> _logger;
         private readonly IMapper _mapper;
         private readonly IVendorRepository _vendorRepository;
+
         public VendorController(ILogger<VendorController> logger, IMapper mapper, IVendorRepository vendorRepository)
         {
             _logger = logger;
             _mapper = mapper;
             _vendorRepository = vendorRepository;
         }
+
         /// <summary>
         /// List all Vendors
         /// </summary>
@@ -37,6 +35,7 @@ namespace UBSI_Ops.server.Controllers
 
             return vendors.Select(r => _mapper.Map<VendorDto>(r));
         }
+
         /// <summary>
         /// View Vendor
         /// </summary>

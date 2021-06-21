@@ -36,13 +36,13 @@ namespace UBSI_Ops.server.Data.Seed
             {
                 new RadioStation()
                 {
-                    StationCode="NAG",
-                    StationName="Naga 106.3",
+                    Code="NAG",
+                    Name="Naga 106.3",
                 },
                 new RadioStation()
                 {
-                   StationCode="DIP",
-                   StationName="Dipolog 103.7",
+                   Code="DIP",
+                   Name="Dipolog 103.7",
                 }
             };
         }
@@ -53,13 +53,13 @@ namespace UBSI_Ops.server.Data.Seed
             {
                 new Vendor()
                 {
-                    VendorCode="8530220",
-                    VendorName="SALER SH..x",
+                    Code="8530220",
+                    Name="SALER SH..x",
                 },
                 new Vendor()
                 {
-                   VendorCode="6513969",
-                   VendorName="SALDEPAR..x",
+                   Code="6513969",
+                   Name="SALDEPAR..x",
                 }
             };
         }
