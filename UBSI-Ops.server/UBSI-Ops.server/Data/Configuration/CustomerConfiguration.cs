@@ -23,7 +23,7 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.Name).HasColumnName("CUS_NAME").
                 HasMaxLength(200);
 
-            builder.Property(t => t.BillingAddress).HasColumnName("CUS_BILLING_ADDRESS").
+            builder.Property(t => t.BillingAddress).HasColumnName("CUS_BILLING_ADDR").
                 HasMaxLength(500);
 
             builder.Property(t => t.RegionCode).HasColumnName("CUS_MA_SR_CODE").
