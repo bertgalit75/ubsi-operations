@@ -14,11 +14,11 @@
 
         public decimal CreditLimit { get; set; }
 
-        public bool IsVatInclusive { get; set; }
+        public string IsVatInclusive { get; set; }
 
         public string CreditStatus { get; set; }
 
-        public bool IsActive { get; set; }
+        public string IsActive { get; set; }
 
         public string AECode { get; set; }
 
