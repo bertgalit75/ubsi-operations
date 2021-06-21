@@ -1,0 +1,42 @@
+<div class="p-5">
+    <div class="flex">
+        <mat-icon class="mt-2">radio</mat-icon>
+        <mat-label class="text-2xl mt-1">Radio Stations</mat-label>
+    </div>
+
+    <div class="mat-elevation-z1 mt-5">
+        <table
+      mat-table
+      matSort
+      (matSortChange)="sortdata($event)"
+      [dataSource]="dataSource"
+      class="w-full"
+    >
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Station Code</th>
+        <td mat-cell *matCellDef="let station"><a class="underline text-blue-500" [routerLink]="[station.stn_code]">{{ station.stn_code }}</a></td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Station Name</th>
+        <td mat-cell *matCellDef="let station">
+          {{ station.stn_name  }}
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    </div>
+    <div *ngIf="dataSource?.data.length === 0" class="app-no-data">
+        No Radio Station found
+      </div>
+  
+      <mat-paginator
+        [pageIndex]="pageIndex"
+        [length]="totalCount"
+        [pageSize]="pageSize"
+        (page)="page($event)"
+      ></mat-paginator>
+</div>
