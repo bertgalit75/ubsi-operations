@@ -35,7 +35,7 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.CreditLimit).HasColumnName("CUS_CREDIT_LIMIT").
                 HasColumnType("decimal(12,2)");
 
-            builder.Property(t => t.IsVatInclusive).HasColumnName("CUS_VAT_EXCLUSIVE").
+            builder.Property(t => t.IsVatInclusive).HasColumnName("CUS_VAT_INCLUSIVE").
                 HasMaxLength(1);
 
             builder.Property(t => t.CreditStatus).HasColumnName("CUS_CREDIT_STATUS").
