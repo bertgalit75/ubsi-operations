@@ -1,0 +1,33 @@
+import { NgModule } from '@angular/core';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzTableModule } from 'ng-zorro-antd/table';
+
+@NgModule({
+  exports: [
+    NzBreadCrumbModule,
+    NzButtonModule,
+    NzCardModule,
+    NzDatePickerModule,
+    NzDescriptionsModule,
+    NzFormModule,
+    NzIconModule,
+    NzInputModule,
+    NzLayoutModule,
+    NzMenuModule,
+    NzPageHeaderModule,
+    NzSelectModule,
+    NzTableModule,
+  ],
+})
+export class AntModule {}
