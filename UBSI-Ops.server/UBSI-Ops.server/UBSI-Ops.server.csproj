@@ -9,7 +9,6 @@
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<DocumentationFile>.\UBSI-Ops.server.xml</DocumentationFile>
 	</PropertyGroup>
-
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="10.1.1" />
 		<PackageReference Include="AWSSDK.S3" Version="3.7.1" />
