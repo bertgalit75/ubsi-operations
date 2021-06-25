@@ -14,11 +14,11 @@ namespace UBSI_Ops.server.Data.Configuration
         {
             builder.ToTable("EZ_STATIONS");
 
-            builder.HasKey(t => t.StationCode);
+            builder.HasKey(t => t.Code);
 
-            builder.Property(t=>t.StationCode).HasColumnName("STN_CODE").HasMaxLength(10);
+            builder.Property(t=>t.Code).HasColumnName("STN_CODE").HasMaxLength(10);
 
-            builder.Property(t => t.StationName).HasColumnName("STN_NAME").HasMaxLength(60);
+            builder.Property(t => t.Name).HasColumnName("STN_NAME").HasMaxLength(60);
         }
     }
 }

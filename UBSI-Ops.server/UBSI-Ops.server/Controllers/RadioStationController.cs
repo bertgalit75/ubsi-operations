@@ -5,23 +5,28 @@ using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Paging;
 using UBSI_Ops.server.RadioStations.Models;
 using UBSI_Ops.server.Services.Intefaces;
+
 namespace UBSI_Ops.server.Controllers
 {
-    [Route("api/radiostation")]
+    [Route("api/radio-stations")]
     [ApiController]
     [Produces("application/json")]
     public class RadioStationController : ControllerBase
     {
         private readonly IRadioStationRepository _radioStationRepository;
         private readonly IMapper _mapper;
-        ILogger<RadioStationController> _logger;
-        public RadioStationController(IRadioStationRepository radioStationRepository, IMapper mapper,
+        private ILogger<RadioStationController> _logger;
+
+        public RadioStationController(
+            IRadioStationRepository radioStationRepository,
+            IMapper mapper,
             ILogger<RadioStationController> logger)
         {
             _radioStationRepository = radioStationRepository;
             _mapper = mapper;
             _logger = logger;
         }
+
         /// <summary>
         /// List all RadioStations
         /// </summary>
@@ -33,6 +38,7 @@ namespace UBSI_Ops.server.Controllers
 
             return radioStations.Select(r => _mapper.Map<RadioStationDto>(r));
         }
+
         /// <summary>
         /// View RadioStation
         /// </summary>
@@ -51,6 +57,5 @@ namespace UBSI_Ops.server.Controllers
                 return _mapper.Map<RadioStationDto>(radioStation);
             }
         }
-
     }
 }

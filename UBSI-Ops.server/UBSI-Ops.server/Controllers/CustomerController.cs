@@ -8,16 +8,17 @@ using UBSI_Ops.server.Services.Intefaces;
 
 namespace UBSI_Ops.server.Controllers
 {
-    [Route("api/customer")]
+    [Route("api/customers")]
     [ApiController]
     [Produces("application/json")]
     public class CustomerController : Controller
     {
-
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
         private readonly ICustomerRepository _customerRepository;
-        public CustomerController(ILogger<CustomerController> logger,
+
+        public CustomerController(
+            ILogger<CustomerController> logger,
             IMapper mapper,
             ICustomerRepository customerRepository)
         {

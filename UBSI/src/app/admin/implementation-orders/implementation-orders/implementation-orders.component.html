@@ -1,0 +1,43 @@
+<nz-page-header [nzGhost]="false">
+  <nz-page-header-title>Implementation Orders</nz-page-header-title>
+  <nz-page-header-extra> </nz-page-header-extra>
+</nz-page-header>
+
+<nz-card class="m-4">
+  <button
+    nz-button
+    nzType="primary"
+    [routerLink]="['/implementation-orders', 'new']"
+    class="mb-2"
+  >
+    New
+  </button>
+  <nz-table #basicTable [nzData]="dataSet">
+    <thead>
+      <tr>
+        <th>IO#</th>
+        <th>Client</th>
+        <th>Agency</th>
+        <th>Station</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let io of basicTable.data">
+        <td>{{ io.ioNo }}</td>
+        <td>
+          <a>{{ io.client }}</a>
+        </td>
+        <td>{{ io.agency }}</td>
+        <td>
+          <a
+            nz-button
+            nzShape="circle"
+            [routerLink]="['/implementation-orders', '1']"
+          >
+            <i nz-icon nzType="search"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

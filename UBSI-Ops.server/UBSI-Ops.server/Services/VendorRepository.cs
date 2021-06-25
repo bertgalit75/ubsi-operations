@@ -22,12 +22,12 @@ namespace UBSI_Ops.server.Services
 
             query = options.Sort switch
             {
-                "code" => query.OrderBy(t => t.VendorCode, options.Direction),
-                "name" => query.OrderBy(t => t.VendorName, options.Direction),
-                "address" => query.OrderBy(t => t.VendorAddress, options.Direction),
-                "contact" => query.OrderBy(t => t.VendorContact, options.Direction),
-                "tin" => query.OrderBy(t => t.VendorTIN, options.Direction),
-                "payto" => query.OrderBy(t => t.VendorPAYTO, options.Direction),
+                "code" => query.OrderBy(t => t.Code, options.Direction),
+                "name" => query.OrderBy(t => t.Name, options.Direction),
+                "address" => query.OrderBy(t => t.Address, options.Direction),
+                "contact" => query.OrderBy(t => t.Contact, options.Direction),
+                "tin" => query.OrderBy(t => t.TIN, options.Direction),
+                "payto" => query.OrderBy(t => t.PayTo, options.Direction),
                 _ => query
             };
 
@@ -41,7 +41,7 @@ namespace UBSI_Ops.server.Services
         }
         public async Task<Vendor> View(string vendorCode)
         {
-            return await _context.Vendors.Where(x => x.VendorCode == vendorCode).FirstOrDefaultAsync();
+            return await _context.Vendors.Where(x => x.Code == vendorCode).FirstOrDefaultAsync();
         }
     }
 }

@@ -2,16 +2,26 @@
 {
     public class Vendor
     {
-        public string VendorCode { get; set; }
-        public string VendorName { get; set; }
-        public string VendorAddress { get; set; }
-        public string VendorType { get; set; }
-        public string VendorTelephone { get; set; }
-        public string VendorFAX { get; set; }
-        public string VendorContact { get; set; }
-        public string VendorTIN { get; set; }
-        public string VendorCompany { get; set; }
-        public string VendorPAYTO { get; set; }
+        public string Code { get; set; }
+
+        public string Name { get; set; }
+
+        public string Address { get; set; }
+
+        public string Type { get; set; }
+
+        public string Telephone { get; set; }
+
+        public string FAX { get; set; }
+
+        public string Contact { get; set; }
+
+        public string TIN { get; set; }
+
+        public string Company { get; set; }
+
+        public string PayTo { get; set; }
+
         public string IsUtility { get; set; }
     }
 }

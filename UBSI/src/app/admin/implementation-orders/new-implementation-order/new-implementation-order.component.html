@@ -1,0 +1,223 @@
+<nz-page-header [nzGhost]="false">
+  <nz-page-header-title>New Implementation Order</nz-page-header-title>
+</nz-page-header>
+
+<form nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="save()">
+  <nz-card nzTitle="Basic Information" class="m-4">
+    <div nz-row nzGutter="24">
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>IO No</nz-form-label>
+          <nz-form-control nzErrorTip="IO No is required">
+            <input nz-input formControlName="ioNo" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>Date</nz-form-label>
+          <nz-form-control nzErrorTip="Date is required">
+            <nz-date-picker formControlName="date"></nz-date-picker>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>Client</nz-form-label>
+          <nz-form-control nzErrorTip="Client is required">
+            <nz-select
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Select a client"
+              formControlName="clientId"
+            >
+              <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+              <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+              <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>
+            Agency
+            <span class="opacity-50 ml-1">(optional)</span>
+          </nz-form-label>
+          <nz-form-control>
+            <nz-select
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Select an agency"
+              formControlName="agencyId"
+            >
+              <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+              <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+              <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>Account Executive</nz-form-label>
+          <nz-form-control nzErrorTip="Account executive is required">
+            <nz-select
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Select an account executive"
+              formControlName="accountExecutiveId"
+            >
+              <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+              <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+              <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>Product</nz-form-label>
+          <nz-form-control nzErrorTip="Product is required">
+            <input nz-input formControlName="product" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>
+            Tagline
+            <span class="opacity-50 ml-1">(optional)</span>
+          </nz-form-label>
+          <nz-form-control>
+            <input nz-input formControlName="tagline" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+  </nz-card>
+
+  <nz-card nzTitle="Reference Codes" class="m-4">
+    <div nz-row nzGutter="24">
+      <div nz-col nzSpan="8">
+        <nz-form-item>
+          <nz-form-label>
+            Booking Order No
+            <span class="opacity-50 ml-1">(optional)</span>
+          </nz-form-label>
+          <nz-form-control>
+            <input nz-input formControlName="bookingOrderNo" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="8">
+        <nz-form-item>
+          <nz-form-label>
+            Purchase Order No
+            <span class="opacity-50 ml-1">(optional)</span>
+          </nz-form-label>
+          <nz-form-control>
+            <input nz-input formControlName="purchaseOrderNo" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="8">
+        <nz-form-item>
+          <nz-form-label>
+            Reference CE No
+            <span class="opacity-50 ml-1">(optional)</span>
+          </nz-form-label>
+          <nz-form-control>
+            <input nz-input formControlName="referenceCeNo" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+  </nz-card>
+
+  <nz-card nzTitle="Bookings" class="m-4">
+    <nz-table #bookingsTable [nzFrontPagination]="false" [nzData]="bookings">
+      <thead>
+        <tr>
+          <th>Station</th>
+          <th>Period</th>
+          <th>Material</th>
+          <th>Qty</th>
+          <th>Duration</th>
+          <th>Gross</th>
+        </tr>
+      </thead>
+      <tbody formArrayName="bookings">
+        <tr
+          *ngFor="let data of bookingsArray.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <td>
+            <nz-form-control nzErrorTip="Station is required">
+              <nz-select
+                nzShowSearch
+                nzAllowClear
+                nzPlaceHolder="Select a station"
+                formControlName="station"
+              >
+                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </td>
+          <td><nz-range-picker [nzAllowClear]="false"></nz-range-picker></td>
+          <td><input nz-input type="text" /></td>
+          <td>
+            <nz-select
+              [nzMaxTagCount]="7"
+              nzMode="multiple"
+              nzPlaceHolder="Please select"
+            >
+              <nz-option
+                *ngFor="let item of DaysOfTheWeek"
+                [nzLabel]="item"
+                [nzValue]="item"
+              ></nz-option>
+            </nz-select>
+          </td>
+          <td>
+            <nz-input-group nzAddOnAfter="secs">
+              <input nz-input type="number" />
+            </nz-input-group>
+          </td>
+          <td>
+            <nz-input-group nzAddOnBefore="₱">
+              <input nz-input type="number" />
+            </nz-input-group>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+
+    <button
+      nz-button
+      type="button"
+      nzType="dashed"
+      class="w-full"
+      (click)="addBooking()"
+    >
+      <i nz-icon nzType="plus" nzTheme="outline"></i>ADD
+    </button>
+  </nz-card>
+
+  <div class="m-4">
+    <button nz-button type="submit" nzSize="large" nzType="primary">
+      Save
+    </button>
+    <button nz-button type="button" nzSize="large">Cancel</button>
+  </div>
+</form>
