@@ -1,10 +1,9 @@
-using UBSI_Ops.server.Core.Hashids;
-using Hangfire;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using UBSI_Ops.server.Core.Hashids;
 using UBSI_Ops.server.Data.Configuration;
 
 namespace UBSI_Ops.server
@@ -53,7 +52,7 @@ namespace UBSI_Ops.server
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection(); 
+            app.UseHttpsRedirection();
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
