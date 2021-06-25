@@ -1,7 +1,7 @@
-using UBSI_Ops.server.Data;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using UBSI_Ops.server.Data;
 
 namespace UBSI_Ops.server
 {

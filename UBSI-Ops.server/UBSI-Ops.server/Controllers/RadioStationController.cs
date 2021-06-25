@@ -15,7 +15,7 @@ namespace UBSI_Ops.server.Controllers
         private readonly IRadioStationRepository _radioStationRepository;
         private readonly IMapper _mapper;
         ILogger<RadioStationController> _logger;
-        public RadioStationController( IRadioStationRepository radioStationRepository, IMapper mapper,
+        public RadioStationController(IRadioStationRepository radioStationRepository, IMapper mapper,
             ILogger<RadioStationController> logger)
         {
             _radioStationRepository = radioStationRepository;
@@ -42,7 +42,7 @@ namespace UBSI_Ops.server.Controllers
         {
             _logger.LogInformation("Get Radiostation with code #{id}", stationCode);
             var radioStation = await _radioStationRepository.View(stationCode);
-            if(radioStation is null)
+            if (radioStation is null)
             {
                 return NotFound();
             }
