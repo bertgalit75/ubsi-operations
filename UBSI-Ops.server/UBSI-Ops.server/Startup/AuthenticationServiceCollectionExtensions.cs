@@ -1,3 +1,8 @@
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
@@ -5,11 +10,6 @@ using UBSI_Ops.server.Auth;
 using UBSI_Ops.server.Data;
 using UBSI_Ops.server.Data.Configuration;
 using UBSI_Ops.server.Entities.Identity;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
 
 namespace UBSI_Ops.server
 {

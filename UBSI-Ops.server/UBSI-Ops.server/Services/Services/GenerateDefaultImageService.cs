@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -33,9 +33,9 @@ namespace UBSI_Ops.server.Services.Services
         {
             // If the user has a name, use the user's intials,
             // otherwise use the 1st and 2nd letter of the email address
-            if (user.FirstName != null && user.LastName != null)
+            if (user.Name != null)
             {
-                return user.FirstName[0].ToString().ToUpper() + user.LastName[0].ToString().ToUpper();
+                return user.Name[0].ToString().ToUpper();
             }
             else
             {
