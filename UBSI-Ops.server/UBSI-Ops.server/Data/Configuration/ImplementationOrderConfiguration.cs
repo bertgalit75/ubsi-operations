@@ -30,6 +30,8 @@ namespace UBSI_Ops.server.Data.Configuration
 
             builder.Property(t => t.Tagline).HasColumnName("TAGLINE").HasMaxLength(30);
 
+            builder.Property(t => t.Product).HasColumnName("PRODUCT").HasMaxLength(30);
+
             builder.Property(t => t.BookingOrderNo).HasColumnName("BO_NO").HasMaxLength(30);
 
             builder.Property(t => t.PurchaseOrderNo).HasColumnName("PO_NO").HasMaxLength(30);
