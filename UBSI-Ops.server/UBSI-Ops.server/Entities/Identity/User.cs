@@ -25,11 +25,11 @@ namespace UBSI_Ops.server.Entities.Identity
 
         public DateTime CreatedAt { get; private set; }
 
-        public int CreatedById { get; set; }
+        public string CreatedById { get; set; }
 
         public DateTime UpdatedAt { get; private set; }
 
-        public int UpdatedById { get; set; }
+        public string UpdatedById { get; set; }
 
         public bool Student { get; set; }
 
