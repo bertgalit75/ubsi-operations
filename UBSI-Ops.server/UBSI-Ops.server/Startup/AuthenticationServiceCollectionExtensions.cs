@@ -6,10 +6,13 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using System.Threading.Tasks;
 using UBSI_Ops.server.Auth;
 using UBSI_Ops.server.Data;
 using UBSI_Ops.server.Data.Configuration;
+using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
+using UBSI_Ops.server.Services.Validator;
 
 namespace UBSI_Ops.server
 {
@@ -28,7 +31,8 @@ namespace UBSI_Ops.server
                     options.User.RequireUniqueEmail = true;
                 })
                 .AddEntityFrameworkStores<OperationContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders()
+                .AddPasswordValidator<ValidatePassword>();
 
             services
                 .AddAuthentication(options =>

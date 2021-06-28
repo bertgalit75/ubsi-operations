@@ -33,7 +33,7 @@ namespace UBSI_Ops.server.Services.Services
         {
             var claims = new List<Claim>()
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserId),
             };
 
             if (userOrganization != null)
@@ -61,7 +61,7 @@ namespace UBSI_Ops.server.Services.Services
         {
             var claims = new List<Claim>()
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString())
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserId)
             };
 
             return _tokenService.Encode(
