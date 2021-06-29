@@ -5,7 +5,7 @@
       <div class="mt-5">
         <div class="container px-6">
           <div class="text-xl mb-5">Login</div>
-          <form nz-form [formGroup]="loginForm">
+          <form nz-form [formGroup]="loginForm" (ngSubmit)="login()">
          
             <nz-form-item>
               <nz-form-label>Username</nz-form-label>
@@ -20,8 +20,8 @@
                 </nz-form-control>
             </nz-form-item>
             <div class="justify-center flex">
-              <button color="primary" class="mr-5"> Login</button>
-              <button [routerLink]="['/admin']" color="primary"> Go to Dashboard</button>
+              <button type="submit" color="primary" class="mr-5"> Login</button>
+              <button type="button" [routerLink]="['/admin']" color="primary"> Go to Dashboard</button>
               
             </div>
             <div class="justify-center flex mt-5">

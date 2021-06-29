@@ -11,6 +11,7 @@ import { AdminModule } from 'src/app/admin/admin.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 import {
   AccountBookFill,
@@ -32,6 +33,7 @@ registerLocaleData(en);
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     AdminModule,
