@@ -18,6 +18,7 @@ import {
   AlertOutline,
   PlusOutline,
 } from '@ant-design/icons-angular/icons';
+import { SiteModule } from './site/site.module';
 
 const icons: IconDefinition[] = [
   AccountBookFill,
@@ -34,6 +35,7 @@ registerLocaleData(en);
     BrowserModule,
     AppRoutingModule,
     AdminModule,
+    SiteModule,
     BrowserAnimationsModule,
     SharedModule,
     NzIconModule.forRoot(icons),
