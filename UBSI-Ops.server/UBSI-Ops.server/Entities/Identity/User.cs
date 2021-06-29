@@ -1,6 +1,8 @@
-﻿namespace UBSI_Ops.server.Entities.Identity
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace UBSI_Ops.server.Entities.Identity
 {
-    public class User
+    public class User : IdentityUser<int>
     {
         public string UserId { get; set; }
 

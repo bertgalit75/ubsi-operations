@@ -6,10 +6,10 @@ namespace UBSI_Ops.server.Entities
     {
         public DateTime CreatedAt { get; }
 
-        public int CreatedById { get; }
+        public string CreatedById { get; }
 
         public DateTime UpdatedAt { get; }
 
-        public int UpdatedById { get; }
+        public string UpdatedById { get; }
     }
 }

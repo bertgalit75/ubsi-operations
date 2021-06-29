@@ -9,14 +9,12 @@ namespace UBSI_Ops.server.Core.Extensions
         public static void HasBaseEntityProperties<T>(this EntityTypeBuilder<T> builder) where T : class, IBaseEntity
         {
             builder.Property(t => t.CreatedAt)
-                .HasColumnType("timestamp")
-                .HasDefaultValueSql("CURRENT_TIMESTAMP()")
-                .ValueGeneratedOnAdd();
+                .HasColumnName("CREATED_AT")
+                .HasColumnType("TIMESTAMP");
 
             builder.Property(t => t.UpdatedAt)
-                .HasColumnType("timestamp")
-                .HasDefaultValueSql("CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()")
-                .ValueGeneratedOnAddOrUpdate();
+                .HasColumnName("UPDATED_AT")
+                .HasColumnType("TIMESTAMP");
         }
     }
 }

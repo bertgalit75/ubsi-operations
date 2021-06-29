@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -33,14 +33,7 @@ namespace UBSI_Ops.server.Services.Services
         {
             // If the user has a name, use the user's intials,
             // otherwise use the 1st and 2nd letter of the email address
-            if (user.FirstName != null && user.LastName != null)
-            {
-                return user.FirstName[0].ToString().ToUpper() + user.LastName[0].ToString().ToUpper();
-            }
-            else
-            {
-                return user.Email[0].ToString().ToUpper() + user.Email[1].ToString().ToUpper();
-            }
+            return user.Name[0].ToString().ToUpper();
         }
 
         private VirtualFile CreateImage(User user)
@@ -54,7 +47,7 @@ namespace UBSI_Ops.server.Services.Services
             stream.Position = 0;
 
             var randomId = DateTime.UtcNow.ToFileTime();
-            var filename = $"{user.Id}-{randomId}.jpg";
+            var filename = $"{user.UserId}-{randomId}.jpg";
 
             return new VirtualFile(filename, stream);
         }
@@ -109,7 +102,7 @@ namespace UBSI_Ops.server.Services.Services
         private ColorCombination PickColorCombination(User user)
         {
             var colorCombinations = ColorCombination.ColorCombinations();
-            var code = GetCode(user.UserName, colorCombinations.Count);
+            var code = GetCode(user.Name, colorCombinations.Count);
             var colorCombination = colorCombinations[code];
 
             return colorCombination;
