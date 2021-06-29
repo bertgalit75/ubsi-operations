@@ -6,11 +6,9 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
-using System.Threading.Tasks;
 using UBSI_Ops.server.Auth;
 using UBSI_Ops.server.Data;
 using UBSI_Ops.server.Data.Configuration;
-using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
 using UBSI_Ops.server.Services.Validator;
 
@@ -18,21 +16,20 @@ namespace UBSI_Ops.server
 {
     public static class AuthenticationServiceCollectionExtensions
     {
-        public static IServiceCollection AddAuthenticationService(this IServiceCollection services, JwtConfiguration configuration)
+        public static object AddAuthenticationService(this IServiceCollection services, JwtConfiguration configuration)
         {
             services
                 .AddIdentity<User, Role>(options =>
                 {
-                    options.Password.RequireDigit = false;
                     options.Password.RequireUppercase = false;
                     options.Password.RequireLowercase = false;
-                    options.Password.RequiredLength = 8;
-                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireNonAlphanumeric = true;
                     options.User.RequireUniqueEmail = true;
                 })
                 .AddEntityFrameworkStores<OperationContext>()
                 .AddDefaultTokenProviders()
-                .AddPasswordValidator<ValidatePassword>();
+                .AddPasswordValidator<CustomPasswordValidator<User>>();
+
 
             services
                 .AddAuthentication(options =>
