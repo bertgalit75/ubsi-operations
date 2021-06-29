@@ -19,13 +19,13 @@ namespace UBSI_Ops.server.FunctionalTests
 
             builder.ConfigureServices(services =>
             {
-                services
-                    .AddAuthentication(opts =>
-                    {
-                        opts.DefaultAuthenticateScheme = TestAuthHandler.TestScheme;
-                        opts.DefaultChallengeScheme = TestAuthHandler.TestScheme;
-                    })
-                    .AddScheme<AuthenticationSchemeOptions, TestAuthHandler>(TestAuthHandler.TestScheme, null);
+                //services
+                //    .AddAuthentication(opts =>
+                //    {
+                //        opts.DefaultAuthenticateScheme = TestAuthHandler.TestScheme;
+                //        opts.DefaultChallengeScheme = TestAuthHandler.TestScheme;
+                //    })
+                //    .AddScheme<AuthenticationSchemeOptions, TestAuthHandler>(TestAuthHandler.TestScheme, null);
 
                 ReplaceDbContextWithTesting(services);
                 SeedDatabase(services);

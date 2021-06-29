@@ -30,7 +30,6 @@ namespace UBSI_Ops.server
                 .AddDefaultTokenProviders()
                 .AddPasswordValidator<CustomPasswordValidator<User>>();
 
-
             services
                 .AddAuthentication(options =>
                 {
