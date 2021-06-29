@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace UBSI_Ops.server.Entities
 {
-    public class ImplementationOrder:IBaseEntity
+    public class ImplementationOrder : IBaseEntity
     {
-        public int Id { get; set; }
+        public int Code { get; set; }
 
         public DateTime Date { get; set; }
 
-        public int ClientId { get; set; }
+        public string ClientCode { get; set; }
 
-        public int AgencyId { get; set; }
+        public string AgencyCode { get; set; }
 
-        public int AccountExecutiveId { get; set; }
+        public string AccountExecutiveCode { get; set; }
 
-        public int Tagline { get; set; }
+        public string Tagline { get; set; }
 
-        public string Product { get; set; }
+        public string ProductCode { get; set; }
 
         public string BookingOrderNo { get; set; }
 
@@ -29,10 +26,10 @@ namespace UBSI_Ops.server.Entities
 
         public DateTime CreatedAt { get; }
 
-        public string CreatedById { get; }
+        public string CreatedByCode { get; }
 
         public DateTime UpdatedAt { get; }
 
-        public string UpdatedById { get; }
+        public string UpdatedByCode { get; }
     }
 }

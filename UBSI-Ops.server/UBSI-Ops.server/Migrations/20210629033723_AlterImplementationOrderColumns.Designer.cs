@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 using UBSI_Ops.server.Data;
@@ -9,9 +10,10 @@ using UBSI_Ops.server.Data;
 namespace UBSI_Ops.server.Migrations
 {
     [DbContext(typeof(OperationContext))]
-    partial class OperationContextModelSnapshot : ModelSnapshot
+    [Migration("20210629033723_AlterImplementationOrderColumns")]
+    partial class AlterImplementationOrderColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -330,10 +332,8 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnName("CLIENT_CODE");
 
                     b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("CREATED_AT")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+                        .HasColumnName("CREATED_AT");
 
                     b.Property<string>("CreatedByCode")
                         .HasColumnType("VARCHAR2(20)")
@@ -360,10 +360,8 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnName("TAGLINE");
 
                     b.Property<DateTime>("UpdatedAt")
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("UPDATED_AT")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+                        .HasColumnName("UPDATED_AT");
 
                     b.Property<string>("UpdatedByCode")
                         .HasColumnType("VARCHAR2(20)")
@@ -383,10 +381,8 @@ namespace UBSI_Ops.server.Migrations
                         .HasAnnotation("Oracle:ValueGenerationStrategy", OracleValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("CREATED_AT")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+                        .HasColumnName("CREATED_AT");
 
                     b.Property<string>("CreatedByCode")
                         .HasColumnType("VARCHAR2(20)")
@@ -421,10 +417,8 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnName("STATION_CODE");
 
                     b.Property<DateTime>("UpdatedAt")
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("UPDATED_AT")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+                        .HasColumnName("UPDATED_AT");
 
                     b.HasKey("Code");
 

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace UBSI_Ops.server.Entities
 {
@@ -6,10 +6,10 @@ namespace UBSI_Ops.server.Entities
     {
         public DateTime CreatedAt { get; }
 
-        public string CreatedById { get; }
+        public string CreatedByCode { get; }
 
         public DateTime UpdatedAt { get; }
 
-        public string UpdatedById { get; }
+        public string UpdatedByCode { get; }
     }
 }

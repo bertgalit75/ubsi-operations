@@ -1,6 +1,6 @@
-using UBSI_Ops.server.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using UBSI_Ops.server.Entities;
 
 namespace UBSI_Ops.server.Core.Extensions
 {
@@ -10,11 +10,12 @@ namespace UBSI_Ops.server.Core.Extensions
         {
             builder.Property(t => t.CreatedAt)
                 .HasColumnName("CREATED_AT")
-                .HasColumnType("TIMESTAMP");
+                .HasColumnType("TIMESTAMP(7)").HasDefaultValueSql("CURRENT_TIMESTAMP").ValueGeneratedOnAdd();
+
 
             builder.Property(t => t.UpdatedAt)
                 .HasColumnName("UPDATED_AT")
-                .HasColumnType("TIMESTAMP");
+                .HasColumnType("TIMESTAMP(7)").HasDefaultValueSql("CURRENT_TIMESTAMP").ValueGeneratedOnAddOrUpdate();
         }
     }
 }

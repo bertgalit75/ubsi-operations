@@ -1,46 +1,42 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Extensions;
 using UBSI_Ops.server.Entities;
 
 namespace UBSI_Ops.server.Data.Configuration
 {
-   
+
     public class ImplementationOrderConfiguration : IEntityTypeConfiguration<ImplementationOrder>
     {
         public void Configure(EntityTypeBuilder<ImplementationOrder> builder)
         {
             builder.ToTable("IMPLEMENTATION_ORDER");
 
-            builder.HasKey(t => t.Id);
+            builder.HasKey(t => t.Code);
 
-            builder.Property(t => t.Id).HasColumnName("ID").HasMaxLength(11);
+            builder.Property(t => t.Code).HasColumnName("CODE").HasColumnType("NUMBER(10)");
 
-            builder.Property(t => t.Date).HasColumnName("DATE").HasColumnType("TIMESTAMP");
+            builder.Property(t => t.Date).HasColumnName("DATE").HasColumnType("TIMESTAMP(7)");
 
-            builder.Property(t => t.ClientId).HasColumnName("CLIENT_ID").HasMaxLength(11);
+            builder.Property(t => t.ClientCode).HasColumnName("CLIENT_CODE").HasColumnType("VARCHAR2(20)");
 
-            builder.Property(t => t.AgencyId).HasColumnName("AGENCY_ID").HasMaxLength(11);
+            builder.Property(t => t.AgencyCode).HasColumnName("AGENCY_CODE").HasColumnType("VARCHAR2(20)");
 
-            builder.Property(t => t.AccountExecutiveId).HasColumnName("AE_ID").HasMaxLength(11);
+            builder.Property(t => t.AccountExecutiveCode).HasColumnName("AE_CODE").HasColumnType("VARCHAR2(20)");
 
-            builder.Property(t => t.Tagline).HasColumnName("TAGLINE").HasMaxLength(30);
+            builder.Property(t => t.Tagline).HasColumnName("TAGLINE").HasColumnType("VARCHAR2(20)");
 
-            builder.Property(t => t.Product).HasColumnName("PRODUCT").HasMaxLength(30);
+            builder.Property(t => t.ProductCode).HasColumnName("PRODUCT_CODE").HasColumnType("VARCHAR2(20)");
 
-            builder.Property(t => t.BookingOrderNo).HasColumnName("BO_NO").HasMaxLength(30);
+            builder.Property(t => t.BookingOrderNo).HasColumnName("BO_NO").HasColumnType("VARCHAR2(20)");
 
-            builder.Property(t => t.PurchaseOrderNo).HasColumnName("PO_NO").HasMaxLength(30);
+            builder.Property(t => t.PurchaseOrderNo).HasColumnName("PO_NO").HasColumnType("VARCHAR2(20)");
 
-            builder.Property(t => t.ReferenceCENo).HasColumnName("REF_NO").HasMaxLength(30);
+            builder.Property(t => t.ReferenceCENo).HasColumnName("REF_NO").HasColumnType("VARCHAR2(20)");
 
-            builder.Property(t => t.CreatedById).HasColumnName("CREATED_BY_ID").HasMaxLength(30);
+            builder.Property(t => t.CreatedByCode).HasColumnName("CREATED_BY_CODE").HasColumnType("VARCHAR2(20)");
 
-            builder.Property(t => t.UpdatedById).HasColumnName("UPDATED_BY_ID").HasMaxLength(30);
+            builder.Property(t => t.UpdatedByCode).HasColumnName("UPDATED_BY_CODE").HasColumnType("VARCHAR2(20)");
 
             builder.HasBaseEntityProperties();
 
