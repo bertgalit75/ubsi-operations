@@ -18,6 +18,8 @@ import {
   AlertFill,
   AlertOutline,
   PlusOutline,
+  UserOutline,
+  LockOutline
 } from '@ant-design/icons-angular/icons';
 import { SiteModule } from './site/site.module';
 
@@ -26,6 +28,8 @@ const icons: IconDefinition[] = [
   AlertOutline,
   AlertFill,
   PlusOutline,
+  UserOutline,
+  LockOutline
 ];
 
 registerLocaleData(en);

@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private guard: AuthGuard) { }
   loginForm:FormGroup=this.fb.group({
-    username:[null],
-    password:[null]
+    username:[null, [Validators.required]],
+    password:[null, [Validators.required]]
   })
   ngOnInit(): void {
   }
@@ -32,6 +32,11 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     console.log(this.loginForm.value);
+    for (const i in this.loginForm.controls) {
+      this.loginForm.controls[i].markAsDirty();
+      this.loginForm.controls[i].updateValueAndValidity();
+    }
+
     if (!this.loginForm.valid) {
       return;
     }
