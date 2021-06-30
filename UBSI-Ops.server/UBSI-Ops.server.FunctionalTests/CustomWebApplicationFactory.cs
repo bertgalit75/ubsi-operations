@@ -1,13 +1,14 @@
-﻿using System;
-using System.Linq;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Linq;
 using UBSI_Ops.server.Data;
 using UBSI_Ops.server.Data.Seed;
+using UBSI_Ops.server.Entities.Identity;
 
 namespace UBSI_Ops.server.FunctionalTests
 {
@@ -55,6 +56,8 @@ namespace UBSI_Ops.server.FunctionalTests
 
             var scopedServices = scope.ServiceProvider;
             var context = scopedServices.GetRequiredService<OperationContext>();
+            var userManagers = scopedServices.GetRequiredService<UserManager<User>>();
+            var roleManager = scopedServices.GetRequiredService<RoleManager<Role>>();
             var logger = scopedServices
                 .GetRequiredService<ILogger<CustomWebApplicationFactory>>();
 

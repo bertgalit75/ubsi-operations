@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 
 namespace UBSI_Ops.server.Entities.Identity
 {
-    public class UserRole
+    public class UserRole : IdentityUserRole<string>
     {
-        public int UserRoleId { get; set; }
-        public int RoleId { get; set; }
-        public string UserId { get; set; }
         public string Type { get; set; }
         public int BranchId { get; set; }
         public DateTime CreatedAt { get; private set; }

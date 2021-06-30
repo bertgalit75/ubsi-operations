@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using UBSI_Ops.server.Core.Hashids;
 using UBSI_Ops.server.Data.Configuration;
+using UBSI_Ops.server.Entities.Identity;
 
 namespace UBSI_Ops.server
 {
@@ -35,11 +37,21 @@ namespace UBSI_Ops.server
             services.AddEmailService(Configuration);
             services.AddAutoMapper();
             services.AddSwagger();
+
+
+            services.AddMvc();
+            services.AddHttpContextAccessor();
+            services.AddScoped<UserManager<User>>();
+            services.AddScoped<SignInManager<User>>();
+            services.AddScoped<RoleManager<Role>>();
+            services.AddScoped<IPasswordValidator<User>, PasswordValidator<User>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

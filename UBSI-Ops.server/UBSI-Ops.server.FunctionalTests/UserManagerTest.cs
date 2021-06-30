@@ -9,10 +9,11 @@ namespace UBSI_Ops.server.FunctionalTests
     public class UserManagerTest : IClassFixture<CustomWebApplicationFactory>
     {
         private readonly UserManager<User> _userManager;
-
+        private readonly CustomWebApplicationFactory _factory;
         public UserManagerTest(CustomWebApplicationFactory factory)
         {
-            _userManager = (UserManager<User>)factory.Services.GetService(typeof(UserManager<User>));
+            _factory = factory;
+            _userManager = (UserManager<User>)_factory.Services.GetService(typeof(UserManager<User>));
         }
 
         [Fact]
@@ -27,5 +28,7 @@ namespace UBSI_Ops.server.FunctionalTests
             // Assert
             result.Should().BeTrue();
         }
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,7 +17,7 @@ namespace UBSI_Ops.server
 {
     public static class AuthenticationServiceCollectionExtensions
     {
-        public static object AddAuthenticationService(this IServiceCollection services, JwtConfiguration configuration)
+        public static IServiceCollection AddAuthenticationService(this IServiceCollection services, JwtConfiguration configuration)
         {
             services
                 .AddIdentity<User, Role>(options =>
