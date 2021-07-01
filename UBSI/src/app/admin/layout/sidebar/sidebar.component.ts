@@ -18,8 +18,8 @@ const menuItems: MenuItem[] = [
     icon: 'dashboard',
   },
   {
-    route: 'buildings',
-    label: 'Report',
+    route: 'customers',
+    label: 'Customers',
     icon: 'summarize',
   },
 ];
