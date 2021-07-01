@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -15,6 +16,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 
 @NgModule({
   exports: [
+    NzAlertModule,
     NzBreadCrumbModule,
     NzButtonModule,
     NzCardModule,
