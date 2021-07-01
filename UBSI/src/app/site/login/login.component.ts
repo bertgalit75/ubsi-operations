@@ -1,37 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { AuthGuard } from 'src/app/auth/auth.guard';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.less']
+  styleUrls: ['./login.component.less'],
 })
 export class LoginComponent implements OnInit {
-  loggingIn: BehaviorSubject<boolean> = new BehaviorSubject(null);
+  loginForm: FormGroup = this.fb.group({
+    username: [null, [Validators.required]],
+    password: [null, [Validators.required]],
+  });
 
   loginError: string;
 
-  constructor(private fb:FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router,
-    private guard: AuthGuard) { }
-  loginForm:FormGroup=this.fb.group({
-    username:[null, [Validators.required]],
-    password:[null, [Validators.required]]
-  })
-  ngOnInit(): void {
-  }
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {}
 
   forgotPassword(): void {
     this.router.navigate(['account', 'forgot-password']);
   }
 
   login(): void {
-    console.log(this.loginForm.value);
     for (const i in this.loginForm.controls) {
       this.loginForm.controls[i].markAsDirty();
       this.loginForm.controls[i].updateValueAndValidity();
@@ -44,7 +41,6 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
 
     this.loginError = null;
-    this.loggingIn.next(true);
 
     this.authService.login(email, password).subscribe(
       () => {
@@ -58,20 +54,18 @@ export class LoginComponent implements OnInit {
       },
       (error) => {
         this.loginError = error;
-        console.log(error);
-        this.loggingIn.next(false);
       }
     );
   }
 
-  signup() {
+  signup(): void {
     this.router.navigate(['signup']);
   }
-  public checkIfAuthenticated() {
+
+  public checkIfAuthenticated(): void {
     if (!this.authService.isTokenValid()) {
       this.authService.logout();
       this.router.navigate(['login']);
     }
   }
-
 }
