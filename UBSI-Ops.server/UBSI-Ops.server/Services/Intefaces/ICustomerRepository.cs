@@ -8,5 +8,6 @@ namespace UBSI_Ops.server.Services.Intefaces
     {
         Task<PaginatedList<Customer>> List(PageOptions options);
         Task<PaginatedList<Customer>> SearchList(PageOptions options, string search);
+        Task<Customer> View(string _search);
     }
 }

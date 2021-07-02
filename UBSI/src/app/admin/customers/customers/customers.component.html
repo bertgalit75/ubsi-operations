@@ -42,7 +42,11 @@
         <td>{{ customer.aeName }}</td>
         <td>{{ customer.creditTermsCode }}</td>
         <td>
-          <a nz-button nzShape="circle" [routerLink]="['/customers', '1']">
+          <a
+            nz-button
+            nzShape="circle"
+            [routerLink]="['/customers', customer.code]"
+          >
             <i nz-icon nzType="search"></i>
           </a>
         </td>

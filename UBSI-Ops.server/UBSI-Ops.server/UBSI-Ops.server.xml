@@ -28,6 +28,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:UBSI_Ops.server.Controllers.CustomerController.View(System.String)">
+            <summary>
+            Return Specific Customer 
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:UBSI_Ops.server.Controllers.RadioStationController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
             <summary>
             List all RadioStations
