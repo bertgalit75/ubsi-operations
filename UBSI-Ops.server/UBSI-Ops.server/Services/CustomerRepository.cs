@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Extensions;
@@ -21,12 +19,23 @@ namespace UBSI_Ops.server.Services
 
         public async Task<PaginatedList<Customer>> List(PageOptions options)
         {
+            string direction = null;
+
+            if (options.Direction == "ascend") { direction = "asc"; }
+
+            else if (options.Direction == "descend") { direction = "desc"; }
+
             var query = _context.Customers.
                 AsQueryable();
 
             query = options.Sort switch
             {
-                "name" => query.OrderBy(t => t.Name, options.Direction),
+                "customerCode" => query.OrderBy(t => t.Code, direction),
+                "customerName" => query.OrderBy(x => x.Name, direction),
+                "regionCode" => query.OrderBy(t => t.RegionCode, direction),
+                "areaCode" => query.OrderBy(t => t.AreaCode, direction),
+                "ae" => query.OrderBy(t => t.AEName, direction),
+                "creditTerms" => query.OrderBy(t => t.CreditTermsCode, direction),
                 _ => query
             };
 

@@ -1,6 +1,6 @@
 ﻿namespace UBSI_Ops.server.Entities
 {
-    public class Customer 
+    public class Customer
     {
         public string Code { get; set; }
 
@@ -12,7 +12,7 @@
 
         public string AreaCode { get; set; }
 
-        public decimal CreditLimit { get; set; }
+        public decimal? CreditLimit { get; set; }
 
         public string IsVatInclusive { get; set; }
 
