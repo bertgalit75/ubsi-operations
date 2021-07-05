@@ -1,1 +1,61 @@
-<p>view-customer works!</p>
+<nz-page-header [nzGhost]="false">
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+    <nz-breadcrumb-item>Customers</nz-breadcrumb-item>
+    <nz-breadcrumb-item>{{ customer?.name }}</nz-breadcrumb-item>
+  </nz-breadcrumb>
+  <nz-page-header-title>{{ customer?.name }}</nz-page-header-title>
+</nz-page-header>
+
+<nz-card class="m-4">
+  <nz-descriptions nzTitle="Customer Info" nzBordered>
+    <nz-descriptions-item nzTitle="Name" [nzSpan]="3">{{
+      customer?.name
+    }}</nz-descriptions-item>
+  </nz-descriptions>
+
+  <nz-descriptions nzBordered class="mt-5">
+    <nz-descriptions-item nzTitle="Account Executive" [nzSpan]="2">{{
+      customer?.aeName
+    }}</nz-descriptions-item>
+
+    <nz-descriptions-item nzTitle="TIN">{{
+      customer?.tin
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Contact Person" [nzSpan]="2">{{
+      customer?.contactPerson
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Telephone">{{
+      customer?.telephone
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Credit Terms Code">{{
+      customer?.creditTermsCode
+    }}</nz-descriptions-item>
+
+    <nz-descriptions-item nzTitle="Credit Status">{{
+      customer?.creditStatus
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Credit Limit">{{
+      customer?.creditLimit
+    }}</nz-descriptions-item>
+
+    <nz-descriptions-item nzTitle="FAX"
+      >{{ customer?.fax }}
+    </nz-descriptions-item>
+  </nz-descriptions>
+</nz-card>
+<nz-card class="m-4">
+  <nz-descriptions nzTitle="Address" nzBordered>
+    <nz-descriptions-item nzTitle="RegionCode">{{
+      customer?.regionCode
+    }}</nz-descriptions-item>
+
+    <nz-descriptions-item nzTitle="Area Code">{{
+      customer?.areaCode
+    }}</nz-descriptions-item>
+
+    <nz-descriptions-item nzTitle="Billing Address">{{
+      customer?.billingAddress
+    }}</nz-descriptions-item>
+  </nz-descriptions>
+</nz-card>

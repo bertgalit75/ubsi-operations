@@ -45,7 +45,7 @@ namespace UBSI_Ops.server.Controllers
         /// List all customers that matches the search
         /// </summary>
         /// <returns></returns>
-        [HttpGet("{search}")]
+        [HttpGet("filter/{search}")]
         public async Task<ActionResult<PaginatedList<CustomerDto>>> SearchList([FromQuery] PageOptions options, string search)
         {
             _logger.LogInformation("Get Customers");
@@ -53,6 +53,20 @@ namespace UBSI_Ops.server.Controllers
             var customers = await _customerRepository.SearchList(options, search);
 
             return customers.Select(r => _mapper.Map<CustomerDto>(r));
+        }
+
+        /// <summary>
+        /// Return Specific Customer 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("{code}")]
+        public async Task<ActionResult<CustomerDto>> View(string code)
+        {
+            _logger.LogInformation("Get Customer #" + code);
+
+            var customer = await _customerRepository.View(code);
+
+            return _mapper.Map<CustomerDto>(customer);
         }
     }
 }

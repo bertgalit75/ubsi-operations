@@ -31,4 +31,8 @@ export class CustomerService {
       params,
     });
   }
+
+  getCustomerDetails(code: string): Observable<ICustomer> {
+    return this.http.get<ICustomer>(`${this.api}/${code}`);
+  }
 }

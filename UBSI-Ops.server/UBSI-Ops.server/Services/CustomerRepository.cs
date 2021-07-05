@@ -68,5 +68,10 @@ namespace UBSI_Ops.server.Services
 
             return new PaginatedList<Customer>(customers, total);
         }
+
+        public async Task<Customer> View(string code)
+        {
+            return await _context.Customers.Where(x => x.Code == code).FirstOrDefaultAsync();
+        }
     }
 }
