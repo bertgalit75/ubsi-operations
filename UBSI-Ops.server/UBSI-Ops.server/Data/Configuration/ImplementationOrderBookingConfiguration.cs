@@ -33,6 +33,20 @@ namespace UBSI_Ops.server.Data.Configuration
 
             builder.Property(t => t.Gross).HasColumnName("GROSS").HasColumnType("NUMBER(18,2)");
 
+            builder.Property(t => t.Monday).HasColumnName("MONDAY").HasColumnType("NUMBER(1)");
+
+            builder.Property(t => t.Tuesday).HasColumnName("TUESDAY").HasColumnType("NUMBER(1)");
+
+            builder.Property(t => t.Wednesday).HasColumnName("WEDNESDAY").HasColumnType("NUMBER(1)");
+
+            builder.Property(t => t.Thursday).HasColumnName("THURSDAY").HasColumnType("NUMBER(1)");
+
+            builder.Property(t => t.Friday).HasColumnName("FRIDAY").HasColumnType("NUMBER(1)");
+
+            builder.Property(t => t.Saturday).HasColumnName("SATURDAY").HasColumnType("NUMBER(1)");
+
+            builder.Property(t => t.Sunday).HasColumnName("SUNDAY").HasColumnType("NUMBER(1)");
+
             builder.Property(t => t.CreatedByCode).HasColumnName("CREATED_BY_CODE").HasColumnType("VARCHAR2(20)");
 
             builder.Property(t => t.CreatedByCode).HasColumnName("UPDATED_BY_CODE").HasColumnType("VARCHAR2(20)");
