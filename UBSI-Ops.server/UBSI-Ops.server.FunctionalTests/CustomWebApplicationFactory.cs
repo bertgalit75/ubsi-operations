@@ -1,11 +1,10 @@
-﻿using System;
-using System.Linq;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Linq;
 using UBSI_Ops.server.Data;
 using UBSI_Ops.server.Data.Seed;
 
@@ -19,13 +18,13 @@ namespace UBSI_Ops.server.FunctionalTests
 
             builder.ConfigureServices(services =>
             {
-                services
-                    .AddAuthentication(opts =>
-                    {
-                        opts.DefaultAuthenticateScheme = TestAuthHandler.TestScheme;
-                        opts.DefaultChallengeScheme = TestAuthHandler.TestScheme;
-                    })
-                    .AddScheme<AuthenticationSchemeOptions, TestAuthHandler>(TestAuthHandler.TestScheme, null);
+                //services
+                //    .AddAuthentication(opts =>
+                //    {
+                //        opts.DefaultAuthenticateScheme = TestAuthHandler.TestScheme;
+                //        opts.DefaultChallengeScheme = TestAuthHandler.TestScheme;
+                //    })
+                //    .AddScheme<AuthenticationSchemeOptions, TestAuthHandler>(TestAuthHandler.TestScheme, null);
 
                 ReplaceDbContextWithTesting(services);
                 SeedDatabase(services);
