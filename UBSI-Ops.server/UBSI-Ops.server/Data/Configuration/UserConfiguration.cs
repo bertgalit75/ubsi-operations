@@ -10,9 +10,7 @@ namespace UBSI_Ops.server.Data.Configuration
         {
             builder.ToTable("EZ_USERS");
 
-            builder.HasKey(t => t.UserId);
-
-            builder.Property(t => t.UserId).HasColumnName("AU_USERID").HasMaxLength(50);
+            builder.Property(t => t.Id).HasColumnName("AU_USERID").HasMaxLength(50);
 
             builder.Property(t => t.PasswordHash).HasColumnName("AU_PASSWORD").HasMaxLength(50);
 
@@ -49,8 +47,6 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.Id).HasColumnName("ID");
 
             builder.Property(t => t.NormalizedUserName).HasColumnName("NORMALIZEDUSERNAME").HasMaxLength(50);
-
         }
     }
-
 }

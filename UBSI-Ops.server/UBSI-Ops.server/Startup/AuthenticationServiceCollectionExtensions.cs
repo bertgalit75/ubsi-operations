@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,8 +27,8 @@ namespace UBSI_Ops.server
                     options.User.RequireUniqueEmail = true;
                 })
                 .AddEntityFrameworkStores<OperationContext>()
-                .AddDefaultTokenProviders()
-                .AddPasswordValidator<CustomPasswordValidator<User>>();
+                .AddDefaultTokenProviders();
+            //.AddPasswordValidator<CustomPasswordValidator<User>>();
 
             services
                 .AddAuthentication(options =>
@@ -66,6 +65,8 @@ namespace UBSI_Ops.server
                 });
 
             services.AddAuthorization();
+
+            services.AddScoped<IPasswordHasher<User>, EzPasPasswordHasher<User>>();
 
             services.AddSingleton<IAuthorizationPolicyProvider, AdminOnlyPolicyProvider>();
             services.AddScoped<IAuthorizationHandler, AdminOnlyHandler>();

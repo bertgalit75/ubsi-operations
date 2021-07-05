@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Entities;
+using UBSI_Ops.server.Entities.Identity;
 
 namespace UBSI_Ops.server.Data.Seed
 {
@@ -12,6 +13,8 @@ namespace UBSI_Ops.server.Data.Seed
             context.RadioStations.AddRange(GetRadioStations());
             context.Vendors.AddRange(GetVendors());
             context.AccountExecutives.AddRange(GetAccountExecutives());
+            context.Users.AddRange(GetUsers());
+
             await context.SaveChangesAsync();
         }
 
@@ -21,10 +24,12 @@ namespace UBSI_Ops.server.Data.Seed
             {
                 new Customer()
                 {
+                    Code = "0001",
                     Name = "John Doe"
                 },
                 new Customer()
                 {
+                    Code = "0002",
                     Name = "Jane Doe"
                 }
             };
@@ -85,6 +90,18 @@ namespace UBSI_Ops.server.Data.Seed
             };
         }
 
-
+        private Collection<User> GetUsers()
+        {
+            return new Collection<User>()
+            {
+                new User()
+                {
+                    Id = "1",
+                    UserName = "admin",
+                    NormalizedUserName = "ADMIN",
+                    PasswordHash = "c06617466ae4a7d621cd"
+                }
+            };
+        }
     }
 }

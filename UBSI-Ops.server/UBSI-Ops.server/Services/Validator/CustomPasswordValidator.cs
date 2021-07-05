@@ -12,6 +12,7 @@ namespace UBSI_Ops.server.Services.Validator
         {
             var MinLength = 8;
             int i;
+
             if (string.Equals(user.UserId, password, StringComparison.OrdinalIgnoreCase))
             {
                 return Task.FromResult(IdentityResult.Failed(new IdentityError
@@ -44,6 +45,7 @@ namespace UBSI_Ops.server.Services.Validator
                     Description = "Password Require Number"
                 }));
             }
+
             return Task.FromResult(IdentityResult.Success);
         }
     }

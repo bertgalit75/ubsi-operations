@@ -5,8 +5,7 @@ using UBSI_Ops.server.Entities.Identity;
 
 namespace UBSI_Ops.server.Data
 {
-    public class OperationContext : IdentityDbContext<
-            User, Role, string>
+    public class OperationContext : IdentityDbContext<User, Role, string>
     {
         public DbSet<RadioStation> RadioStations { get; set; }
 
@@ -25,6 +24,5 @@ namespace UBSI_Ops.server.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(OperationContext).Assembly);
         }
-
     }
 }
