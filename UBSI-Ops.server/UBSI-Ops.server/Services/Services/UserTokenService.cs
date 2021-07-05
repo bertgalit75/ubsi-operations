@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -33,8 +33,7 @@ namespace UBSI_Ops.server.Services.Services
         {
             var claims = new List<Claim>()
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-                new Claim(CustomClaimTypes.UserType, user.UserType)
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserId),
             };
 
             if (userOrganization != null)
@@ -51,10 +50,6 @@ namespace UBSI_Ops.server.Services.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
-                new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email)
             };
 
             return _tokenService.Encode(
@@ -66,7 +61,7 @@ namespace UBSI_Ops.server.Services.Services
         {
             var claims = new List<Claim>()
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString())
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserId)
             };
 
             return _tokenService.Encode(

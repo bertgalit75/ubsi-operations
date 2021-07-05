@@ -1,13 +1,11 @@
-using UBSI_Ops.server.Entities.Identity;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
+using UBSI_Ops.server.Entities.Identity;
 
 namespace UBSI_Ops.server.Services.Helpers
 {
@@ -19,7 +17,7 @@ namespace UBSI_Ops.server.Services.Helpers
             {
                 new Claim(JwtRegisteredClaimNames.Sub, email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+                new Claim(ClaimTypes.NameIdentifier, user.UserId)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
