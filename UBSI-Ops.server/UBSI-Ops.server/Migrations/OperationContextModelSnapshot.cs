@@ -184,8 +184,8 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnName("NAME");
 
                     b.Property<string>("Remarks")
-                        .HasMaxLength(200)
-                        .HasColumnType("NVARCHAR2(200)")
+                        .HasMaxLength(1000)
+                        .HasColumnType("NVARCHAR2(1000)")
                         .HasColumnName("REMARKS");
 
                     b.HasKey("Code");

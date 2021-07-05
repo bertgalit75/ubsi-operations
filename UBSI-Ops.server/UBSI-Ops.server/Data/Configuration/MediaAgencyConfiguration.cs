@@ -33,7 +33,7 @@ namespace UBSI_Ops.server.Data.Configuration
                 HasMaxLength(40);
 
             builder.Property(t => t.Remarks).HasColumnName("REMARKS").
-                HasMaxLength(200);
+                HasMaxLength(1000);
         }
     }
 }
