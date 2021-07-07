@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using UBSI_Ops.server.Auth;
 using UBSI_Ops.server.Core.View;
 using UBSI_Ops.server.Data.Configuration;
+using UBSI_Ops.server.MediaAgencies.Services;
 using UBSI_Ops.server.Services;
 using UBSI_Ops.server.Services.Intefaces;
 using UBSI_Ops.server.Services.Services;
@@ -16,6 +17,7 @@ namespace UBSI_Ops.server
             //Repositories
             services.AddTransient<IRadioStationRepository, RadioStationRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IMediaAgencyRepository, MediaAgencyRepository>();
             services.AddTransient<IVendorRepository, VendorRepository>();
             services.AddTransient<IAccountExecutiveRepository, AccountExecutiveRepository>();
 
@@ -31,6 +33,8 @@ namespace UBSI_Ops.server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddScoped<MediaAgencyService>();
 
             services.AddSingleton<IHashids>(services => new Hashids("secret"));
 
