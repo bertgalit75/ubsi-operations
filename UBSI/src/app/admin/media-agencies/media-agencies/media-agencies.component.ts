@@ -1,26 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  NzTableQueryParams,
-  NzTableSortFn,
-  NzTableSortOrder,
-} from 'ng-zorro-antd/table';
-import { PageOptions } from 'src/app/core/pageoptions/PageOptions';
-import { ICustomer } from 'src/app/models/customer.model';
-import { CustomerService } from 'src/app/services/customer.service';
+import { NzTableQueryParams } from 'ng-zorro-antd/table';
+import { IMediaAgency } from 'src/app/models/media-agency.model';
+import { MediaAgencyService } from 'src/app/services/media-agency.service';
 
 @Component({
-  selector: 'app-customers',
-  templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.less'],
+  selector: 'app-media-agencies',
+  templateUrl: './media-agencies.component.html',
+  styleUrls: ['./media-agencies.component.less'],
 })
-export class CustomersComponent implements OnInit {
-  constructor(private customerService: CustomerService) {}
-  dataSet: ICustomer[];
+export class MediaAgenciesComponent implements OnInit {
+  constructor(private mediaAgencyService: MediaAgencyService) {}
+  dataSet: IMediaAgency[];
+
   total: number;
   loading = true;
   pageSize = 10;
   pageIndex = 0;
-
   ngOnInit(): void {
     this.List(this.pageIndex, this.pageSize, null, null);
   }
@@ -31,8 +26,8 @@ export class CustomersComponent implements OnInit {
     sortOrder: string | null
   ): void {
     this.loading = true;
-    this.customerService
-      .getCustomers(pageIndex, pageSize, sortField, sortOrder)
+    this.mediaAgencyService
+      .getMediaAgencies(pageIndex, pageSize, sortField, sortOrder)
       .subscribe((data) => {
         this.loading = false;
         this.total = data.totalCount; // mock the total data here

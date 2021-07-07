@@ -18,6 +18,7 @@ namespace UBSI_Ops.server
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IVendorRepository, VendorRepository>();
             services.AddTransient<IAccountExecutiveRepository, AccountExecutiveRepository>();
+            services.AddTransient<IMediaAgencyRepository, MediaAgencyRepository>();
 
             services.AddScoped<LoginService>();
             services.AddScoped<JwtConfiguration>();

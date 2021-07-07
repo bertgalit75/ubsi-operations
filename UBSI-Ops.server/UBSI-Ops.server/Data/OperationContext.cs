@@ -15,6 +15,8 @@ namespace UBSI_Ops.server.Data
 
         public DbSet<AccountExecutive> AccountExecutives { get; set; }
 
+        public DbSet<MediaAgency> MediaAgencies { get; set; }
+
         public OperationContext(DbContextOptions options) : base(options)
         {
         }
