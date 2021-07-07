@@ -12,7 +12,7 @@ export class NewAgenciesComponent implements OnInit {
   form: FormGroup = this.fb.group({
     code: [null, Validators.required],
     name: [null, Validators.required],
-    contractNo: [null],
+    contactNo: [null],
     fax: [null],
     email: [null, Validators.required],
     remarks: [null],
