@@ -14,6 +14,7 @@ namespace UBSI_Ops.server.Data.Seed
             context.Vendors.AddRange(GetVendors());
             context.AccountExecutives.AddRange(GetAccountExecutives());
             context.Users.AddRange(GetUsers());
+            context.MediaAgencies.AddRange(GetMediaAgencies());
 
             await context.SaveChangesAsync();
         }
@@ -100,6 +101,29 @@ namespace UBSI_Ops.server.Data.Seed
                     UserName = "admin",
                     NormalizedUserName = "ADMIN",
                     PasswordHash = "c06617466ae4a7d621cd"
+                }
+            };
+        }
+
+        private Collection<MediaAgency> GetMediaAgencies()
+        {
+            return new Collection<MediaAgency>()
+            {
+                new MediaAgency()
+                {
+                    Code = "1",
+                    Name = "True Tiles Media",
+                    AddressLine = "Roxas, Panganiban St.",
+                    City = "Santiago City",
+                    Province="Isabela",
+                },
+                 new MediaAgency()
+                {
+                    Code = "2",
+                    Name = "MediaCom",
+                    AddressLine = "Roxas, Panganiban St.",
+                    City = "Santiago City",
+                    Province="Isabela",
                 }
             };
         }

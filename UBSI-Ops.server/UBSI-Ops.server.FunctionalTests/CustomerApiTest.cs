@@ -40,15 +40,17 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/customers/Jane");
+            var response = await client.GetAsync("/api/customers/0002");
 
             // Assert
             response.EnsureSuccessStatusCode();
 
             var responseContent = await response.Content.ReadAsStringAsync();
-            var customers = JsonSerializer.Deserialize<PaginatedListTest<CustomerDto>>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            var customer = JsonSerializer.Deserialize<CustomerDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
-            customers.Should().NotBeNull();
+            customer.Name.Should().Be("Jane Doe");
+            customer.Code.Should().Be("0002");
+
         }
     }
 }
