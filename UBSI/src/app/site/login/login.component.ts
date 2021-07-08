@@ -38,11 +38,11 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    const { email, password } = this.loginForm.value;
+    const { username, password } = this.loginForm.value;
 
     this.loginError = null;
 
-    this.authService.login(email, password).subscribe(
+    this.authService.login(username, password).subscribe(
       () => {
         if (this.authService.redirectUrl != null) {
           const attemptedUrl = this.authService.redirectUrl;

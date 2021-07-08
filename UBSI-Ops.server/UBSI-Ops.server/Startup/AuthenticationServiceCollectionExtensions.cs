@@ -10,7 +10,6 @@ using UBSI_Ops.server.Auth;
 using UBSI_Ops.server.Data;
 using UBSI_Ops.server.Data.Configuration;
 using UBSI_Ops.server.Entities.Identity;
-using UBSI_Ops.server.Services.Validator;
 
 namespace UBSI_Ops.server
 {

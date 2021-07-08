@@ -31,7 +31,7 @@ export class AuthService {
   }
 
   login(username: string, password: string): Observable<string> {
-    const credentials = { username: username, password };
+    const credentials = { username, password };
 
     return this.httpClient
       .post<LoginResult>('/api/account/login', credentials)
