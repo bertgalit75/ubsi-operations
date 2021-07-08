@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { markAllAsDirty } from 'src/app/core/functions';
 import { AppSettingsService } from 'src/app/core/services/app-settings.service';
 
@@ -33,7 +34,8 @@ export class NewImplementationOrderComponent implements OnInit {
 
   constructor(
     public appSettings: AppSettingsService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -54,6 +56,10 @@ export class NewImplementationOrderComponent implements OnInit {
 
   removeBookingGroup(index: number): void {
     this.bookingsArray.removeAt(index);
+  }
+
+  goToBack(): void {
+    this.router.navigate(['/', 'implementation-orders']);
   }
 
   private createBookingGroup(): FormGroup {

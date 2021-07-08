@@ -1,4 +1,4 @@
-<nz-page-header [nzGhost]="false" (nzBack)="(!!false)" nzBackIcon>
+<nz-page-header [nzGhost]="false" (nzBack)="goToBack()" nzBackIcon>
   <nz-page-header-title>New Implementation Order</nz-page-header-title>
 </nz-page-header>
 
@@ -268,6 +268,8 @@
     >
       Save
     </button>
-    <button nz-button type="button" nzSize="large">Cancel</button>
+    <button nz-button type="button" nzSize="large" (click)="goToBack()">
+      Cancel
+    </button>
   </div>
 </form>
