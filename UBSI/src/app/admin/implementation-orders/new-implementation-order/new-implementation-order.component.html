@@ -1,4 +1,4 @@
-<nz-page-header [nzGhost]="false">
+<nz-page-header [nzGhost]="false" (nzBack)="(!!false)" nzBackIcon>
   <nz-page-header-title>New Implementation Order</nz-page-header-title>
 </nz-page-header>
 
@@ -16,9 +16,12 @@
 
       <div nz-col nzSpan="12">
         <nz-form-item>
-          <nz-form-label>Date</nz-form-label>
+          <nz-form-label>IO Date</nz-form-label>
           <nz-form-control nzErrorTip="Date is required">
-            <nz-date-picker formControlName="date"></nz-date-picker>
+            <nz-date-picker
+              [nzFormat]="appSettings.DateFormat"
+              formControlName="date"
+            ></nz-date-picker>
           </nz-form-control>
         </nz-form-item>
       </div>
@@ -33,9 +36,11 @@
               nzPlaceHolder="Select a client"
               formControlName="clientId"
             >
-              <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-              <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
-              <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+              <nz-option
+                nzLabel="Unilever Philippines"
+                nzValue="jack"
+              ></nz-option>
+              <nz-option nzLabel="Jolllibee Inc" nzValue="lucy"></nz-option>
             </nz-select>
           </nz-form-control>
         </nz-form-item>
@@ -54,10 +59,22 @@
               nzPlaceHolder="Select an agency"
               formControlName="agencyId"
             >
-              <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-              <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+              <nz-option nzLabel="True Ties Media" nzValue="jack"></nz-option>
+              <nz-option
+                nzLabel="IPG MediaBrands Philippines"
+                nzValue="lucy"
+              ></nz-option>
               <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
             </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>Product</nz-form-label>
+          <nz-form-control nzErrorTip="Product is required">
+            <input nz-input formControlName="product" />
           </nz-form-control>
         </nz-form-item>
       </div>
@@ -72,19 +89,10 @@
               nzPlaceHolder="Select an account executive"
               formControlName="accountExecutiveId"
             >
-              <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-              <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
-              <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+              <nz-option nzLabel="Jack Sandoval" nzValue="jack"></nz-option>
+              <nz-option nzLabel="Lucy Mercado" nzValue="lucy"></nz-option>
+              <nz-option nzLabel="Tom Galit" nzValue="tom"></nz-option>
             </nz-select>
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-
-      <div nz-col nzSpan="12">
-        <nz-form-item>
-          <nz-form-label>Product</nz-form-label>
-          <nz-form-control nzErrorTip="Product is required">
-            <input nz-input formControlName="product" />
           </nz-form-control>
         </nz-form-item>
       </div>
@@ -150,9 +158,17 @@
           <th>Station</th>
           <th>Period</th>
           <th>Material</th>
+          <th>Mo</th>
+          <th>Tu</th>
+          <th>We</th>
+          <th>Th</th>
+          <th>Fr</th>
+          <th>Sa</th>
+          <th>Su</th>
           <th>Qty</th>
           <th>Duration</th>
           <th>Gross</th>
+          <th></th>
         </tr>
       </thead>
       <tbody formArrayName="bookings">
@@ -174,30 +190,58 @@
               </nz-select>
             </nz-form-control>
           </td>
-          <td><nz-range-picker [nzAllowClear]="false"></nz-range-picker></td>
-          <td><input nz-input type="text" /></td>
           <td>
-            <nz-select
-              [nzMaxTagCount]="7"
-              nzMode="multiple"
-              nzPlaceHolder="Please select"
-            >
-              <nz-option
-                *ngFor="let item of DaysOfTheWeek"
-                [nzLabel]="item"
-                [nzValue]="item"
-              ></nz-option>
-            </nz-select>
+            <nz-range-picker
+              [nzAllowClear]="false"
+              formControlName="period"
+            ></nz-range-picker>
+          </td>
+          <td><input nz-input type="text" formControlName="material" /></td>
+          <td>
+            <label nz-checkbox formControlName="monday"></label>
+          </td>
+          <td>
+            <label nz-checkbox formControlName="tuesday"></label>
+          </td>
+          <td>
+            <label nz-checkbox formControlName="wednesday"></label>
+          </td>
+          <td>
+            <label nz-checkbox formControlName="thursday"></label>
+          </td>
+          <td>
+            <label nz-checkbox formControlName="friday"></label>
+          </td>
+          <td>
+            <label nz-checkbox formControlName="saturday"></label>
+          </td>
+          <td>
+            <label nz-checkbox formControlName="sunday"></label>
+          </td>
+          <td>
+            <input nz-input type="number" formControlName="qty" />
           </td>
           <td>
             <nz-input-group nzAddOnAfter="secs">
-              <input nz-input type="number" />
+              <input nz-input type="number" formControlName="duration" />
             </nz-input-group>
           </td>
           <td>
             <nz-input-group nzAddOnBefore="₱">
-              <input nz-input type="number" />
+              <input nz-input type="number" formControlName="gross" />
             </nz-input-group>
+          </td>
+          <td>
+            <a
+              nz-button
+              nzShape="circle"
+              nz-popconfirm
+              nzPopconfirmTitle="Remove this booking?"
+              nzPopconfirmPlacement="bottom"
+              nzOkText="Remove"
+              (nzOnConfirm)="removeBookingGroup(i)"
+              ><i nz-icon nzType="close"></i
+            ></a>
           </td>
         </tr>
       </tbody>
@@ -215,7 +259,13 @@
   </nz-card>
 
   <div class="m-4">
-    <button nz-button type="submit" nzSize="large" nzType="primary">
+    <button
+      nz-button
+      type="submit"
+      nzSize="large"
+      nzType="primary"
+      [nzLoading]="isSaving"
+    >
       Save
     </button>
     <button nz-button type="button" nzSize="large">Cancel</button>
