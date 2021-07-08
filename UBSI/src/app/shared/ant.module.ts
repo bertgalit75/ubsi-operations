@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
@@ -11,6 +12,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzTableModule } from 'ng-zorro-antd/table';
 
@@ -20,6 +22,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
     NzBreadCrumbModule,
     NzButtonModule,
     NzCardModule,
+    NzCheckboxModule,
     NzDatePickerModule,
     NzDescriptionsModule,
     NzFormModule,
@@ -28,6 +31,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
     NzLayoutModule,
     NzMenuModule,
     NzPageHeaderModule,
+    NzPopconfirmModule,
     NzSelectModule,
     NzTableModule,
   ],
