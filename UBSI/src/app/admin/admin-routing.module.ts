@@ -6,7 +6,7 @@ import { ViewImplementationOrderComponent } from 'src/app/admin/implementation-o
 import { MainComponent } from 'src/app/admin/layout/main/main.component';
 import { CustomersComponent } from './customers/customers/customers.component';
 import { ViewCustomerComponent } from './customers/view-customer/view-customer.component';
-import { NewAgenciesComponent } from './agencies/new-agencies/new-agencies.component';
+import { NewAgencyComponent } from 'src/app/admin/agencies/new-agency/new-agency.component';
 
 const routes: Routes = [
   {
@@ -35,7 +35,7 @@ const routes: Routes = [
       },
       {
         path: 'agencies/new',
-        component: NewAgenciesComponent,
+        component: NewAgencyComponent,
       },
     ],
   },
