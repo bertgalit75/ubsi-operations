@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { markAllAsDirty } from 'src/app/core/functions';
 import { AppSettingsService } from 'src/app/core/services/app-settings.service';
 
 @Component({
@@ -40,10 +41,8 @@ export class NewImplementationOrderComponent implements OnInit {
   }
 
   save(): void {
-    for (const i in this.form.controls) {
-      this.form.controls[i].markAsDirty();
-      this.form.controls[i].updateValueAndValidity();
-    }
+    markAllAsDirty(this.form);
+    if (!this.form.valid) return;
 
     this.isSaving = true;
   }
