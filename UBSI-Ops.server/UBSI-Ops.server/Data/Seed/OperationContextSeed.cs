@@ -14,8 +14,34 @@ namespace UBSI_Ops.server.Data.Seed
             context.Vendors.AddRange(GetVendors());
             context.AccountExecutives.AddRange(GetAccountExecutives());
             context.Users.AddRange(GetUsers());
-
+            context.MediaAgencies.AddRange(GetMediaAgencies());
             await context.SaveChangesAsync();
+        }
+
+        public Collection<MediaAgency> GetMediaAgencies()
+        {
+            return new Collection<MediaAgency>()
+            {
+                new MediaAgency()
+                {
+                    Name = "John Doe",
+                    Code = "0001",
+                    ContactNo = "0999",
+                    Email = "JohnDoe@gmail.com",
+                    Fax = "123",
+                    Remarks = "Remarks 0001"
+                },
+                new MediaAgency()
+                {
+                    Name = "Jane Doe",
+                    ContactNo = "0999",
+                    Code = "0002",
+                    Email = "JaneDoe@gmail.com",
+                    Fax = "124",
+                    Remarks = "Remakrs 0002"
+                    
+                }
+            };
         }
 
         public Collection<Customer> GetCustomers()

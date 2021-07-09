@@ -40,7 +40,7 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/customers/Jane");
+            var response = await client.GetAsync("/api/customers/0002");
 
             // Assert
             response.EnsureSuccessStatusCode();

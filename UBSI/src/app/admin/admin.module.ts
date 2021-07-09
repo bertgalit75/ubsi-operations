@@ -7,9 +7,17 @@ import { NewImplementationOrderComponent } from './implementation-orders/new-imp
 import { ViewImplementationOrderComponent } from './implementation-orders/view-implementation-order/view-implementation-order.component';
 import { CustomersComponent } from './customers/customers/customers.component';
 import { ViewCustomerComponent } from './customers/view-customer/view-customer.component';
+import { NewAgencyComponent } from './agencies/new-agency/new-agency.component';
 
 @NgModule({
-  declarations: [ImplementationOrdersComponent, NewImplementationOrderComponent, ViewImplementationOrderComponent, CustomersComponent, ViewCustomerComponent],
+  declarations: [
+    ImplementationOrdersComponent,
+    NewImplementationOrderComponent,
+    ViewImplementationOrderComponent,
+    CustomersComponent,
+    ViewCustomerComponent,
+    NewAgencyComponent,
+  ],
   imports: [SharedModule, LayoutModule, AdminRoutingModule],
 })
 export class AdminModule {}

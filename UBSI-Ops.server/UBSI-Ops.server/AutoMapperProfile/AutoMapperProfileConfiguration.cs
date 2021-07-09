@@ -2,6 +2,7 @@
 using UBSI_Ops.server.AccountExecutives.Models;
 using UBSI_Ops.server.Customers.Models;
 using UBSI_Ops.server.Entities;
+using UBSI_Ops.server.MediaAgencies.Models;
 using UBSI_Ops.server.RadioStations.Models;
 using UBSI_Ops.server.Vendors.Models;
 
@@ -15,6 +16,8 @@ namespace UBSI_Ops.server.AutoMapperProfile
 
         private AutoMapperProfileConfiguration(string profileName) : base(profileName)
         {
+            CreateMap<MediaAgency, MediaAgencyDto>();
+            CreateMap<MediaAgencyDto, MediaAgency>();
             CreateMap<RadioStation, RadioStationDto>();
             CreateMap<Customer, CustomerDto>();
             CreateMap<Vendor, VendorDto>();

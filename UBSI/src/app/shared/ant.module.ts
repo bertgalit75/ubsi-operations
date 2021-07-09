@@ -11,6 +11,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzSelectModule } from 'ng-zorro-antd/select';
@@ -30,6 +31,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
     NzInputModule,
     NzLayoutModule,
     NzMenuModule,
+    NzModalModule,
     NzPageHeaderModule,
     NzPopconfirmModule,
     NzSelectModule,

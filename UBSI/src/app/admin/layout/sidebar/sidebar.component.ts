@@ -21,6 +21,11 @@ const menuItems: MenuItem[] = [
     route: 'customers',
     label: 'Customers',
     icon: 'summarize',
+  }, 
+  {
+    route: 'agencies',
+    label: 'Agency',
+    icon: 'summarize',
   },
 ];
 
