@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AgencyService } from 'src/app/services/agency.service';
 
 @Component({
   selector: 'app-new-agency',
@@ -16,7 +17,10 @@ export class NewAgencyComponent implements OnInit {
     remarks: [null],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private readonly agencyService: AgencyService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -25,5 +29,13 @@ export class NewAgencyComponent implements OnInit {
       this.form.controls[i].markAsDirty();
       this.form.controls[i].updateValueAndValidity();
     }
+
+    if (!this.form.valid) {
+      return;
+    }
+
+    this.agencyService.newAgency(this.form.value).subscribe({
+      next: () => {},
+    });
   }
 }
