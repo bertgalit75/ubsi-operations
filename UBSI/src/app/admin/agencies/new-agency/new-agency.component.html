@@ -1,4 +1,4 @@
-<nz-page-header [nzGhost]="false">
+<nz-page-header [nzGhost]="false" (nzBack)="goToBack()" nzBackIcon>
   <nz-page-header-title>New Agency</nz-page-header-title>
 </nz-page-header>
 
@@ -62,9 +62,17 @@
   </nz-card>
 
   <div class="m-4">
-    <button nz-button type="submit" nzSize="large" nzType="primary">
+    <button
+      nz-button
+      [nzLoading]="isSaving"
+      type="submit"
+      nzSize="large"
+      nzType="primary"
+    >
       Save
     </button>
-    <button nz-button type="button" nzSize="large">Cancel</button>
+    <button nz-button type="button" nzSize="large" (click)="goToBack()">
+      Cancel
+    </button>
   </div>
 </form>
