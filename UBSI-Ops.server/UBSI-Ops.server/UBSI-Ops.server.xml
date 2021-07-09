@@ -4,6 +4,12 @@
         <name>UBSI-Ops.server</name>
     </assembly>
     <members>
+        <member name="M:UBSI_Ops.server.Controllers.AccountController.login(UBSI_Ops.server.Models.Request.LoginModel)">
+            <summary>
+            User Authentication
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:UBSI_Ops.server.Controllers.AccountExecutiveController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
             <summary>
             List all Account Executives
@@ -37,6 +43,12 @@
         <member name="M:UBSI_Ops.server.Controllers.MediaAgencyController.Create(UBSI_Ops.server.MediaAgencies.Models.MediaAgencyDto)">
             <summary>
             Create new agency
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UBSI_Ops.server.Controllers.MediaAgencyController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+            <summary>
+            List all agencies
             </summary>
             <returns></returns>
         </member>
@@ -81,7 +93,7 @@
             <param name="token"></param>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Services.Services.UserTokenService.CreateAccessToken(UBSI_Ops.server.Entities.Identity.User,UBSI_Ops.server.Entities.UserOrganization)">
+        <member name="M:UBSI_Ops.server.Services.Services.UserTokenService.CreateAccessToken(UBSI_Ops.server.Entities.Identity.User)">
             <summary>
             Create a token from a user.
             The token service does not ensure that user is to be given a token.

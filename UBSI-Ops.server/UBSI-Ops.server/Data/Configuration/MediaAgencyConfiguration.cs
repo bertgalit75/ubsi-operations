@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Extensions;
 using UBSI_Ops.server.Entities;
 
 namespace UBSI_Ops.server.Data.Configuration
@@ -34,6 +29,15 @@ namespace UBSI_Ops.server.Data.Configuration
 
             builder.Property(t => t.Remarks).HasColumnName("REMARKS").
                 HasMaxLength(1000);
+
+            builder.Property(t => t.Province).HasColumnName("PROVINCE").
+                HasMaxLength(20);
+
+            builder.Property(t => t.City).HasColumnName("CITY").
+                HasMaxLength(20);
+
+            builder.Property(t => t.AddressLine).HasColumnName("ADDRESSLINE").
+                HasMaxLength(50);
         }
     }
 }

@@ -1,10 +1,10 @@
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Data;
 using UBSI_Ops.server.Entities.Identity;
 using UBSI_Ops.server.Exceptions;
 using UBSI_Ops.server.Services.Services;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
 namespace UBSI_Ops.server.Services
 {
@@ -13,6 +13,7 @@ namespace UBSI_Ops.server.Services
         private readonly SignInManager<User> _signInManager;
         private readonly OperationContext _context;
         private readonly UserTokenService _tokenService;
+        private readonly UserManager<User> _userManager;
 
         public LoginService(
             SignInManager<User> signInManager,
@@ -23,31 +24,29 @@ namespace UBSI_Ops.server.Services
             _signInManager = signInManager;
             _context = context;
             _tokenService = tokenService;
+            _userManager = userManager;
         }
 
-        //public async Task<string> LogIn(string email, string password)
-        //{
-        //    var user = await _context.Users.FirstOrDefaultAsync(u=>u.Email==email);
+        public async Task<string> LogIn(string username, string password)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
 
-        //    if (user is null)
-        //    {
-        //        throw LoginException.CredentialsMismatch();
-        //    }
+            if (user is null)
+            {
+                throw LoginException.CredentialsMismatch();
+            }
 
-        //    var userOrganization = await _context
-        //        .UserOrganizations
-        //        .FirstOrDefaultAsync(t => t.UserId == user.Id);
 
-        //    var result = await _signInManager.PasswordSignInAsync(user, password, false, false);
+            var result = await _userManager.CheckPasswordAsync(user, password);
 
-        //    if (!result.Succeeded)
-        //    {
-        //        throw LoginException.CredentialsMismatch();
-        //    }
+            if (!result)
+            {
+                throw LoginException.CredentialsMismatch();
+            }
 
-        //    var token = _tokenService.CreateAccessToken(user, userOrganization);
+            var token = _tokenService.CreateAccessToken(user);
 
-        //    return token;
-        //}
+            return token;
+        }
     }
 }

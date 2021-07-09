@@ -22,6 +22,7 @@ namespace UBSI_Ops.server.AutoMapperProfile
             CreateMap<Customer, CustomerDto>();
             CreateMap<Vendor, VendorDto>();
             CreateMap<AccountExecutive, AccountExecutiveDto>();
+            CreateMap<MediaAgency, MediaAgencyDto>();
         }
     }
 }

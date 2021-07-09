@@ -1,0 +1,64 @@
+<nz-page-header [nzGhost]="false">
+  <nz-page-header-title>Media Agencies</nz-page-header-title>
+  <nz-page-header-extra> </nz-page-header-extra>
+</nz-page-header>
+
+<nz-card class="m-4">
+  <button
+    nz-button
+    nzType="primary"
+    [routerLink]="['/media-agencies', 'new']"
+    class="mb-2"
+  >
+    New
+  </button>
+  <nz-table
+    #basicTable
+    nzShowSizeChanger
+    [nzData]="dataSet"
+    [nzFrontPagination]="false"
+    [nzTotal]="total"
+    [nzPageSize]="pageSize"
+    [nzPageIndex]="pageIndex"
+    (nzQueryParams)="onQueryParamsChange($event)"
+  >
+    <thead>
+      <tr>
+        <th nzColumnKey="code" [nzSortFn]="true">Code</th>
+        <th nzColumnKey="name" [nzSortFn]="true">Name</th>
+        <th nzColumnKey="address" [nzSortFn]="true">Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mediaAgency of basicTable.data">
+        <td>{{ mediaAgency.code }}</td>
+        <td>{{ mediaAgency.name }}</td>
+        <td>
+          <address>
+            {{
+              mediaAgency.province == null
+                ? "-"
+                : mediaAgency.addressLine +
+                  " " +
+                  mediaAgency.city +
+                  ", " +
+                  mediaAgency.province
+            }}
+          </address>
+          <address *ngIf="mediaAgency.province == null">-</address>
+        </td>
+
+        <td>
+          <a
+            nz-button
+            nzShape="circle"
+            [routerLink]="['/media-agencies', mediaAgency.code]"
+          >
+            <i nz-icon nzType="search"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

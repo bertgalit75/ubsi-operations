@@ -7,6 +7,8 @@ import { MainComponent } from 'src/app/admin/layout/main/main.component';
 import { CustomersComponent } from './customers/customers/customers.component';
 import { ViewCustomerComponent } from './customers/view-customer/view-customer.component';
 import { NewAgencyComponent } from 'src/app/admin/agencies/new-agency/new-agency.component';
+import { MediaAgenciesComponent } from './media-agencies/media-agencies/media-agencies.component';
+import { NewMediaAgencyComponent } from './media-agencies/new-media-agency/new-media-agency.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
       {
         path: 'agencies/new',
         component: NewAgencyComponent,
+      },
+      {
+        path: 'media-agencies',
+        component: MediaAgenciesComponent,
+      },
+      {
+        path: 'media-agencies/new',
+        component: NewMediaAgencyComponent,
       },
     ],
   },

@@ -46,5 +46,23 @@ namespace UBSI_Ops.server.FunctionalTests
 
             mediaAgency.Name.Should().Be("Agency");
         }
+
+        [Fact]
+        public async Task ShouldRetrieveMediaAgencyList()
+        {
+            // Arrange
+            var client = _factory.CreateClient();
+
+            // Act
+            var response = await client.GetAsync("/api/media-agencies");
+
+            // Assert
+            response.EnsureSuccessStatusCode();
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var mediaAgencies = JsonSerializer.Deserialize<PaginatedListTest<MediaAgencyDto>>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+
+            mediaAgencies.Items.Should().NotBeEmpty();
+        }
     }
 }

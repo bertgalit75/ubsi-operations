@@ -27,6 +27,11 @@ const menuItems: MenuItem[] = [
     label: 'Agency',
     icon: 'summarize',
   },
+  {
+    route: 'media-agencies',
+    label: 'Media Agencies',
+    icon: 'team',
+  },
 ];
 
 @Component({

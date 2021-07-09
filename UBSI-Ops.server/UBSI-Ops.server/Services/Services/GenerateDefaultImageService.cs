@@ -47,7 +47,7 @@ namespace UBSI_Ops.server.Services.Services
             stream.Position = 0;
 
             var randomId = DateTime.UtcNow.ToFileTime();
-            var filename = $"{user.UserId}-{randomId}.jpg";
+            var filename = $"{user.Id}-{randomId}.jpg";
 
             return new VirtualFile(filename, stream);
         }

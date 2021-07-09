@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 using UBSI_Ops.server.Data;
@@ -9,9 +10,10 @@ using UBSI_Ops.server.Data;
 namespace UBSI_Ops.server.Migrations
 {
     [DbContext(typeof(OperationContext))]
-    partial class OperationContextModelSnapshot : ModelSnapshot
+    [Migration("20210707031848_AddAddressColumnOnMediaAgency")]
+    partial class AddAddressColumnOnMediaAgency
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +60,7 @@ namespace UBSI_Ops.server.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(30)");
+                        .HasColumnType("NVARCHAR2(50)");
 
                     b.HasKey("Id");
 
@@ -80,7 +82,7 @@ namespace UBSI_Ops.server.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(30)");
+                        .HasColumnType("NVARCHAR2(50)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -111,7 +113,7 @@ namespace UBSI_Ops.server.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("NVARCHAR2(30)");
+                        .HasColumnType("NVARCHAR2(50)");
 
                     b.Property<string>("LoginProvider")
                         .HasColumnType("NVARCHAR2(450)");
@@ -295,26 +297,28 @@ namespace UBSI_Ops.server.Migrations
             modelBuilder.Entity("UBSI_Ops.server.Entities.Identity.User", b =>
                 {
                     b.Property<string>("Id")
-                        .HasMaxLength(30)
-                        .HasColumnType("NVARCHAR2(30)")
-                        .HasColumnName("AU_USERID");
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
+                        .HasColumnName("ID");
 
                     b.Property<int>("AccessFailedCount")
+                        .HasMaxLength(50)
                         .HasColumnType("NUMBER(10)")
                         .HasColumnName("ACCESSFAILEDCOUNT");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasMaxLength(20)
-                        .HasColumnType("NVARCHAR2(20)")
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
                         .HasColumnName("CONCURRENTCURRENCYSTAMP");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(20)
-                        .HasColumnType("NVARCHAR2(20)")
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
                         .HasColumnName("EMAIL");
 
                     b.Property<bool>("EmailConfirmed")
+                        .HasMaxLength(50)
                         .HasColumnType("NUMBER(1)")
                         .HasColumnName("EMAILCONFIRMED");
 
@@ -327,6 +331,7 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnName("AU_LOCKED_ON");
 
                     b.Property<bool>("LockoutEnabled")
+                        .HasMaxLength(50)
                         .HasColumnType("NUMBER(1)")
                         .HasColumnName("LOCKOUTENABLED");
 
@@ -340,41 +345,46 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnName("AU_NAME");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(20)
-                        .HasColumnType("NVARCHAR2(20)")
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
                         .HasColumnName("NORMALIZEDEMAIL");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(20)
-                        .HasColumnType("NVARCHAR2(20)")
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
                         .HasColumnName("NORMALIZEDUSERNAME");
 
                     b.Property<string>("PasswordHash")
-                        .HasMaxLength(32)
-                        .HasColumnType("NVARCHAR2(32)")
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
                         .HasColumnName("AU_PASSWORD");
 
                     b.Property<string>("PhoneNumber")
-                        .HasMaxLength(20)
-                        .HasColumnType("NVARCHAR2(20)")
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
                         .HasColumnName("PHONENUMBER");
 
                     b.Property<bool>("PhoneNumberConfirmed")
+                        .HasMaxLength(50)
                         .HasColumnType("NUMBER(1)")
                         .HasColumnName("PHONENUMBERCONFIRMED");
 
                     b.Property<string>("SecurityStamp")
-                        .HasMaxLength(20)
-                        .HasColumnType("NVARCHAR2(20)")
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
                         .HasColumnName("SECURITYSTAMP");
 
                     b.Property<bool>("TwoFactorEnabled")
+                        .HasMaxLength(50)
                         .HasColumnType("NUMBER(1)")
                         .HasColumnName("TWOFACTORENABLED");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("NVARCHAR2(2000)");
+
                     b.Property<string>("UserName")
-                        .HasMaxLength(20)
-                        .HasColumnType("NVARCHAR2(20)")
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
                         .HasColumnName("USERNAME");
 
                     b.HasKey("Id");

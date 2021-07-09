@@ -15,33 +15,8 @@ namespace UBSI_Ops.server.Data.Seed
             context.AccountExecutives.AddRange(GetAccountExecutives());
             context.Users.AddRange(GetUsers());
             context.MediaAgencies.AddRange(GetMediaAgencies());
-            await context.SaveChangesAsync();
-        }
 
-        public Collection<MediaAgency> GetMediaAgencies()
-        {
-            return new Collection<MediaAgency>()
-            {
-                new MediaAgency()
-                {
-                    Name = "John Doe",
-                    Code = "0001",
-                    ContactNo = "0999",
-                    Email = "JohnDoe@gmail.com",
-                    Fax = "123",
-                    Remarks = "Remarks 0001"
-                },
-                new MediaAgency()
-                {
-                    Name = "Jane Doe",
-                    ContactNo = "0999",
-                    Code = "0002",
-                    Email = "JaneDoe@gmail.com",
-                    Fax = "124",
-                    Remarks = "Remakrs 0002"
-                    
-                }
-            };
+            await context.SaveChangesAsync();
         }
 
         public Collection<Customer> GetCustomers()
@@ -126,6 +101,29 @@ namespace UBSI_Ops.server.Data.Seed
                     UserName = "admin",
                     NormalizedUserName = "ADMIN",
                     PasswordHash = "c06617466ae4a7d621cd"
+                }
+            };
+        }
+
+        private Collection<MediaAgency> GetMediaAgencies()
+        {
+            return new Collection<MediaAgency>()
+            {
+                new MediaAgency()
+                {
+                    Code = "1",
+                    Name = "True Tiles Media",
+                    AddressLine = "Roxas, Panganiban St.",
+                    City = "Santiago City",
+                    Province="Isabela",
+                },
+                 new MediaAgency()
+                {
+                    Code = "2",
+                    Name = "MediaCom",
+                    AddressLine = "Roxas, Panganiban St.",
+                    City = "Santiago City",
+                    Province="Isabela",
                 }
             };
         }

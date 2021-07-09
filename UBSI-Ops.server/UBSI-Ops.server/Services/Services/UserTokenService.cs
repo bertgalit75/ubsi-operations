@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using UBSI_Ops.server.Auth;
-using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
 
 namespace UBSI_Ops.server.Services.Services
@@ -29,17 +27,12 @@ namespace UBSI_Ops.server.Services.Services
         /// <param name="user"></param>
         /// <param name="userOrganization"></param>
         /// <returns></returns>
-        public string CreateAccessToken(User user, UserOrganization userOrganization)
+        public string CreateAccessToken(User user)
         {
             var claims = new List<Claim>()
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id),
             };
-
-            if (userOrganization != null)
-            {
-                claims.Add(new Claim(CustomClaimTypes.CompanyId, userOrganization.OrganizationId.ToString()));
-            }
 
             return _tokenService.Encode(
                 timeToExpire: TimeSpan.FromHours(24),
