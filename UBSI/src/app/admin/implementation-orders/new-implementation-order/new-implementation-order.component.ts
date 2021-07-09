@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { markAllAsDirty } from 'src/app/core/functions';
+import { AppSettingsService } from 'src/app/core/services/app-settings.service';
 
 @Component({
   selector: 'app-new-implementation-order',
@@ -7,16 +10,6 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./new-implementation-order.component.less'],
 })
 export class NewImplementationOrderComponent implements OnInit {
-  readonly DaysOfTheWeek: string[] = [
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat',
-    'Sun',
-  ];
-
   form: FormGroup = this.fb.group({
     ioNo: [null, Validators.required],
     agencyId: [],
@@ -31,7 +24,7 @@ export class NewImplementationOrderComponent implements OnInit {
     bookings: this.fb.array([]),
   });
 
-  days: string[] = [];
+  isSaving: boolean = false;
 
   bookings: any[] = [];
 
@@ -39,22 +32,21 @@ export class NewImplementationOrderComponent implements OnInit {
     return this.form.get('bookings') as FormArray;
   }
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    public appSettings: AppSettingsService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.addBooking();
+  }
 
   save(): void {
-    for (const i in this.form.controls) {
-      this.form.controls[i].markAsDirty();
-      this.form.controls[i].updateValueAndValidity();
-    }
+    markAllAsDirty(this.form);
+    if (!this.form.valid) return;
 
-    for (const bookingRow of this.bookingsArray.controls as FormGroup[]) {
-      for (const i in bookingRow.controls) {
-        bookingRow.controls[i].markAsDirty();
-        bookingRow.controls[i].updateValueAndValidity();
-      }
-    }
+    this.isSaving = true;
   }
 
   addBooking(): void {
@@ -62,11 +54,26 @@ export class NewImplementationOrderComponent implements OnInit {
     this.bookings = [...this.bookings, {}];
   }
 
+  removeBookingGroup(index: number): void {
+    this.bookingsArray.removeAt(index);
+  }
+
+  goToBack(): void {
+    this.router.navigate(['/', 'implementation-orders']);
+  }
+
   private createBookingGroup(): FormGroup {
     const group = this.fb.group({
       station: [null, Validators.required],
       period: [null, Validators.required],
       material: [],
+      monday: [],
+      tuesday: [],
+      wednesday: [],
+      thursday: [],
+      friday: [],
+      saturday: [],
+      sunday: [],
       qty: [],
       duration: [],
       gross: [null, Validators.required],

@@ -12,24 +12,18 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { HttpClientModule } from '@angular/common/http';
-
-import {
-  AccountBookFill,
-  AlertFill,
-  AlertOutline,
-  PlusOutline,
-  UserOutline,
-  LockOutline
-} from '@ant-design/icons-angular/icons';
+import * as antIcons from '@ant-design/icons-angular/icons';
 import { SiteModule } from './site/site.module';
 
 const icons: IconDefinition[] = [
-  AccountBookFill,
-  AlertOutline,
-  AlertFill,
-  PlusOutline,
-  UserOutline,
-  LockOutline
+  antIcons.AccountBookFill,
+  antIcons.AlertOutline,
+  antIcons.AlertFill,
+  antIcons.ArrowLeftOutline,
+  antIcons.CloseOutline,
+  antIcons.PlusOutline,
+  antIcons.UserOutline,
+  antIcons.LockOutline,
 ];
 
 registerLocaleData(en);
