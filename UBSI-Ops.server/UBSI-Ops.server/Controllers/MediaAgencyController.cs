@@ -9,7 +9,7 @@ using UBSI_Ops.server.Services.Intefaces;
 
 namespace UBSI_Ops.server.Controllers
 {
-    [Route("api/media-agencies")]
+    [Route("api/agencies")]
     [ApiController]
     [Produces("application/json")]
     public class MediaAgencyController : Controller

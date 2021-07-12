@@ -8,8 +8,7 @@ import { ViewImplementationOrderComponent } from './implementation-orders/view-i
 import { CustomersComponent } from './customers/customers/customers.component';
 import { ViewCustomerComponent } from './customers/view-customer/view-customer.component';
 import { NewAgencyComponent } from './agencies/new-agency/new-agency.component';
-import { MediaAgenciesComponent } from './media-agencies/media-agencies/media-agencies.component';
-import { NewMediaAgencyComponent } from './media-agencies/new-media-agency/new-media-agency.component';
+import { AgenciesComponent } from './agencies/agencies/agencies.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { NewMediaAgencyComponent } from './media-agencies/new-media-agency/new-m
     CustomersComponent,
     ViewCustomerComponent,
     NewAgencyComponent,
-    MediaAgenciesComponent,
-    NewMediaAgencyComponent,
+    AgenciesComponent,
   ],
   imports: [SharedModule, LayoutModule, AdminRoutingModule],
 })

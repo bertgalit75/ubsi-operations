@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { finalize } from 'rxjs/operators';
+import { delay, finalize } from 'rxjs/operators';
 import { markAsDirty } from 'src/app/core/functions';
 import { AgencyService } from 'src/app/services/agency.service';
 
@@ -39,7 +39,7 @@ export class NewAgencyComponent implements OnInit {
     this.isSaving = true;
 
     this.agencyService
-      .newAgency(this.form.value)
+      .create(this.form.value)
       .pipe(finalize(() => (this.isSaving = false)))
       .subscribe({
         next: () => {

@@ -21,15 +21,10 @@ const menuItems: MenuItem[] = [
     route: 'customers',
     label: 'Customers',
     icon: 'summarize',
-  }, 
-  {
-    route: 'agencies',
-    label: 'Agency',
-    icon: 'summarize',
   },
   {
-    route: 'media-agencies',
-    label: 'Media Agencies',
+    route: 'agencies',
+    label: 'Agencies',
     icon: 'team',
   },
 ];

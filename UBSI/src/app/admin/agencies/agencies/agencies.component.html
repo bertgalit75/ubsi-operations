@@ -7,7 +7,7 @@
   <button
     nz-button
     nzType="primary"
-    [routerLink]="['/media-agencies', 'new']"
+    [routerLink]="['/agencies', 'new']"
     class="mb-2"
   >
     New
@@ -36,24 +36,19 @@
         <td>{{ mediaAgency.name }}</td>
         <td>
           <address>
-            {{
-              mediaAgency.province == null
-                ? "-"
-                : mediaAgency.addressLine +
-                  " " +
-                  mediaAgency.city +
-                  ", " +
-                  mediaAgency.province
-            }}
+            <ng-container *ngIf="mediaAgency.province != null; else noAddress">
+              {{ mediaAgency.addressLine }} {{ mediaAgency.city }}
+              {{ mediaAgency.province }}
+            </ng-container>
+            <ng-template #noAddress>-</ng-template>
           </address>
-          <address *ngIf="mediaAgency.province == null">-</address>
         </td>
 
         <td>
           <a
             nz-button
             nzShape="circle"
-            [routerLink]="['/media-agencies', mediaAgency.code]"
+            [routerLink]="['/agencies', mediaAgency.code]"
           >
             <i nz-icon nzType="search"></i>
           </a>
