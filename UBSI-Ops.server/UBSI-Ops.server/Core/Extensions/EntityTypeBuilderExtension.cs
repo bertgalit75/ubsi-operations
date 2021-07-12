@@ -15,6 +15,7 @@ namespace UBSI_Ops.server.Core.Extensions
             builder.Property(t => t.UpdatedAt)
                 .HasColumnName("UPDATED_AT")
                 .HasColumnType("TIMESTAMP(7)").HasDefaultValueSql("CURRENT_TIMESTAMP").ValueGeneratedOnAddOrUpdate();
+
         }
     }
 }

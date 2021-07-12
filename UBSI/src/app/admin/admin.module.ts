@@ -9,9 +9,10 @@ import { CustomersComponent } from './customers/customers/customers.component';
 import { ViewCustomerComponent } from './customers/view-customer/view-customer.component';
 import { NewAgencyComponent } from './agencies/new-agency/new-agency.component';
 import { AgenciesComponent } from './agencies/agencies/agencies.component';
-import { RolesComponent } from './roles/roles/roles.component';
 import { AccountExecutivesComponent } from './account-executives/account-executives/account-executives.component';
 import { UsersComponent } from './users/users/users.component';
+import { NewRoleComponent } from './roles/new-role/new-role.component';
+import { RolesComponent } from './roles/roles/roles.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { UsersComponent } from './users/users/users.component';
     AccountExecutivesComponent,
     RolesComponent,
     UsersComponent,
+    NewRoleComponent
   ],
   imports: [SharedModule, LayoutModule, AdminRoutingModule],
 })

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Paging;
 using UBSI_Ops.server.Roles.Models;
 using UBSI_Ops.server.Services.Intefaces;
+using UBSI_Ops.server.Services.Services;
 
 namespace UBSI_Ops.server.Controllers
 {
@@ -16,8 +17,13 @@ namespace UBSI_Ops.server.Controllers
         private readonly IRoleRepository _roleRepository;
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
+        private readonly RoleService _roleService;
 
-        public RoleController(IRoleRepository roleRepository, IMapper mapper, ILogger<RoleController> logger)
+        public RoleController(
+            IRoleRepository roleRepository,
+            IMapper mapper,
+            RoleService roleService,
+            ILogger<RoleController> logger)
         {
             _roleRepository = roleRepository;
             _mapper = mapper;
@@ -36,6 +42,16 @@ namespace UBSI_Ops.server.Controllers
             var customers = await _roleRepository.List(options);
 
             return customers.Select(r => _mapper.Map<RoleDto>(r));
+        }
+
+        /// <summary>
+        /// Insert New Role
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("new")]
+        public async Task<ActionResult<RoleDto>> CreateRole([FromBody] CreateRoleDto model)
+        {
+            return await _roleService.Create(model);
         }
     }
 }

@@ -17,5 +17,6 @@ namespace UBSI_Ops.server.Entities.Identity
         public DateTime UpdatedAt { get; private set; }
 
         public string UpdatedById { get; set; }
+        public Role Role { get; set; }
     }
 }

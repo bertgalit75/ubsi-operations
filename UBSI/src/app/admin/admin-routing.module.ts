@@ -11,6 +11,7 @@ import { AgenciesComponent } from 'src/app/admin/agencies/agencies/agencies.comp
 import { RolesComponent } from './roles/roles/roles.component';
 import { AccountExecutivesComponent } from './account-executives/account-executives/account-executives.component';
 import { UsersComponent } from './users/users/users.component';
+import { NewRoleComponent } from './roles/new-role/new-role.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,14 @@ const routes: Routes = [
       {
         path: 'customers/:code',
         component: ViewCustomerComponent,
+      },
+      {
+        path: 'roles',
+        component: RolesComponent,
+      },
+      {
+        path: 'roles/new',
+        component: NewRoleComponent,
       },
       {
         path: 'agencies',

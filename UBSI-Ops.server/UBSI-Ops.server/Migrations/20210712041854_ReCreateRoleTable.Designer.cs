@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 using UBSI_Ops.server.Data;
@@ -9,9 +10,10 @@ using UBSI_Ops.server.Data;
 namespace UBSI_Ops.server.Migrations
 {
     [DbContext(typeof(OperationContext))]
-    partial class OperationContextModelSnapshot : ModelSnapshot
+    [Migration("20210712041854_ReCreateRoleTable")]
+    partial class ReCreateRoleTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +36,7 @@ namespace UBSI_Ops.server.Migrations
 
                     b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(450)");
+                        .HasColumnType("VARCHAR2(20)");
 
                     b.HasKey("Id");
 
@@ -102,8 +104,6 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnName("ROLE_ID");
 
                     b.HasKey("UserId", "RoleId");
-
-                    b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
                 });
@@ -268,11 +268,15 @@ namespace UBSI_Ops.server.Migrations
             modelBuilder.Entity("UBSI_Ops.server.Entities.Identity.Role", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("NVARCHAR2(450)");
+                        .HasMaxLength(20)
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("ID");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(20)
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("CONCURRENCY_TIMESTAMP");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
@@ -286,12 +290,14 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnName("CREATED_BY_CODE");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("NVARCHAR2(256)");
+                        .HasMaxLength(20)
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("NAME");
 
                     b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("NVARCHAR2(256)");
+                        .HasMaxLength(20)
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("NORMALIZE_NAME");
 
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAddOrUpdate()
@@ -309,7 +315,7 @@ namespace UBSI_Ops.server.Migrations
                     b.HasIndex("NormalizedName")
                         .IsUnique()
                         .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("\"NormalizedName\" IS NOT NULL");
+                        .HasFilter("\"NORMALIZE_NAME\" IS NOT NULL");
 
                     b.ToTable("EZ_ROLES");
                 });
@@ -420,6 +426,162 @@ namespace UBSI_Ops.server.Migrations
                     b.ToTable("EZ_USERS");
                 });
 
+            modelBuilder.Entity("UBSI_Ops.server.Entities.ImplementationOrder", b =>
+                {
+                    b.Property<int>("Code")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("CODE")
+                        .HasAnnotation("Oracle:ValueGenerationStrategy", OracleValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AccountExecutiveCode")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("AE_CODE");
+
+                    b.Property<string>("AgencyCode")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("AGENCY_CODE");
+
+                    b.Property<string>("BookingOrderNo")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("BO_NO");
+
+                    b.Property<string>("ClientCode")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("CLIENT_CODE");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP(7)")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.Property<string>("CreatedByCode")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("CREATED_BY_CODE");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("TIMESTAMP(7)")
+                        .HasColumnName("DATE");
+
+                    b.Property<string>("ProductCode")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("PRODUCT_CODE");
+
+                    b.Property<string>("PurchaseOrderNo")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("PO_NO");
+
+                    b.Property<string>("ReferenceCENo")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("REF_NO");
+
+                    b.Property<string>("Tagline")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("TAGLINE");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("TIMESTAMP(7)")
+                        .HasColumnName("UPDATED_AT")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.Property<string>("UpdatedByCode")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("UPDATED_BY_CODE");
+
+                    b.HasKey("Code");
+
+                    b.ToTable("IMPLEMENTATION_ORDER");
+                });
+
+            modelBuilder.Entity("UBSI_Ops.server.Entities.ImplementationOrderBooking", b =>
+                {
+                    b.Property<int>("Code")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("CODE")
+                        .HasAnnotation("Oracle:ValueGenerationStrategy", OracleValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP(7)")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.Property<string>("CreatedByCode")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("UPDATED_BY_CODE");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("DURATION");
+
+                    b.Property<bool>("Friday")
+                        .HasColumnType("NUMBER(1)")
+                        .HasColumnName("FRIDAY");
+
+                    b.Property<decimal>("Gross")
+                        .HasColumnType("NUMBER(18,2)")
+                        .HasColumnName("GROSS");
+
+                    b.Property<int>("ImplementationOrderCode")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("IMPLEMENTATION_ORDER_CODE");
+
+                    b.Property<bool>("Monday")
+                        .HasColumnType("NUMBER(1)")
+                        .HasColumnName("MONDAY");
+
+                    b.Property<DateTime>("PeriodEnd")
+                        .HasColumnType("TIMESTAMP(7)")
+                        .HasColumnName("PERIOD_END");
+
+                    b.Property<DateTime>("PeriodStart")
+                        .HasColumnType("TIMESTAMP(7)")
+                        .HasColumnName("PERIOD_START");
+
+                    b.Property<bool>("Saturday")
+                        .HasColumnType("NUMBER(1)")
+                        .HasColumnName("SATURDAY");
+
+                    b.Property<int>("Spot")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("SPOT");
+
+                    b.Property<string>("StationCode")
+                        .HasColumnType("VARCHAR2(20)")
+                        .HasColumnName("STATION_CODE");
+
+                    b.Property<bool>("Sunday")
+                        .HasColumnType("NUMBER(1)")
+                        .HasColumnName("SUNDAY");
+
+                    b.Property<bool>("Thursday")
+                        .HasColumnType("NUMBER(1)")
+                        .HasColumnName("THURSDAY");
+
+                    b.Property<bool>("Tuesday")
+                        .HasColumnType("NUMBER(1)")
+                        .HasColumnName("TUESDAY");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("TIMESTAMP(7)")
+                        .HasColumnName("UPDATED_AT")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.Property<bool>("Wednesday")
+                        .HasColumnType("NUMBER(1)")
+                        .HasColumnName("WEDNESDAY");
+
+                    b.HasKey("Code");
+
+                    b.HasIndex("ImplementationOrderCode");
+
+                    b.ToTable("IMPLEMENTATION_ORDER_BOOKING");
+                });
+
             modelBuilder.Entity("UBSI_Ops.server.Entities.MediaAgency", b =>
                 {
                     b.Property<string>("Code")
@@ -457,23 +619,6 @@ namespace UBSI_Ops.server.Migrations
                     b.ToTable("MEDIAAGENCY");
                 });
 
-            modelBuilder.Entity("UBSI_Ops.server.Entities.Permission", b =>
-                {
-                    b.Property<int>("Code")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("CODE")
-                        .HasAnnotation("Oracle:ValueGenerationStrategy", OracleValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("VARCHAR2(20)")
-                        .HasColumnName("NAME");
-
-                    b.HasKey("Code");
-
-                    b.ToTable("PERMISSION");
-                });
-
             modelBuilder.Entity("UBSI_Ops.server.Entities.RadioStation", b =>
                 {
                     b.Property<string>("Code")
@@ -489,41 +634,6 @@ namespace UBSI_Ops.server.Migrations
                     b.HasKey("Code");
 
                     b.ToTable("EZ_STATIONS");
-                });
-
-            modelBuilder.Entity("UBSI_Ops.server.Entities.RolePermission", b =>
-                {
-                    b.Property<int>("Code")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("CODE")
-                        .HasAnnotation("Oracle:ValueGenerationStrategy", OracleValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Add")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("ADD");
-
-                    b.Property<bool>("Delete")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("DELETE");
-
-                    b.Property<bool>("Edit")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("EDIT");
-
-                    b.Property<int>("PermissionCode")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("PERMISSION_CODE");
-
-                    b.Property<bool>("View")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("VIEW");
-
-                    b.HasKey("Code");
-
-                    b.HasIndex("PermissionCode");
-
-                    b.ToTable("ROLE_PERMISSION");
                 });
 
             modelBuilder.Entity("UBSI_Ops.server.Entities.Vendor", b =>
@@ -588,160 +698,6 @@ namespace UBSI_Ops.server.Migrations
                     b.ToTable("VENDORS");
                 });
 
-            modelBuilder.Entity("UBSI_Ops.server.ImplementationOrders.ImplementationOrder", b =>
-                {
-                    b.Property<string>("Code")
-                        .HasColumnType("VARCHAR2(10)")
-                        .HasColumnName("CODE");
-
-                    b.Property<string>("AccountExecutiveCode")
-                        .HasColumnType("VARCHAR2(6)")
-                        .HasColumnName("ACCOUNT_EXECUTIVE_CODE");
-
-                    b.Property<string>("AgencyCode")
-                        .HasColumnType("VARCHAR2(20)")
-                        .HasColumnName("AGENCY_CODE");
-
-                    b.Property<string>("BookingOrderNo")
-                        .HasColumnType("VARCHAR2(30)")
-                        .HasColumnName("BOOKING_ORDER_NO");
-
-                    b.Property<string>("ClientCode")
-                        .HasColumnType("VARCHAR2(8)")
-                        .HasColumnName("CLIENT_CODE");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("CREATED_AT")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
-
-                    b.Property<string>("CreatedByCode")
-                        .HasColumnType("VARCHAR2(20)")
-                        .HasColumnName("CREATED_BY_CODE");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("DATE");
-
-                    b.Property<string>("Product")
-                        .HasColumnType("VARCHAR2(100)")
-                        .HasColumnName("PRODUCT");
-
-                    b.Property<string>("PurchaseOrderNo")
-                        .HasColumnType("VARCHAR2(30)")
-                        .HasColumnName("PURCHASE_ORDER_NO");
-
-                    b.Property<string>("ReferenceCENo")
-                        .HasColumnType("VARCHAR2(30)")
-                        .HasColumnName("REFERENCE_CE_NO");
-
-                    b.Property<string>("Tagline")
-                        .HasColumnType("VARCHAR2(1000)")
-                        .HasColumnName("TAGLINE");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("UPDATED_AT")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
-
-                    b.Property<string>("UpdatedByCode")
-                        .HasColumnType("VARCHAR2(20)")
-                        .HasColumnName("UPDATED_BY_CODE");
-
-                    b.HasKey("Code");
-
-                    b.ToTable("IMPLEMENTATION_ORDER");
-                });
-
-            modelBuilder.Entity("UBSI_Ops.server.ImplementationOrders.ImplementationOrderBooking", b =>
-                {
-                    b.Property<int>("Code")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("CODE")
-                        .HasAnnotation("Oracle:ValueGenerationStrategy", OracleValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("CREATED_AT")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
-
-                    b.Property<string>("CreatedByCode")
-                        .HasColumnType("VARCHAR2(20)")
-                        .HasColumnName("UPDATED_BY_CODE");
-
-                    b.Property<int>("Duration")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("DURATION");
-
-                    b.Property<bool>("Friday")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("FRIDAY");
-
-                    b.Property<decimal>("GrossAmount")
-                        .HasColumnType("DECIMAL(18, 2)")
-                        .HasColumnName("GROSS_AMOUNT");
-
-                    b.Property<string>("ImplementationOrderCode")
-                        .HasColumnType("VARCHAR2(10)")
-                        .HasColumnName("IMPLEMENTATION_ORDER_CODE");
-
-                    b.Property<bool>("Monday")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("MONDAY");
-
-                    b.Property<int>("NoOfSpots")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("NO_OF_SPOTS");
-
-                    b.Property<DateTime>("PeriodEnd")
-                        .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("PERIOD_END");
-
-                    b.Property<DateTime>("PeriodStart")
-                        .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("PERIOD_START");
-
-                    b.Property<bool>("Saturday")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("SATURDAY");
-
-                    b.Property<string>("StationCode")
-                        .HasColumnType("VARCHAR2(10)")
-                        .HasColumnName("STATION_CODE");
-
-                    b.Property<bool>("Sunday")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("SUNDAY");
-
-                    b.Property<bool>("Thursday")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("THURSDAY");
-
-                    b.Property<bool>("Tuesday")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("TUESDAY");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("UPDATED_AT")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
-
-                    b.Property<bool>("Wednesday")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("WEDNESDAY");
-
-                    b.HasKey("Code");
-
-                    b.HasIndex("ImplementationOrderCode");
-
-                    b.ToTable("IMPLEMENTATION_ORDER_BOOKING");
-                });
-
             modelBuilder.Entity("UBSI_Ops.server.Entities.Identity.UserRole", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUserRole<string>");
@@ -773,6 +729,8 @@ namespace UBSI_Ops.server.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("VARCHAR2(30)")
                         .HasColumnName("UPDATED_BY");
+
+                    b.HasIndex("RoleId");
 
                     b.ToTable("EZ_USER_ROLES");
                 });
@@ -806,12 +764,6 @@ namespace UBSI_Ops.server.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("UBSI_Ops.server.Entities.Identity.Role", null)
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("UBSI_Ops.server.Entities.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -828,38 +780,32 @@ namespace UBSI_Ops.server.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("UBSI_Ops.server.Entities.RolePermission", b =>
+            modelBuilder.Entity("UBSI_Ops.server.Entities.ImplementationOrderBooking", b =>
                 {
-                    b.HasOne("UBSI_Ops.server.Entities.Permission", "Permission")
+                    b.HasOne("UBSI_Ops.server.Entities.ImplementationOrder", "ImplementationOrder")
                         .WithMany()
-                        .HasForeignKey("PermissionCode")
+                        .HasForeignKey("ImplementationOrderCode")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Permission");
-                });
-
-            modelBuilder.Entity("UBSI_Ops.server.ImplementationOrders.ImplementationOrderBooking", b =>
-                {
-                    b.HasOne("UBSI_Ops.server.ImplementationOrders.ImplementationOrder", "ImplementationOrder")
-                        .WithMany("Bookings")
-                        .HasForeignKey("ImplementationOrderCode");
 
                     b.Navigation("ImplementationOrder");
                 });
 
             modelBuilder.Entity("UBSI_Ops.server.Entities.Identity.UserRole", b =>
                 {
+                    b.HasOne("UBSI_Ops.server.Entities.Identity.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", null)
                         .WithOne()
                         .HasForeignKey("UBSI_Ops.server.Entities.Identity.UserRole", "UserId", "RoleId")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("UBSI_Ops.server.ImplementationOrders.ImplementationOrder", b =>
-                {
-                    b.Navigation("Bookings");
+                    b.Navigation("Role");
                 });
 #pragma warning restore 612, 618
         }

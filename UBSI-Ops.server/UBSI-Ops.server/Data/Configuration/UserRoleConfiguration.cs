@@ -15,6 +15,10 @@ namespace UBSI_Ops.server.Data.Configuration
 
             builder.Property(t => t.RoleId).HasColumnType("VARCHAR2").HasColumnName("ROLE_ID").HasMaxLength(11);
 
+            builder.HasOne(t => t.Role)
+             .WithMany()
+             .HasForeignKey(t => t.RoleId);
+
             builder.Property(t => t.BranchId).HasColumnType("NUMBER").HasColumnName("BRANCH_ID").HasMaxLength(11);
 
             builder.Property(t => t.Type).HasColumnType("VARCHAR2").HasColumnName("TYPE").HasMaxLength(30);

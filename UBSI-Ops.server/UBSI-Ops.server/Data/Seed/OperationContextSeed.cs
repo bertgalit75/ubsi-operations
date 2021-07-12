@@ -15,6 +15,7 @@ namespace UBSI_Ops.server.Data.Seed
             context.AccountExecutives.AddRange(GetAccountExecutives());
             context.Users.AddRange(GetUsers());
             context.MediaAgencies.AddRange(GetMediaAgencies());
+            context.Roles.AddRange(GetRoles());
 
             await context.SaveChangesAsync();
         }
@@ -124,6 +125,18 @@ namespace UBSI_Ops.server.Data.Seed
                     AddressLine = "Roxas, Panganiban St.",
                     City = "Santiago City",
                     Province="Isabela",
+                }
+            };
+        }
+        private Collection<Role> GetRoles()
+        {
+            return new Collection<Role>()
+            {
+                new Role()
+                {
+                    Id = "1",
+                    Name = "admin",
+                    NormalizedName = "admin",
                 }
             };
         }

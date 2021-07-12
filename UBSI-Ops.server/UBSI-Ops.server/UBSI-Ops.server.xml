@@ -83,6 +83,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:UBSI_Ops.server.Controllers.RoleController.CreateRole(UBSI_Ops.server.Roles.Models.CreateRoleDto)">
+            <summary>
+            Insert New Role
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:UBSI_Ops.server.Controllers.VendorController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
             <summary>
             List all Vendors

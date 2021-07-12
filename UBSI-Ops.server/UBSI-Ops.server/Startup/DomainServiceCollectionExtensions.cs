@@ -36,6 +36,7 @@ namespace UBSI_Ops.server
             services.AddScoped<UserTokenService>();
             services.AddScoped<TokenService>();
             services.AddScoped<GenerateDefaultImageService>();
+            services.AddScoped<RoleService>();
 
             services.AddScoped<ViewRenderService>();
 

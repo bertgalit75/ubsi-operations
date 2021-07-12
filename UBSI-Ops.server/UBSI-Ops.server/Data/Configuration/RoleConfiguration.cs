@@ -15,7 +15,7 @@ namespace UBSI_Ops.server.Data.Configuration
 
             builder.Property(t => t.Name).HasColumnType("VARCHAR2").HasColumnName("NAME").HasMaxLength(20);
 
-            builder.Property(t => t.NormalizedName).HasColumnType("VARCHAR2").HasColumnName("NORMALIZED_NAME").HasMaxLength(20);
+            builder.Property(t => t.NormalizedName).HasColumnType("VARCHAR2").HasColumnName("NORMALIZE_NAME").HasMaxLength(20);
 
             builder.Property(t => t.ConcurrencyStamp).HasColumnType("VARCHAR2").HasColumnName("CONCURRENCY_TIMESTAMP").HasMaxLength(36);
 
