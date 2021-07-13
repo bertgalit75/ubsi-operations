@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using UBSI_Ops.server.AccountExecutives.Models;
 using UBSI_Ops.server.Customers.Models;
 using UBSI_Ops.server.Entities;
@@ -23,6 +23,7 @@ namespace UBSI_Ops.server.AutoMapperProfile
             CreateMap<Vendor, VendorDto>();
             CreateMap<AccountExecutive, AccountExecutiveDto>();
             CreateMap<MediaAgency, MediaAgencyDto>();
+            CreateMap<ImplementationOrders.Models.CreateImplementationOrderDto, ImplementationOrders.ImplementationOrder>();
         }
     }
 }

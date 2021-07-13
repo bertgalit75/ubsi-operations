@@ -1,6 +1,7 @@
-﻿using System;
+using System;
+using UBSI_Ops.server.Entities;
 
-namespace UBSI_Ops.server.Entities
+namespace UBSI_Ops.server.ImplementationOrders
 {
     public class ImplementationOrder : IBaseEntity
     {

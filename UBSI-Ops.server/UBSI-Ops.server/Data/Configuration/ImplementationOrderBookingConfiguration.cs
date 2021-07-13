@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UBSI_Ops.server.Core.Extensions;
-using UBSI_Ops.server.Entities;
+using UBSI_Ops.server.ImplementationOrders;
 
 namespace UBSI_Ops.server.Data.Configuration
 {
@@ -52,7 +52,6 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.CreatedByCode).HasColumnName("UPDATED_BY_CODE").HasColumnType("VARCHAR2(20)");
 
             builder.HasBaseEntityProperties();
-
         }
     }
 }
