@@ -18,8 +18,7 @@ namespace UBSI_Ops.server.Data.Configuration
                 .HasColumnType("VARCHAR2(10)");
 
             builder.Property(t => t.Date)
-                .HasColumnName("DATE")
-                .HasColumnType("TIMESTAMP(7)");
+                .HasColumnName("DATE");
 
             builder.Property(t => t.ClientCode)
                 .HasColumnName("CLIENT_CODE")

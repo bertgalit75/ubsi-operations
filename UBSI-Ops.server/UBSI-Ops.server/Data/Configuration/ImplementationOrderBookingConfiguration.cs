@@ -14,8 +14,7 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.HasKey(t => t.Code);
 
             builder.Property(t => t.Code)
-                .HasColumnName("CODE")
-                .HasColumnType("NUMBER(10)");
+                .HasColumnName("CODE");
 
             builder.Property(t => t.ImplementationOrderCode)
                 .HasColumnName("IMPLEMENTATION_ORDER_CODE")
@@ -26,52 +25,40 @@ namespace UBSI_Ops.server.Data.Configuration
                 .HasColumnType("VARCHAR2(10)");
 
             builder.Property(t => t.PeriodEnd)
-                .HasColumnName("PERIOD_END")
-                .HasColumnType("TIMESTAMP(7)");
+                .HasColumnName("PERIOD_END");
 
             builder.Property(t => t.PeriodStart)
-                .HasColumnName("PERIOD_START")
-                .HasColumnType("TIMESTAMP(7)");
+                .HasColumnName("PERIOD_START");
 
             builder.Property(t => t.Duration)
-                .HasColumnName("DURATION")
-                .HasColumnType("NUMBER(10)");
+                .HasColumnName("DURATION");
 
             builder.Property(t => t.Spot)
-                .HasColumnName("SPOT")
-                .HasColumnType("NUMBER(10)");
+                .HasColumnName("SPOT");
 
             builder.Property(t => t.Gross)
-                .HasColumnName("GROSS")
-                .HasColumnType("NUMBER(18,2)");
+                .HasColumnName("GROSS");
 
             builder.Property(t => t.Monday)
-                .HasColumnName("MONDAY")
-                .HasColumnType("NUMBER(1)");
+                .HasColumnName("MONDAY");
 
             builder.Property(t => t.Tuesday)
-                .HasColumnName("TUESDAY")
-                .HasColumnType("NUMBER(1)");
+                .HasColumnName("TUESDAY");
 
             builder.Property(t => t.Wednesday)
-                .HasColumnName("WEDNESDAY")
-                .HasColumnType("NUMBER(1)");
+                .HasColumnName("WEDNESDAY");
 
             builder.Property(t => t.Thursday)
-                .HasColumnName("THURSDAY")
-                .HasColumnType("NUMBER(1)");
+                .HasColumnName("THURSDAY");
 
             builder.Property(t => t.Friday)
-                .HasColumnName("FRIDAY")
-                .HasColumnType("NUMBER(1)");
+                .HasColumnName("FRIDAY");
 
             builder.Property(t => t.Saturday)
-                .HasColumnName("SATURDAY")
-                .HasColumnType("NUMBER(1)");
+                .HasColumnName("SATURDAY");
 
             builder.Property(t => t.Sunday)
-                .HasColumnName("SUNDAY")
-                .HasColumnType("NUMBER(1)");
+                .HasColumnName("SUNDAY");
 
             builder.Property(t => t.CreatedByCode)
                 .HasColumnName("CREATED_BY_CODE")
