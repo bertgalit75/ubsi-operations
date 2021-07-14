@@ -1,28 +1,23 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.ObjectModel;
 
 namespace UBSI_Ops.server.ImplementationOrders.Models
 {
-    public class CreateImplementationOrderDto
+    public class ImplementationOrderDto
     {
-        [Required]
         public string Code { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public string ClientCode { get; set; }
 
         public string AgencyCode { get; set; }
 
-        [Required]
         public string AccountExecutiveCode { get; set; }
 
-        [Required]
-        public string ClientCode { get; set; }
-
-        [Required]
-        public DateTime IODate { get; set; }
+        public string Tagline { get; set; }
 
         public string Product { get; set; }
-
-        public string Tagline { get; set; }
 
         public string BookingOrderNo { get; set; }
 
@@ -30,20 +25,23 @@ namespace UBSI_Ops.server.ImplementationOrders.Models
 
         public string ReferenceCENo { get; set; }
 
-        public ICollection<BookingDto> Bookings { get; set; }
+        public Collection<BookingDto> Bookings { get; set; }
 
         public class BookingDto
         {
-            [Required]
+            public int Code { get; set; }
+
             public string StationCode { get; set; }
 
-            [Required]
             public DateTime PeriodStart { get; set; }
 
-            [Required]
             public DateTime PeriodEnd { get; set; }
 
-            public string Material { get; set; }
+            public int Duration { get; set; }
+
+            public int Spot { get; set; }
+
+            public decimal Gross { get; set; }
 
             public bool Monday { get; set; }
 
@@ -58,15 +56,6 @@ namespace UBSI_Ops.server.ImplementationOrders.Models
             public bool Saturday { get; set; }
 
             public bool Sunday { get; set; }
-
-            [Required]
-            public int Quantity { get; set; }
-
-            [Required]
-            public int Duration { get; set; }
-
-            [Required]
-            public decimal Gross { get; set; }
         }
     }
 }

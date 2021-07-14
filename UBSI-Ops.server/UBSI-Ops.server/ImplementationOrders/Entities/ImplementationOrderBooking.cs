@@ -7,7 +7,7 @@ namespace UBSI_Ops.server.ImplementationOrders
     {
         public int Code { get; set; }
 
-        public int ImplementationOrderCode { get; set; }
+        public string ImplementationOrderCode { get; set; }
 
         public string StationCode { get; set; }
 

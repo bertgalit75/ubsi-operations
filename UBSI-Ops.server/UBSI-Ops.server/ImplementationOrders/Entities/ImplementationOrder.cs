@@ -5,7 +5,7 @@ namespace UBSI_Ops.server.ImplementationOrders
 {
     public class ImplementationOrder : IBaseEntity
     {
-        public int Code { get; set; }
+        public string Code { get; set; }
 
         public DateTime Date { get; set; }
 
@@ -17,7 +17,7 @@ namespace UBSI_Ops.server.ImplementationOrders
 
         public string Tagline { get; set; }
 
-        public string ProductCode { get; set; }
+        public string Product { get; set; }
 
         public string BookingOrderNo { get; set; }
 

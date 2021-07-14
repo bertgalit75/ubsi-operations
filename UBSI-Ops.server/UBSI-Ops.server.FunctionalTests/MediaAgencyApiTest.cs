@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+using FluentAssertions;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -54,7 +54,7 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/media-agencies");
+            var response = await client.GetAsync("/api/agencies");
 
             // Assert
             response.EnsureSuccessStatusCode();

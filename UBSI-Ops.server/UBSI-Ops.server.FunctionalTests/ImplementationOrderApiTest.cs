@@ -1,3 +1,5 @@
+using FluentAssertions;
+using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -22,8 +24,36 @@ namespace UBSI_Ops.server.FunctionalTests
             var client = _factory.CreateClient();
             var createDto = new CreateImplementationOrderDto()
             {
-                IONo = "M100",
-                AgencyCode = "001"
+                Code = "M100",
+                AgencyCode = "001",
+                ClientCode = "001",
+                AccountExecutiveCode = "001",
+                Tagline = "Surf Detergent Bili Na",
+                IODate = new System.DateTime(2020, 1, 1),
+                Product = "Surf Detergent",
+                BookingOrderNo = "BO#102391023",
+                PurchaseOrderNo = "2340A9812031",
+                ReferenceCENo = "109230123901231",
+                Bookings = new Collection<CreateImplementationOrderDto.BookingDto>()
+                {
+                    new CreateImplementationOrderDto.BookingDto()
+                    {
+                        StationCode = "001",
+                        PeriodStart = new System.DateTime(2020, 1, 1),
+                        PeriodEnd = new System.DateTime(2020, 1, 31),
+                        Material = "Surf 30s",
+                        Monday = true,
+                        Tuesday = true,
+                        Wednesday = true,
+                        Thursday = true,
+                        Friday = true,
+                        Saturday = false,
+                        Sunday = false,
+                        Quantity = 4,
+                        Duration = 30,
+                        Gross = 10000
+                    }
+                }
             };
 
             var json = JsonSerializer.Serialize(createDto);
@@ -32,9 +62,13 @@ namespace UBSI_Ops.server.FunctionalTests
 
             // Act
             var response = await client.PostAsync("api/implementation-orders", content);
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var implementationOrer = JsonSerializer.Deserialize<ImplementationOrderDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
             // Assert
             response.EnsureSuccessStatusCode();
+            implementationOrer.Code.Should().Be("M100");
+            implementationOrer.Bookings.Should().NotBeEmpty();
         }
     }
 }

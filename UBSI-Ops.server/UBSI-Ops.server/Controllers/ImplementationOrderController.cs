@@ -21,14 +21,21 @@ namespace UBSI_Ops.server.Controllers
             _repository = repository;
         }
 
+        /// <summary>
+        /// Create an implementation order
+        /// </summary>
+        /// <param name="createDto"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] CreateImplementationOrderDto createDto)
+        public async Task<ActionResult<ImplementationOrderDto>> Create([FromBody] CreateImplementationOrderDto createDto)
         {
             var implementationOrder = _mapper.Map<ImplementationOrder>(createDto);
 
             await _repository.Add(implementationOrder);
 
-            return BadRequest();
+            var resultDto = _mapper.Map<ImplementationOrderDto>(implementationOrder);
+
+            return resultDto;
         }
     }
 }

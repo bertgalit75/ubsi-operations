@@ -24,6 +24,7 @@ namespace UBSI_Ops.server.AutoMapperProfile
             CreateMap<AccountExecutive, AccountExecutiveDto>();
             CreateMap<MediaAgency, MediaAgencyDto>();
             CreateMap<ImplementationOrders.Models.CreateImplementationOrderDto, ImplementationOrders.ImplementationOrder>();
+            CreateMap<ImplementationOrders.ImplementationOrder, ImplementationOrders.Models.ImplementationOrderDto>();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using HashidsNet;
+using HashidsNet;
 using Microsoft.Extensions.DependencyInjection;
 using UBSI_Ops.server.Auth;
 using UBSI_Ops.server.Core.View;
@@ -21,6 +21,7 @@ namespace UBSI_Ops.server
             services.AddTransient<IVendorRepository, VendorRepository>();
             services.AddTransient<IAccountExecutiveRepository, AccountExecutiveRepository>();
             services.AddTransient<IMediaAgencyRepository, MediaAgencyRepository>();
+            services.AddTransient<IImplementationOrderRepository, ImplementationOrderRepository>();
 
             services.AddScoped<LoginService>();
             services.AddScoped<JwtConfiguration>();
