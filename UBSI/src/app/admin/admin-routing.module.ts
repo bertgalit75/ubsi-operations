@@ -8,6 +8,7 @@ import { CustomersComponent } from './customers/customers/customers.component';
 import { ViewCustomerComponent } from './customers/view-customer/view-customer.component';
 import { NewAgencyComponent } from 'src/app/admin/agencies/new-agency/new-agency.component';
 import { AgenciesComponent } from 'src/app/admin/agencies/agencies/agencies.component';
+import { UsersComponent } from './users/users/users.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'agencies/new',
         component: NewAgencyComponent,
+      },
+      {
+        path: 'users',
+        component: UsersComponent,
       },
     ],
   },

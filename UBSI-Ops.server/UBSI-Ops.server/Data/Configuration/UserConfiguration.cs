@@ -44,7 +44,11 @@ namespace UBSI_Ops.server.Data.Configuration
 
             builder.Property(t => t.SecurityStamp).HasColumnName("SECURITYSTAMP").HasMaxLength(20);
 
-            builder.Property(t => t.NormalizedUserName).HasColumnName("NORMALIZEDUSERNAME").HasMaxLength(20);
+            builder.Property(t => t.Id).HasColumnName("ID");
+
+            builder.Property(t => t.NormalizedUserName).HasColumnName("NORMALIZEDUSERNAME").HasMaxLength(50);
+
+            builder.Property(t => t.UserRoleId).HasColumnName("USERROLEID");
         }
     }
 }

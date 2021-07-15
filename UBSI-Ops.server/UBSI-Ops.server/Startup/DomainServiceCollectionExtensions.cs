@@ -18,6 +18,7 @@ namespace UBSI_Ops.server
             services.AddTransient<IRadioStationRepository, RadioStationRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IMediaAgencyRepository, MediaAgencyRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IVendorRepository, VendorRepository>();
             services.AddTransient<IAccountExecutiveRepository, AccountExecutiveRepository>();
             services.AddTransient<IMediaAgencyRepository, MediaAgencyRepository>();

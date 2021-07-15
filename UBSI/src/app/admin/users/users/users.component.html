@@ -1,0 +1,38 @@
+<nz-page-header [nzGhost]="false">
+  <nz-page-header-title>Users</nz-page-header-title>
+  <nz-page-header-extra> </nz-page-header-extra>
+</nz-page-header>
+
+<nz-card class="m-4">
+  <nz-table
+    #basicTable
+    nzShowSizeChanger
+    [nzData]="dataSet"
+    [nzFrontPagination]="false"
+    [nzTotal]="total"
+    [nzPageSize]="pageSize"
+    [nzPageIndex]="pageIndex"
+    (nzQueryParams)="onQueryParamsChange($event)"
+  >
+    <thead>
+      <tr>
+        <th nzColumnKey="userName" [nzSortFn]="true">Name</th>
+        <th nzColumnKey="userEmail" [nzSortFn]="true">Email</th>
+        <th nzColumnKey="userRole" [nzSortFn]="true">Role</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of basicTable.data">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role.type }}</td>
+        <td>
+          <a nz-button nzShape="circle" [routerLink]="['/users', user.userId]">
+            <i nz-icon nzType="search"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

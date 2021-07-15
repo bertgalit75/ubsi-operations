@@ -10,5 +10,9 @@ namespace UBSI_Ops.server.Entities.Identity
         public DateTime? LockedOn { get; set; }
 
         public string Name { get; set; }
+
+        public int UserRoleId { get; set; }
+
+        public UserRole UserRole { get; set; }
     }
 }

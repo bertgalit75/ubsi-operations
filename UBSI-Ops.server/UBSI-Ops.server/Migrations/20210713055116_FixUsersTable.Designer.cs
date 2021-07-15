@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 using UBSI_Ops.server.Data;
@@ -9,9 +10,10 @@ using UBSI_Ops.server.Data;
 namespace UBSI_Ops.server.Migrations
 {
     [DbContext(typeof(OperationContext))]
-    partial class OperationContextModelSnapshot : ModelSnapshot
+    [Migration("20210713055116_test")]
+    partial class FixUsersTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -606,41 +608,6 @@ namespace UBSI_Ops.server.Migrations
                     b.HasKey("Code");
 
                     b.ToTable("EZ_STATIONS");
-                });
-
-            modelBuilder.Entity("UBSI_Ops.server.Entities.RolePermission", b =>
-                {
-                    b.Property<int>("Code")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("CODE")
-                        .HasAnnotation("Oracle:ValueGenerationStrategy", OracleValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Add")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("ADD");
-
-                    b.Property<bool>("Delete")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("DELETE");
-
-                    b.Property<bool>("Edit")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("EDIT");
-
-                    b.Property<int>("PermissionCode")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("PERMISSION_CODE");
-
-                    b.Property<bool>("View")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("VIEW");
-
-                    b.HasKey("Code");
-
-                    b.HasIndex("PermissionCode");
-
-                    b.ToTable("ROLEPERMISSION");
                 });
 
             modelBuilder.Entity("UBSI_Ops.server.Entities.Vendor", b =>

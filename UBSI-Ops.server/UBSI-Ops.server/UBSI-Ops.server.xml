@@ -64,6 +64,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:UBSI_Ops.server.Controllers.UserController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+            <summary>
+            List all customers
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:UBSI_Ops.server.Controllers.VendorController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
             <summary>
             List all Vendors
