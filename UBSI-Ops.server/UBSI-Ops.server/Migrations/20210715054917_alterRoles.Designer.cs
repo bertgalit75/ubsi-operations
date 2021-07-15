@@ -10,8 +10,8 @@ using UBSI_Ops.server.Data;
 namespace UBSI_Ops.server.Migrations
 {
     [DbContext(typeof(OperationContext))]
-    [Migration("20210712041854_ReCreateRoleTable")]
-    partial class ReCreateRoleTable
+    [Migration("20210715054917_alterRoles")]
+    partial class alterRoles
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -274,8 +274,8 @@ namespace UBSI_Ops.server.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasMaxLength(20)
-                        .HasColumnType("VARCHAR2(20)")
+                        .HasMaxLength(36)
+                        .HasColumnType("VARCHAR2(36)")
                         .HasColumnName("CONCURRENCY_TIMESTAMP");
 
                     b.Property<DateTime>("CreatedAt")
