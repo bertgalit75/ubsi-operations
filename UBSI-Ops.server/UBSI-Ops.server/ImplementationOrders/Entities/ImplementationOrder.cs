@@ -1,4 +1,5 @@
 using System;
+using System.Collections.ObjectModel;
 using UBSI_Ops.server.Entities;
 
 namespace UBSI_Ops.server.ImplementationOrders
@@ -32,5 +33,7 @@ namespace UBSI_Ops.server.ImplementationOrders
         public DateTime UpdatedAt { get; }
 
         public string UpdatedByCode { get; }
+
+        public Collection<ImplementationOrderBooking> Bookings { get; set; }
     }
 }

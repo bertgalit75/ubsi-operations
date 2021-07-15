@@ -33,11 +33,11 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.Duration)
                 .HasColumnName("DURATION");
 
-            builder.Property(t => t.Spot)
-                .HasColumnName("SPOT");
+            builder.Property(t => t.NoOfSpots)
+                .HasColumnName("NO_OF_SPOTS");
 
-            builder.Property(t => t.Gross)
-                .HasColumnName("GROSS");
+            builder.Property(t => t.GrossAmount)
+                .HasColumnName("GROSS_AMOUNT");
 
             builder.Property(t => t.Monday)
                 .HasColumnName("MONDAY");
@@ -71,7 +71,7 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.HasBaseEntityProperties();
 
             builder.HasOne(t => t.ImplementationOrder)
-                .WithMany()
+                .WithMany(t => t.Bookings)
                 .HasForeignKey(t => t.ImplementationOrderCode);
         }
     }

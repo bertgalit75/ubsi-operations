@@ -17,9 +17,9 @@ namespace UBSI_Ops.server.ImplementationOrders
 
         public int Duration { get; set; }
 
-        public int Spot { get; set; }
+        public int NoOfSpots { get; set; }
 
-        public decimal Gross { get; set; }
+        public decimal GrossAmount { get; set; }
 
         public bool Monday { get; set; }
 

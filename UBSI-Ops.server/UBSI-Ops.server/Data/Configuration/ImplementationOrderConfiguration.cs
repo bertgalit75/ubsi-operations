@@ -29,7 +29,7 @@ namespace UBSI_Ops.server.Data.Configuration
                 .HasColumnType("VARCHAR2(20)");
 
             builder.Property(t => t.AccountExecutiveCode)
-                .HasColumnName("AE_CODE")
+                .HasColumnName("ACCOUNT_EXECUTIVE_CODE")
                 .HasColumnType("VARCHAR2(6)");
 
             builder.Property(t => t.Tagline)
@@ -41,15 +41,15 @@ namespace UBSI_Ops.server.Data.Configuration
                 .HasColumnType("VARCHAR2(100)");
 
             builder.Property(t => t.BookingOrderNo)
-                .HasColumnName("BO_NO")
+                .HasColumnName("BOOKING_ORDER_NO")
                 .HasColumnType("VARCHAR2(30)");
 
             builder.Property(t => t.PurchaseOrderNo)
-                .HasColumnName("PO_NO")
+                .HasColumnName("PURCHASE_ORDER_NO")
                 .HasColumnType("VARCHAR2(30)");
 
             builder.Property(t => t.ReferenceCENo)
-                .HasColumnName("REF_NO")
+                .HasColumnName("REFERENCE_CE_NO")
                 .HasColumnType("VARCHAR2(30)");
 
             builder.Property(t => t.CreatedByCode)
