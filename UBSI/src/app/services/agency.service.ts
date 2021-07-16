@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { PaginatedList } from 'src/app/core/paging/PaginatedList';
 import { IMediaAgency } from 'src/app/models/media-agency.model';
 import { IAgency } from '../models/agency.model';
@@ -18,6 +19,12 @@ export class AgencyService {
 
   create(iAgencyModel: IAgency): Observable<IAgency> {
     return this.http.post<IAgency>(`${this.api}`, iAgencyModel);
+  }
+
+  getAll(): Observable<IAgency[]> {
+    return this.http
+      .get<PaginatedList<IAgency>>(`${this.api}?all=true`)
+      .pipe(map((data) => data.items));
   }
 
   list(
