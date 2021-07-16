@@ -9,7 +9,7 @@
         <nz-form-item>
           <nz-form-label>IO No</nz-form-label>
           <nz-form-control nzErrorTip="IO No is required">
-            <input nz-input formControlName="ioNo" />
+            <input nz-input formControlName="code" />
           </nz-form-control>
         </nz-form-item>
       </div>
@@ -34,13 +34,13 @@
               nzShowSearch
               nzAllowClear
               nzPlaceHolder="Select a client"
-              formControlName="clientId"
+              formControlName="clientCode"
             >
               <nz-option
-                nzLabel="Unilever Philippines"
-                nzValue="jack"
+                *ngFor="let customer of customers"
+                [nzLabel]="customer.name"
+                [nzValue]="customer.code"
               ></nz-option>
-              <nz-option nzLabel="Jolllibee Inc" nzValue="lucy"></nz-option>
             </nz-select>
           </nz-form-control>
         </nz-form-item>
@@ -57,14 +57,14 @@
               nzShowSearch
               nzAllowClear
               nzPlaceHolder="Select an agency"
-              formControlName="agencyId"
+              formControlName="agencyCode"
             >
-              <nz-option nzLabel="True Ties Media" nzValue="jack"></nz-option>
               <nz-option
-                nzLabel="IPG MediaBrands Philippines"
-                nzValue="lucy"
-              ></nz-option>
-              <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+                *ngFor="let agency of agencies"
+                [nzLabel]="agency.name"
+                [nzValue]="agency.code"
+              >
+              </nz-option>
             </nz-select>
           </nz-form-control>
         </nz-form-item>
@@ -87,11 +87,15 @@
               nzShowSearch
               nzAllowClear
               nzPlaceHolder="Select an account executive"
-              formControlName="accountExecutiveId"
+              formControlName="accountExecutiveCode"
             >
-              <nz-option nzLabel="Jack Sandoval" nzValue="jack"></nz-option>
-              <nz-option nzLabel="Lucy Mercado" nzValue="lucy"></nz-option>
-              <nz-option nzLabel="Tom Galit" nzValue="tom"></nz-option>
+              <nz-option
+                *ngFor="let accountExecutive of accountExecutives"
+                [nzLabel]="
+                  accountExecutive.firstName + ' ' + accountExecutive.lastName
+                "
+                [nzValue]="accountExecutive.code"
+              ></nz-option>
             </nz-select>
           </nz-form-control>
         </nz-form-item>
@@ -182,19 +186,23 @@
                 nzShowSearch
                 nzAllowClear
                 nzPlaceHolder="Select a station"
-                formControlName="station"
+                formControlName="stationCode"
               >
-                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
-                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+                <nz-option
+                  *ngFor="let radioStation of radioStations"
+                  [nzLabel]="radioStation.name"
+                  [nzValue]="radioStation.code"
+                ></nz-option>
               </nz-select>
             </nz-form-control>
           </td>
           <td>
-            <nz-range-picker
-              [nzAllowClear]="false"
-              formControlName="period"
-            ></nz-range-picker>
+            <nz-form-control nzErrorTip="Period is required">
+              <nz-range-picker
+                [nzAllowClear]="false"
+                formControlName="period"
+              ></nz-range-picker>
+            </nz-form-control>
           </td>
           <td><input nz-input type="text" formControlName="material" /></td>
           <td>
@@ -219,7 +227,7 @@
             <label nz-checkbox formControlName="sunday"></label>
           </td>
           <td>
-            <input nz-input type="number" formControlName="qty" />
+            <input nz-input type="number" formControlName="noOfSpots" />
           </td>
           <td>
             <nz-input-group nzAddOnAfter="secs">
@@ -227,9 +235,11 @@
             </nz-input-group>
           </td>
           <td>
-            <nz-input-group nzAddOnBefore="₱">
-              <input nz-input type="number" formControlName="gross" />
-            </nz-input-group>
+            <nz-form-control nzErrorTip="Gross is required">
+              <nz-input-group nzAddOnBefore="₱">
+                <input nz-input type="number" formControlName="grossAmount" />
+              </nz-input-group>
+            </nz-form-control>
           </td>
           <td>
             <a
