@@ -9,6 +9,7 @@ import { ViewCustomerComponent } from './customers/view-customer/view-customer.c
 import { NewAgencyComponent } from 'src/app/admin/agencies/new-agency/new-agency.component';
 import { AgenciesComponent } from 'src/app/admin/agencies/agencies/agencies.component';
 import { RolesComponent } from './roles/roles/roles.component';
+import { AccountExecutivesComponent } from './account-executives/account-executives/account-executives.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
       {
         path: 'roles',
         component: RolesComponent,
+      },
+      {
+        path: 'account-executives',
+        component: AccountExecutivesComponent,
       },
     ],
   },

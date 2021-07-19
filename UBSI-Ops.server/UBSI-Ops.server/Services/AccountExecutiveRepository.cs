@@ -17,12 +17,19 @@ namespace UBSI_Ops.server.Services
 
         public async Task<PaginatedList<AccountExecutive>> List(PageOptions options)
         {
+            string direction = null;
+
+            if (options.Direction == "ascend") { direction = "asc"; }
+
+            else if (options.Direction == "descend") { direction = "desc"; }
+
             var query = _context.AccountExecutives.AsQueryable();
 
             query = options.Sort switch
             {
-                "code" => query.OrderBy(t => t.Code, options.Direction),
-                "name" => query.OrderBy(t => t.FirstName, options.Direction),
+                "code" => query.OrderBy(t => t.Code, direction),
+                "fullName" => query.OrderBy(t => t.FirstName + " " + t.MiddleInitial + ", " + t.LastName, direction),
+                "areaCode" => query.OrderBy(t => t.AreaCode, direction),
                 _ => query
             };
 

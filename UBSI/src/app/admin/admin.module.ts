@@ -10,6 +10,7 @@ import { ViewCustomerComponent } from './customers/view-customer/view-customer.c
 import { NewAgencyComponent } from './agencies/new-agency/new-agency.component';
 import { AgenciesComponent } from './agencies/agencies/agencies.component';
 import { RolesComponent } from './roles/roles/roles.component';
+import { AccountExecutivesComponent } from './account-executives/account-executives/account-executives.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RolesComponent } from './roles/roles/roles.component';
     ViewCustomerComponent,
     NewAgencyComponent,
     AgenciesComponent,
+    AccountExecutivesComponent,
     RolesComponent,
   ],
   imports: [SharedModule, LayoutModule, AdminRoutingModule],

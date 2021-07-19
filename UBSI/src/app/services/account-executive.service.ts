@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -17,5 +17,23 @@ export class AccountExecutiveService {
     return this.httpClient
       .get<PaginatedList<IAccountExecutive>>(`${this.api}?all=true`)
       .pipe(map((data) => data.items));
+  }
+  list(
+    pageIndex: number,
+    pageSize: number,
+    sortField: string | null,
+    sortOrder: string | null
+  ): Observable<PaginatedList<IAccountExecutive>> {
+    let params = new HttpParams()
+      .append('pageIndex', `${pageIndex}`)
+      .append('pageSize', `${pageSize}`)
+      .append('sort', `${sortField}`)
+      .append('direction', `${sortOrder}`);
+    return this.httpClient.get<PaginatedList<IAccountExecutive>>(
+      `${this.api}`,
+      {
+        params,
+      }
+    );
   }
 }

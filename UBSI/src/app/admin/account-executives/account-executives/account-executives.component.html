@@ -1,0 +1,42 @@
+<nz-page-header [nzGhost]="false">
+  <nz-page-header-title>Account Executives</nz-page-header-title>
+  <nz-page-header-extra> </nz-page-header-extra>
+</nz-page-header>
+
+<nz-card class="m-4">
+  <nz-table
+    #basicTable
+    nzShowSizeChanger
+    [nzData]="dataSet"
+    [nzFrontPagination]="false"
+    [nzTotal]="total"
+    [nzPageSize]="pageSize"
+    [nzPageIndex]="pageIndex"
+    (nzQueryParams)="onQueryParamsChange($event)"
+  >
+    <thead>
+      <tr>
+        <th nzColumnKey="code" [nzSortFn]="true">Code</th>
+        <th nzColumnKey="fullName" [nzSortFn]="true">Full Name</th>
+        <th nzColumnKey="areaCode" [nzSortFn]="true">Area Code</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ae of basicTable.data">
+        <td>{{ ae.code }}</td>
+        <td>{{ ae.firstName }} {{ ae.middleInitial }}, {{ ae.lastName }}</td>
+        <td>{{ ae.areaCode }}</td>
+        <td>
+          <a
+            nz-button
+            nzShape="circle"
+            [routerLink]="['/account-executives', ae.code]"
+          >
+            <i nz-icon nzType="search"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>
