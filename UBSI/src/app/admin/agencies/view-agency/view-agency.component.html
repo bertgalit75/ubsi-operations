@@ -1,0 +1,45 @@
+<nz-page-header [nzGhost]="false">
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+    <nz-breadcrumb-item>Agencies</nz-breadcrumb-item>
+    <nz-breadcrumb-item>{{ agency?.name }}</nz-breadcrumb-item>
+  </nz-breadcrumb>
+  <nz-page-header-title>{{ agency?.name }}</nz-page-header-title>
+</nz-page-header>
+
+<nz-card class="m-4">
+  <nz-descriptions nzTitle="Customer Info" nzBordered>
+    <nz-descriptions-item nzTitle="Name" [nzSpan]="3">
+      {{ agency?.name }}
+    </nz-descriptions-item>
+  </nz-descriptions>
+  <nz-descriptions nzBordered class="mt-5">
+    <nz-descriptions-item nzTitle="Contact Number">
+      {{ agency?.contactNo }}
+    </nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Email" [nzSpan]="2">
+      {{ agency?.email }}
+    </nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Fax"
+      >{{ agency?.fax }}
+    </nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Remarks">
+      {{ agency?.remarks }}
+    </nz-descriptions-item>
+  </nz-descriptions>
+</nz-card>
+<nz-card class="m-4">
+  <nz-descriptions nzTitle="Address" nzBordered>
+    <nz-descriptions-item nzTitle="Province">
+      {{ agency?.province }}
+    </nz-descriptions-item>
+
+    <nz-descriptions-item nzTitle="City">
+      {{ agency?.city }}
+    </nz-descriptions-item>
+
+    <nz-descriptions-item nzTitle="Address Line">
+      {{ agency?.addressLine }}
+    </nz-descriptions-item>
+  </nz-descriptions>
+</nz-card>

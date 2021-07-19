@@ -14,6 +14,7 @@ import { UsersComponent } from './users/users/users.component';
 import { NewRoleComponent } from './roles/new-role/new-role.component';
 import { RolesComponent } from './roles/roles/roles.component';
 import { RadioStationsComponent } from './radio-stations/radio-stations/radio-stations.component';
+import { ViewAgencyComponent } from './agencies/view-agency/view-agency.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RadioStationsComponent } from './radio-stations/radio-stations/radio-st
     ViewCustomerComponent,
     NewAgencyComponent,
     AgenciesComponent,
+    ViewAgencyComponent,
     AccountExecutivesComponent,
     RolesComponent,
     UsersComponent,

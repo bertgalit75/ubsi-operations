@@ -42,4 +42,8 @@ export class AgencyService {
       params,
     });
   }
+
+  getAgencyDetails(code: string): Observable<IAgency> {
+    return this.http.get<IAgency>(`${this.api}/${code}`);
+  }
 }
