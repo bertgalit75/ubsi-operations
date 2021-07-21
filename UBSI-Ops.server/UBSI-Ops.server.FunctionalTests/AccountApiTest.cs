@@ -16,6 +16,7 @@ namespace UBSI_Ops.server.FunctionalTests
         {
             _factory = factory;
         }
+
         [Fact]
         public async Task ShouldRetrieveUserToken()
         {
@@ -31,16 +32,15 @@ namespace UBSI_Ops.server.FunctionalTests
             // Act
             var response = await client.PostAsync("/api/account/login", new StringContent(JsonSerializer.Serialize(loginModel), Encoding.UTF8, "application/json"));
 
-
             var responseContent = await response.Content.ReadAsStringAsync();
             var loginResult = JsonSerializer.Deserialize<LoginResult>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
             loginResult.Token.Should().NotBeNullOrEmpty();
         }
+
         public class LoginResult
         {
             public string Token { get; set; }
         }
     }
-
 }

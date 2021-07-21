@@ -1,6 +1,6 @@
+using Microsoft.AspNetCore.Http;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
 
 namespace UBSI_Ops.server.Auth
 {

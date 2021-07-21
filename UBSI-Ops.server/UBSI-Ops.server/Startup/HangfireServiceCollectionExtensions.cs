@@ -3,7 +3,6 @@ using Hangfire.Oracle.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Transactions;
 
 namespace UBSI_Ops.server
 {
@@ -24,7 +23,6 @@ namespace UBSI_Ops.server
                     TransactionTimeout = TimeSpan.FromMinutes(1),
                     //SchemaName = "hangfire"
                 }));
-            
 
             services.AddHangfire(config => { });
 
