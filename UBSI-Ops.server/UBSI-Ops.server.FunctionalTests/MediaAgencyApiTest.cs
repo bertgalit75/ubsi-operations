@@ -78,10 +78,10 @@ namespace UBSI_Ops.server.FunctionalTests
             response.EnsureSuccessStatusCode();
 
             var responseContent = await response.Content.ReadAsStringAsync();
-            var customer = JsonSerializer.Deserialize<MediaAgencyDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            var mediaAgency = JsonSerializer.Deserialize<MediaAgencyDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
-            customer.Name.Should().Be("MediaCom");
-            customer.Province.Should().Be("Isabela");
+            mediaAgency.Name.Should().Be("MediaCom");
+            mediaAgency.Province.Should().Be("Isabela");
         }
     }
 }
