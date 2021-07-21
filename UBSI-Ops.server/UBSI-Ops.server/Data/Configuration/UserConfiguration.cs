@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UBSI_Ops.server.Entities.Identity;
 
@@ -48,7 +48,7 @@ namespace UBSI_Ops.server.Data.Configuration
 
             builder.Property(t => t.NormalizedUserName).HasColumnName("NORMALIZEDUSERNAME").HasMaxLength(50);
 
-            builder.Property(t => t.UserRoleId).HasColumnName("USERROLEID");
+            //builder.Property(t => t.UserRoleId).HasColumnName("USERROLEID");
         }
     }
 }

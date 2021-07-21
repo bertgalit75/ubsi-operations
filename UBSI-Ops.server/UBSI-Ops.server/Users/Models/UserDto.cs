@@ -1,4 +1,4 @@
-﻿using UBSI_Ops.server.UserRoles.Models;
+using UBSI_Ops.server.UserRoles.Models;
 
 namespace UBSI_Ops.server.Users.Models
 {
@@ -12,6 +12,6 @@ namespace UBSI_Ops.server.Users.Models
 
         public string Email { get; set; }
 
-        public UserRoleDto UserRoleDto { get; set; }
+        public UserRoleDto UserRole { get; set; }
     }
 }

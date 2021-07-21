@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UBSI_Ops.server.Entities.Identity;
 
@@ -9,6 +9,9 @@ namespace UBSI_Ops.server.Data.Configuration
         public void Configure(EntityTypeBuilder<UserRole> builder)
         {
             builder.ToTable("EZ_USER_ROLES");
+
+
+            builder.Property(t => t.UserRoleId).HasColumnType("NUMBER").HasColumnName("USER_ROLE_ID").HasMaxLength(11);
 
             builder.Property(t => t.RoleId).HasColumnType("VARCHAR2").HasColumnName("ROLE_ID").HasMaxLength(11);
 

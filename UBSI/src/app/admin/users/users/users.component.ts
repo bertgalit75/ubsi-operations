@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
   total: number;
   loading = true;
   pageSize = 10;
-  pageIndex = 1;
+  pageIndex = 0;
 
   ngOnInit(): void {
     this.List(this.pageIndex, this.pageSize, null, null);
@@ -31,6 +31,7 @@ export class UsersComponent implements OnInit {
     this.userService
       .getUsers(pageIndex, pageSize, sortField, sortOrder)
       .subscribe((data) => {
+        console.log(data);
         this.loading = false;
         this.total = data.totalCount; // mock the total data here
         this.dataSet = data.items;

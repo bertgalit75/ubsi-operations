@@ -1,4 +1,4 @@
-﻿using HashidsNet;
+using HashidsNet;
 using Microsoft.Extensions.DependencyInjection;
 using UBSI_Ops.server.Auth;
 using UBSI_Ops.server.Core.View;
@@ -7,6 +7,7 @@ using UBSI_Ops.server.MediaAgencies.Services;
 using UBSI_Ops.server.Services;
 using UBSI_Ops.server.Services.Intefaces;
 using UBSI_Ops.server.Services.Services;
+using UBSI_Ops.server.Users.Services;
 
 namespace UBSI_Ops.server
 {
@@ -22,11 +23,14 @@ namespace UBSI_Ops.server
             services.AddTransient<IVendorRepository, VendorRepository>();
             services.AddTransient<IAccountExecutiveRepository, AccountExecutiveRepository>();
             services.AddTransient<IMediaAgencyRepository, MediaAgencyRepository>();
+            services.AddTransient<IUserRoleRepository, UserRoleRepository>();
+            services.AddTransient<IRoleRepository, RoleRepository>();
 
             services.AddScoped<LoginService>();
             services.AddScoped<JwtConfiguration>();
             services.AddScoped<ICurrentUser, CurrentUser>();
             services.AddScoped<AccountService>();
+            services.AddScoped<UserService>();
             services.AddScoped<UserTokenService>();
             services.AddScoped<TokenService>();
             services.AddScoped<GenerateDefaultImageService>();

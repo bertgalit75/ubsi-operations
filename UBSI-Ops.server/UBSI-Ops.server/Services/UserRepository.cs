@@ -1,5 +1,6 @@
-﻿
 
+
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,15 +8,21 @@ using UBSI_Ops.server.Core.Extensions;
 using UBSI_Ops.server.Core.Paging;
 using UBSI_Ops.server.Data;
 using UBSI_Ops.server.Entities.Identity;
+using UBSI_Ops.server.Roles.Models;
 using UBSI_Ops.server.Services.Intefaces;
+using UBSI_Ops.server.UserRoles.Models;
+using UBSI_Ops.server.Users.Models;
 
 namespace UBSI_Ops.server.Services
 {
     public class UserRepository : Repository, IUserRepository
     {
-        public UserRepository(OperationContext context) : base(context)
-        {
 
+        private readonly IMapper _mapper;
+
+        public UserRepository(OperationContext context, IMapper mapper) : base(context)
+        {
+            _mapper = mapper;
         }
 
         public async Task<UserRole> GetUserRole(string id)
@@ -32,6 +39,8 @@ namespace UBSI_Ops.server.Services
             if (options.Direction == "ascend") { direction = "asc"; }
 
             else if (options.Direction == "descend") { direction = "desc"; }
+
+            //var query = _context.Users.AsQueryable();
 
             var query = _context.Users.
                 AsQueryable();

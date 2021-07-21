@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UBSI_Ops.server.UserRoles.Models;
+using UBSI_Ops.server.Users.Models;
 
 namespace UBSI_Ops.server.Core.Paging
 {
@@ -34,6 +36,11 @@ namespace UBSI_Ops.server.Core.Paging
             var items = Items.Select(func);
 
             return new PaginatedList<R>(items, TotalCount);
+        }
+
+        internal object Join(IEnumerable<UserRoleDto> userRoleDto, Func<object, object> p1, Func<UserRoleDto, string> p2, Func<object, object, UserDto> p3)
+        {
+            throw new NotImplementedException();
         }
     }
 }

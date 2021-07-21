@@ -11,8 +11,13 @@ namespace UBSI_Ops.server.Entities.Identity
 
         public string Name { get; set; }
 
-        public int UserRoleId { get; set; }
+        internal object Select(Func<object, object> p)
+        {
+            throw new NotImplementedException();
+        }
 
-        public UserRole UserRole { get; set; }
+        //public int UserRoleId { get; set; }
+
+        //public UserRole UserRole { get; set; }
     }
 }

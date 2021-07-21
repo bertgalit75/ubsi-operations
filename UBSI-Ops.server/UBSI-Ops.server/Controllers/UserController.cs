@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
@@ -6,6 +6,7 @@ using UBSI_Ops.server.Core.Paging;
 using UBSI_Ops.server.Services.Intefaces;
 using UBSI_Ops.server.UserRoles.Models;
 using UBSI_Ops.server.Users.Models;
+using UBSI_Ops.server.Users.Services;
 
 namespace UBSI_Ops.server.Controllers
 {
@@ -16,20 +17,20 @@ namespace UBSI_Ops.server.Controllers
     {
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
-        private readonly IUserRepository _userRepository;
+        private readonly UserService _userService;
 
         public UserController(
             ILogger<UserController> logger,
             IMapper mapper,
-            IUserRepository userRepository)
+            UserService userService)
         {
             _logger = logger;
             _mapper = mapper;
-            _userRepository = userRepository;
+            _userService = userService;
         }
 
         /// <summary>
-        /// List all customers
+        /// List all Users
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -37,14 +38,9 @@ namespace UBSI_Ops.server.Controllers
         {
             _logger.LogInformation("Get Users");
 
-            var users = await _userRepository.List(options);
+            var users = await _userService.UserList(options);
 
-            var userDto = users.Select(r => _mapper.Map<UserDto>(r));
-
-            var userRole = _userRepository.GetUserRole("0");
-
-            //return userDto;
-            return null;
+            return users;
         }
 
 

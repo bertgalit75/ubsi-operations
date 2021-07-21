@@ -1,8 +1,8 @@
-import { IRole } from './role.model';
+import { IUserRole } from './user-role.model';
 
 export interface IUser {
   userId: string;
   name: string;
   email: string;
-  role: IRole;
+  userRole: IUserRole;
 }

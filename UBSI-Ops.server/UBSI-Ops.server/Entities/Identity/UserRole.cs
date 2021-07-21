@@ -5,6 +5,7 @@ namespace UBSI_Ops.server.Entities.Identity
 {
     public class UserRole : IdentityUserRole<string>
     {
+        public int UserRoleId { get; set; }
         public string Type { get; set; }
         public int BranchId { get; set; }
         public DateTime CreatedAt { get; private set; }

@@ -26,7 +26,7 @@
       <tr *ngFor="let user of basicTable.data">
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
-        <td>{{ user.role.type }}</td>
+        <td>{{ user.userRole.role.name }}</td>
         <td>
           <a nz-button nzShape="circle" [routerLink]="['/users', user.userId]">
             <i nz-icon nzType="search"></i>
