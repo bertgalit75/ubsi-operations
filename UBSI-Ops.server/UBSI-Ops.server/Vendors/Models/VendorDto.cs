@@ -1,4 +1,4 @@
-﻿namespace UBSI_Ops.server.Vendors.Models
+namespace UBSI_Ops.server.Vendors.Models
 {
     public class VendorDto
     {

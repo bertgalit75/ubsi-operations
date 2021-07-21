@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
@@ -97,8 +97,8 @@ namespace UBSI_Ops.server.Data.Seed
             {
                 new User()
                 {
-                    Id = "1",
-                    UserName = "admin",
+                    Id = "admin",
+                    UserName = "adminUsername",
                     NormalizedUserName = "ADMIN",
                     PasswordHash = "c06617466ae4a7d621cd"
                 }

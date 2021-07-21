@@ -1,14 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace UBSI_Ops.server.Models
 {
     public class ColorCombination
     {
-
-
         private const string BLACK = "#000000";
 
         private const string WHITE = "#ffffff";

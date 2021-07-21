@@ -1,4 +1,4 @@
-﻿namespace UBSI_Ops.server.Customers.Models
+namespace UBSI_Ops.server.Customers.Models
 {
     public class CustomerDto
 

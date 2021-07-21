@@ -36,8 +36,15 @@
         </member>
         <member name="M:UBSI_Ops.server.Controllers.CustomerController.View(System.String)">
             <summary>
-            Return Specific Customer 
+            Return Specific Customer
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UBSI_Ops.server.Controllers.ImplementationOrderController.Create(UBSI_Ops.server.ImplementationOrders.Models.CreateImplementationOrderDto)">
+            <summary>
+            Create an implementation order
+            </summary>
+            <param name="createDto"></param>
             <returns></returns>
         </member>
         <member name="M:UBSI_Ops.server.Controllers.MediaAgencyController.Create(UBSI_Ops.server.MediaAgencies.Models.MediaAgencyDto)">

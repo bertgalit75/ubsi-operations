@@ -1,10 +1,12 @@
-﻿using System;
+using System;
+using System.Collections.ObjectModel;
+using UBSI_Ops.server.Entities;
 
-namespace UBSI_Ops.server.Entities
+namespace UBSI_Ops.server.ImplementationOrders
 {
     public class ImplementationOrder : IBaseEntity
     {
-        public int Code { get; set; }
+        public string Code { get; set; }
 
         public DateTime Date { get; set; }
 
@@ -16,7 +18,7 @@ namespace UBSI_Ops.server.Entities
 
         public string Tagline { get; set; }
 
-        public string ProductCode { get; set; }
+        public string Product { get; set; }
 
         public string BookingOrderNo { get; set; }
 
@@ -31,5 +33,7 @@ namespace UBSI_Ops.server.Entities
         public DateTime UpdatedAt { get; }
 
         public string UpdatedByCode { get; }
+
+        public Collection<ImplementationOrderBooking> Bookings { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Data;
@@ -29,13 +29,12 @@ namespace UBSI_Ops.server.Services
 
         public async Task<string> LogIn(string username, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == username);
 
             if (user is null)
             {
                 throw LoginException.CredentialsMismatch();
             }
-
 
             var result = await _userManager.CheckPasswordAsync(user, password);
 

@@ -25,6 +25,7 @@ namespace UBSI_Ops.server
             services.AddTransient<IMediaAgencyRepository, MediaAgencyRepository>();
             services.AddTransient<IUserRoleRepository, UserRoleRepository>();
             services.AddTransient<IRoleRepository, RoleRepository>();
+            services.AddTransient<IImplementationOrderRepository, ImplementationOrderRepository>();
 
             services.AddScoped<LoginService>();
             services.AddScoped<JwtConfiguration>();

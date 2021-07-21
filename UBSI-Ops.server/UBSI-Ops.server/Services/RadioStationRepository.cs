@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Extensions;
@@ -11,11 +11,10 @@ namespace UBSI_Ops.server.Services
 {
     public class RadioStationRepository : Repository, IRadioStationRepository
     {
-
         public RadioStationRepository(OperationContext operationContext) : base(operationContext)
         {
-
         }
+
         public async Task<PaginatedList<RadioStation>> List(PageOptions options)
         {
             var query = _context.RadioStations.AsQueryable();
@@ -35,6 +34,7 @@ namespace UBSI_Ops.server.Services
 
             return new PaginatedList<RadioStation>(radioStations, total);
         }
+
         public async Task<RadioStation> View(string stationCode)
         {
             return await _context.RadioStations.Where(x => x.Code == stationCode).FirstOrDefaultAsync();

@@ -1,10 +1,10 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text.Encodings.Web;
+using System.Threading.Tasks;
 using UBSI_Ops.server.Auth;
 
 namespace UBSI_Ops.server.FunctionalTests
@@ -21,6 +21,7 @@ namespace UBSI_Ops.server.FunctionalTests
             : base(options, logger, encoder, clock)
         {
         }
+
         protected override Task<AuthenticateResult> HandleAuthenticateAsync()
         {
             var claims = new[]

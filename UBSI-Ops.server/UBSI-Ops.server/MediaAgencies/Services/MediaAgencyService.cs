@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.MediaAgencies.Models;

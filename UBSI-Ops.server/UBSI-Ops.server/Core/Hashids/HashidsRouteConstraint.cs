@@ -1,8 +1,8 @@
-using System;
-using System.Globalization;
 using HashidsNet;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using System;
+using System.Globalization;
 
 namespace UBSI_Ops.server.Core.Hashids
 {

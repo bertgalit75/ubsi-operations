@@ -1,5 +1,5 @@
-using UBSI_Ops.server.AutoMapperProfile;
 using Microsoft.Extensions.DependencyInjection;
+using UBSI_Ops.server.AutoMapperProfile;
 
 namespace UBSI_Ops.server
 {

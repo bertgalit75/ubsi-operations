@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { PageOptions } from '../core/pageoptions/PageOptions';
 import { PaginatedList } from '../core/paging/PaginatedList';
 import { ICustomer } from '../models/customer.model';
@@ -10,11 +11,18 @@ import { ICustomer } from '../models/customer.model';
   providedIn: 'root',
 })
 export class CustomerService {
+  readonly api: string = 'api/customers';
+
   constructor(
     private http: HttpClient,
     @Inject('BASE_URL') public baseUrl: string
   ) {}
-  readonly api: string = 'api/customers';
+
+  getAll(): Observable<ICustomer[]> {
+    return this.http
+      .get<PaginatedList<ICustomer>>(`${this.api}?all=true`)
+      .pipe(map((data) => data.items));
+  }
 
   getCustomers(
     pageIndex: number,

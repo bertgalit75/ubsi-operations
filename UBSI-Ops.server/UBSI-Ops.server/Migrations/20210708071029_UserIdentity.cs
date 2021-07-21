@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
 namespace UBSI_Ops.server.Migrations
@@ -7,7 +7,6 @@ namespace UBSI_Ops.server.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
             migrationBuilder.AddColumn<int>(
                 name: "ACCESSFAILEDCOUNT",
                 table: "EZ_USERS",
@@ -98,7 +97,6 @@ namespace UBSI_Ops.server.Migrations
                 maxLength: 20,
                 nullable: true);
 
-
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "EZ_USERS",
@@ -110,7 +108,6 @@ namespace UBSI_Ops.server.Migrations
                 column: "NORMALIZEDUSERNAME",
                 unique: true,
                 filter: "\"NORMALIZEDUSERNAME\" IS NOT NULL");
-
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

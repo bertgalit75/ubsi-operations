@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+using FluentAssertions;
 using System.Text.Json;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Customers.Models;
@@ -50,7 +50,6 @@ namespace UBSI_Ops.server.FunctionalTests
 
             customer.Name.Should().Be("Jane Doe");
             customer.Code.Should().Be("0002");
-
         }
     }
 }

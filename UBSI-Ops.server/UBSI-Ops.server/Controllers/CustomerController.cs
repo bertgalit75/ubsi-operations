@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
@@ -56,7 +56,7 @@ namespace UBSI_Ops.server.Controllers
         }
 
         /// <summary>
-        /// Return Specific Customer 
+        /// Return Specific Customer
         /// </summary>
         /// <returns></returns>
         [HttpGet("{code}")]

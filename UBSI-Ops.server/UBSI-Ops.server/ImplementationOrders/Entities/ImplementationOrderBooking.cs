@@ -1,12 +1,13 @@
-﻿using System;
+using System;
+using UBSI_Ops.server.Entities;
 
-namespace UBSI_Ops.server.Entities
+namespace UBSI_Ops.server.ImplementationOrders
 {
     public class ImplementationOrderBooking : IBaseEntity
     {
         public int Code { get; set; }
 
-        public int ImplementationOrderCode { get; set; }
+        public string ImplementationOrderCode { get; set; }
 
         public string StationCode { get; set; }
 
@@ -16,9 +17,9 @@ namespace UBSI_Ops.server.Entities
 
         public int Duration { get; set; }
 
-        public int Spot { get; set; }
+        public int NoOfSpots { get; set; }
 
-        public decimal Gross { get; set; }
+        public decimal GrossAmount { get; set; }
 
         public bool Monday { get; set; }
 

@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Configuration;
-using UBSI_Ops.server.Core.Emails;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using UBSI_Ops.server.Core.Configuration;
+using UBSI_Ops.server.Core.Emails;
 
 namespace UBSI_Ops.server
 {
