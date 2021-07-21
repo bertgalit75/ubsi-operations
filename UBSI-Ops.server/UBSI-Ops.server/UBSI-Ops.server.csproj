@@ -43,7 +43,6 @@
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.1" />
 	</ItemGroup>
 
-
 	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
 		<TypeScriptTarget>ES5</TypeScriptTarget>
 		<TypeScriptJSXEmit>React</TypeScriptJSXEmit>

@@ -27,6 +27,11 @@ const menuItems: MenuItem[] = [
     label: 'Agencies',
     icon: 'team',
   },
+  {
+    route: 'roles',
+    label: 'Roles',
+    icon: 'team',
+  },
 ];
 
 @Component({

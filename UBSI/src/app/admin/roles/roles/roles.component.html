@@ -1,0 +1,45 @@
+<nz-page-header [nzGhost]="false">
+  <nz-page-header-title>Roles</nz-page-header-title>
+  <nz-page-header-extra> </nz-page-header-extra>
+</nz-page-header>
+
+<nz-card class="m-4">
+  <button
+    nz-button
+    nzType="primary"
+    [routerLink]="['/roles', 'new']"
+    class="mb-2"
+  >
+    New
+  </button>
+  <nz-table
+    #basicTable
+    nzShowSizeChanger
+    [nzData]="dataSet"
+    [nzFrontPagination]="false"
+    [nzTotal]="total"
+    [nzPageSize]="pageSize"
+    [nzPageIndex]="pageIndex"
+    (nzQueryParams)="onQueryParamsChange($event)"
+  >
+    <thead>
+      <tr>
+        <th nzColumnKey="code" [nzSortFn]="true">Code</th>
+        <th nzColumnKey="name" [nzSortFn]="true">Nane</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of basicTable.data">
+        <td>{{ role.id }}</td>
+        <td>{{ role.name }}</td>
+
+        <td>
+          <a nz-button nzShape="circle" [routerLink]="['/roles', role.id]">
+            <i nz-icon nzType="search"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

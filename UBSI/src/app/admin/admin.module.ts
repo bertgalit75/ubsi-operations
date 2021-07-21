@@ -9,6 +9,7 @@ import { CustomersComponent } from './customers/customers/customers.component';
 import { ViewCustomerComponent } from './customers/view-customer/view-customer.component';
 import { NewAgencyComponent } from './agencies/new-agency/new-agency.component';
 import { AgenciesComponent } from './agencies/agencies/agencies.component';
+import { RolesComponent } from './roles/roles/roles.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AgenciesComponent } from './agencies/agencies/agencies.component';
     ViewCustomerComponent,
     NewAgencyComponent,
     AgenciesComponent,
+    RolesComponent,
   ],
   imports: [SharedModule, LayoutModule, AdminRoutingModule],
 })
