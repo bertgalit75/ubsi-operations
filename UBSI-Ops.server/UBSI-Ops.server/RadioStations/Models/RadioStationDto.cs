@@ -1,4 +1,4 @@
-﻿namespace UBSI_Ops.server.RadioStations.Models
+namespace UBSI_Ops.server.RadioStations.Models
 {
     public class RadioStationDto
     {

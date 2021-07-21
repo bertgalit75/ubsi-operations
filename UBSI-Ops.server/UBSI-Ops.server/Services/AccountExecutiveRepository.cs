@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Extensions;
@@ -13,8 +13,8 @@ namespace UBSI_Ops.server.Services
     {
         public AccountExecutiveRepository(OperationContext context) : base(context)
         {
-
         }
+
         public async Task<PaginatedList<AccountExecutive>> List(PageOptions options)
         {
             var query = _context.AccountExecutives.AsQueryable();
@@ -34,6 +34,7 @@ namespace UBSI_Ops.server.Services
 
             return new PaginatedList<AccountExecutive>(accountExecutives, total);
         }
+
         public async Task<AccountExecutive> View(string code)
         {
             return await _context.AccountExecutives.Where(x => x.Code == code).FirstOrDefaultAsync();

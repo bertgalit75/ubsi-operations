@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Tasks;
 using UBSI_Ops.server.Entities.Identity;
 using Xunit;
 

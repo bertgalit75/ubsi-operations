@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UBSI_Ops.server.Entities;
 
@@ -27,8 +27,6 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.Edit).HasColumnName("EDIT").HasColumnType("NUMBER(1)");
 
             builder.Property(t => t.Delete).HasColumnName("DELETE").HasColumnType("NUMBER(1)");
-
         }
     }
-
 }

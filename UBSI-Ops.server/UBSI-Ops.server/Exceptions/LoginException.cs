@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace UBSI_Ops.server.Exceptions
 {
@@ -9,7 +6,6 @@ namespace UBSI_Ops.server.Exceptions
     {
         public LoginException(string message) : base(message)
         {
-
         }
 
         public static LoginException CredentialsMismatch() =>

@@ -1,7 +1,7 @@
+using HashidsNet;
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using HashidsNet;
 
 namespace UBSI_Ops.server.Core.Hashids
 {

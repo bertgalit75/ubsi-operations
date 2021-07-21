@@ -1,8 +1,8 @@
-using System.Linq;
-using System.Threading.Tasks;
 using Amazon;
 using Amazon.SimpleEmail;
 using Amazon.SimpleEmail.Model;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace UBSI_Ops.server.Core.Emails
 {

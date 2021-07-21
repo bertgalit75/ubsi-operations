@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+using FluentAssertions;
 using System.Text.Json;
 using System.Threading.Tasks;
 using UBSI_Ops.server.AccountExecutives.Models;

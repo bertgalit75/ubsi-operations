@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UBSI_Ops.server.Entities;
 
@@ -25,8 +25,6 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.AreaCode).HasColumnName("SP_MA_CODE").HasMaxLength(3);
 
             builder.Property(t => t.Company).HasColumnName("CO").HasMaxLength(1);
-
-
         }
     }
 }

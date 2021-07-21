@@ -1,5 +1,5 @@
-using System;
 using Microsoft.Extensions.Configuration;
+using System;
 
 namespace UBSI_Ops.server.Data.Configuration
 {

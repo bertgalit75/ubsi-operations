@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -14,7 +14,6 @@ namespace UBSI_Ops.server.Services.Services
 {
     public class GenerateDefaultImageService
     {
-
         private const string FontLocation = "./Fonts/Roboto-Bold.ttf";
 
         private const int FontSize = 128;

@@ -1,10 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Extensions;
 using UBSI_Ops.server.Entities;
 
 namespace UBSI_Ops.server.Data.Configuration
@@ -60,7 +55,7 @@ namespace UBSI_Ops.server.Data.Configuration
                 HasMaxLength(25);
 
             //builder.Property(t => t.CO_CODE).HasColumnName("CO_CODE").
-                //HasMaxLength(1);
+            //HasMaxLength(1);
 
             builder.Property(t => t.CreditTermsCode).HasColumnName("CUS_CT_CODE").
                 HasMaxLength(8);

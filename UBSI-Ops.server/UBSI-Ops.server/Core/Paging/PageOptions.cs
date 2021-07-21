@@ -1,4 +1,4 @@
-﻿namespace UBSI_Ops.server.Core.Paging
+namespace UBSI_Ops.server.Core.Paging
 {
     public class PageOptions
     {

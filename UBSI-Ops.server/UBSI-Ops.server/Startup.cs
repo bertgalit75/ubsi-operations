@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -38,7 +38,6 @@ namespace UBSI_Ops.server
             services.AddAutoMapper();
             services.AddSwagger();
 
-
             services.AddMvc();
             services.AddHttpContextAccessor();
             services.AddScoped<UserManager<User>>();
@@ -50,8 +49,6 @@ namespace UBSI_Ops.server
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

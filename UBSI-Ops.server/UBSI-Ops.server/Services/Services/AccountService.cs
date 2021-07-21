@@ -1,14 +1,8 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using UBSI_Ops.server.Auth;
 using UBSI_Ops.server.Core.Files;
 using UBSI_Ops.server.Data;
-using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
-using UBSI_Ops.server.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
 namespace UBSI_Ops.server.Services.Services
 {
@@ -34,7 +28,5 @@ namespace UBSI_Ops.server.Services.Services
             _generateDefaultImageService = generateDefaultImageService;
             _fileSystem = filesystem;
         }
-
-       
     }
 }

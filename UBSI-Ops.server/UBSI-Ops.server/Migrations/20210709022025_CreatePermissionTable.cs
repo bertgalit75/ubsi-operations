@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace UBSI_Ops.server.Migrations
 {
@@ -41,13 +41,10 @@ namespace UBSI_Ops.server.Migrations
                         principalColumn: "CODE",
                         onDelete: ReferentialAction.Cascade);
                 });
-
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-
-
             migrationBuilder.DropTable(
                 name: "ROLEPERMISSION");
 

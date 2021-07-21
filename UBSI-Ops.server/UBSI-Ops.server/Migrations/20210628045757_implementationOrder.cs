@@ -1,5 +1,5 @@
-﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace UBSI_Ops.server.Migrations
 {
@@ -31,7 +31,6 @@ namespace UBSI_Ops.server.Migrations
                     table.PrimaryKey("PK_IMPLEMENTATION_ORDER", x => x.ID);
                 });
 
-           
             migrationBuilder.CreateTable(
                 name: "IMPLEMENTATION_ORDER_BOOKING",
                 columns: table => new
@@ -69,10 +68,8 @@ namespace UBSI_Ops.server.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-
             migrationBuilder.DropTable(
                 name: "IMPLEMENTATION_ORDER_BOOKING");
-
 
             migrationBuilder.DropTable(
                 name: "IMPLEMENTATION_ORDER");

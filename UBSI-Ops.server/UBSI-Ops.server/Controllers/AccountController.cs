@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Exceptions;
 using UBSI_Ops.server.Models.Request;
@@ -9,10 +9,10 @@ namespace UBSI_Ops.server.Controllers
     [Route("api/account")]
     [ApiController]
     [Produces("application/json")]
-
     public class AccountController : ControllerBase
     {
         private readonly LoginService _loginService;
+
         public AccountController(LoginService loginService)
         {
             _loginService = loginService;
@@ -41,6 +41,5 @@ namespace UBSI_Ops.server.Controllers
         {
             public string Token { get; set; }
         }
-
     }
 }

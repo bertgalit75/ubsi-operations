@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace UBSI_Ops.server.Entities
 {

@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace UBSI_Ops.server.Migrations
 {
@@ -26,7 +26,6 @@ namespace UBSI_Ops.server.Migrations
                 type: "NVARCHAR2(20)",
                 maxLength: 20,
                 nullable: true);
-
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -1,7 +1,7 @@
-using System.Linq;
-using System.Threading.Tasks;
 using HashidsNet;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace UBSI_Ops.server.Core.Hashids
 {

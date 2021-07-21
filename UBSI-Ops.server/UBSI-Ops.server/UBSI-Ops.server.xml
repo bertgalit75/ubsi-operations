@@ -36,7 +36,7 @@
         </member>
         <member name="M:UBSI_Ops.server.Controllers.CustomerController.View(System.String)">
             <summary>
-            Return Specific Customer 
+            Return Specific Customer
             </summary>
             <returns></returns>
         </member>

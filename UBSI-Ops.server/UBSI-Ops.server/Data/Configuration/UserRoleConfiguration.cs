@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UBSI_Ops.server.Entities.Identity;
 
@@ -25,7 +25,6 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.CreatedAt).HasColumnType("DATE").HasColumnName("CREATED_AT");
 
             builder.Property(t => t.UpdatedAt).HasColumnType("DATE").HasColumnName("UPDATED_AT");
-
         }
     }
 }

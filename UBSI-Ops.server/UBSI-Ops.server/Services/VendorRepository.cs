@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Extensions;
@@ -11,11 +11,10 @@ namespace UBSI_Ops.server.Services
 {
     public class VendorRepository : Repository, IVendorRepository
     {
-
         public VendorRepository(OperationContext operationContext) : base(operationContext)
         {
-
         }
+
         public async Task<PaginatedList<Vendor>> List(PageOptions options)
         {
             var query = _context.Vendors.AsQueryable();
@@ -39,6 +38,7 @@ namespace UBSI_Ops.server.Services
 
             return new PaginatedList<Vendor>(vendors, total);
         }
+
         public async Task<Vendor> View(string vendorCode)
         {
             return await _context.Vendors.Where(x => x.Code == vendorCode).FirstOrDefaultAsync();

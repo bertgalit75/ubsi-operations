@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Extensions;
@@ -13,16 +13,13 @@ namespace UBSI_Ops.server.Services
     {
         public CustomerRepository(OperationContext context) : base(context)
         {
-
         }
-
 
         public async Task<PaginatedList<Customer>> List(PageOptions options)
         {
             string direction = null;
 
             if (options.Direction == "ascend") { direction = "asc"; }
-
             else if (options.Direction == "descend") { direction = "desc"; }
 
             var query = _context.Customers.
