@@ -21,18 +21,6 @@ namespace UBSI_Ops.server.Data.Configuration
                 .HasColumnName("IMPLEMENTATION_ORDER_CODE")
                 .HasColumnType("VARCHAR2(10)");
 
-            builder.Property(t => t.File)
-                .HasColumnName("FILE")
-                .HasColumnType("VARCHAR2(40)");
-
-            builder.Property(t => t.File)
-                .HasColumnName("FILE")
-                .HasColumnType("VARCHAR2(40)");
-
-            builder.Property(t => t.File)
-                .HasColumnName("FILE")
-                .HasColumnType("VARCHAR2(40)");
-
             builder.Property(t => t.CreatedByCode)
                 .HasColumnName("CREATED_BY_CODE")
                 .HasColumnType("VARCHAR2(20)");
