@@ -47,6 +47,11 @@ const menuItems: MenuItem[] = [
     label: 'Roles',
     icon: 'summarize',
   },
+  {
+    route: 'radio-stations',
+    label: 'Radio Stations',
+    icon: 'team',
+  },
 ];
 
 @Component({

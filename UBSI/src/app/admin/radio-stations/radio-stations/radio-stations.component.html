@@ -1,0 +1,40 @@
+<nz-page-header [nzGhost]="false">
+  <nz-page-header-title>Radio Staions</nz-page-header-title>
+  <nz-page-header-extra> </nz-page-header-extra>
+</nz-page-header>
+
+<nz-card class="m-4">
+  <nz-table
+    #basicTable
+    nzShowSizeChanger
+    [nzData]="dataSet"
+    [nzFrontPagination]="false"
+    [nzTotal]="total"
+    [nzPageSize]="pageSize"
+    [nzPageIndex]="pageIndex"
+    (nzQueryParams)="onQueryParamsChange($event)"
+  >
+    <thead>
+      <tr>
+        <th nzColumnKey="radioStationCode" [nzSortFn]="true">Code</th>
+        <th nzColumnKey="radioStationName" [nzSortFn]="true">Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let radioStation of basicTable.data">
+        <td>{{ radioStation.code }}</td>
+        <td>{{ radioStation.name }}</td>
+        <td>
+          <a
+            nz-button
+            nzShape="circle"
+            [routerLink]="['/radio-stations', radioStation.code]"
+          >
+            <i nz-icon nzType="search"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>
