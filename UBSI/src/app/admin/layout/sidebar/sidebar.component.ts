@@ -37,6 +37,11 @@ const menuItems: MenuItem[] = [
     label: 'Account Executives',
     icon: 'team',
   },
+  {
+    route: 'users',
+    label: 'Users',
+    icon: 'team',
+  },
 ];
 
 @Component({

@@ -10,5 +10,14 @@ namespace UBSI_Ops.server.Entities.Identity
         public DateTime? LockedOn { get; set; }
 
         public string Name { get; set; }
+
+        internal object Select(Func<object, object> p)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public int UserRoleId { get; set; }
+
+        //public UserRole UserRole { get; set; }
     }
 }

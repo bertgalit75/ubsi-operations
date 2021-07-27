@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Extensions;
@@ -38,6 +40,11 @@ namespace UBSI_Ops.server.Services
             var total = await query.CountAsync();
 
             return new PaginatedList<Role>(radioStations, total);
+        }
+
+        public async Task<IEnumerable<Role>> GetRolesByUserRole(IEnumerable<UserRole> userRoles)
+        {
+            return await _context.Roles.Where(r => userRoles.Select(ur => ur.RoleId).Contains(r.Id)).ToListAsync();
         }
     }
 }

@@ -11,6 +11,7 @@ import { NewAgencyComponent } from './agencies/new-agency/new-agency.component';
 import { AgenciesComponent } from './agencies/agencies/agencies.component';
 import { RolesComponent } from './roles/roles/roles.component';
 import { AccountExecutivesComponent } from './account-executives/account-executives/account-executives.component';
+import { UsersComponent } from './users/users/users.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AccountExecutivesComponent } from './account-executives/account-executi
     AgenciesComponent,
     AccountExecutivesComponent,
     RolesComponent,
+    UsersComponent,
   ],
   imports: [SharedModule, LayoutModule, AdminRoutingModule],
 })

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using UBSI_Ops.server.Entities;
@@ -6,7 +7,16 @@ using UBSI_Ops.server.ImplementationOrders;
 
 namespace UBSI_Ops.server.Data
 {
-    public class OperationContext : IdentityDbContext<User, Role, string>
+    public class OperationContext
+        : IdentityDbContext<
+            User,
+            Role,
+            string,
+            IdentityUserClaim<string>,
+            UserRole,
+            IdentityUserLogin<string>,
+            IdentityRoleClaim<string>,
+            IdentityUserToken<string>>
     {
         public DbSet<RadioStation> RadioStations { get; set; }
 

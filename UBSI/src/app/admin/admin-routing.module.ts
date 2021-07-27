@@ -10,6 +10,7 @@ import { NewAgencyComponent } from 'src/app/admin/agencies/new-agency/new-agency
 import { AgenciesComponent } from 'src/app/admin/agencies/agencies/agencies.component';
 import { RolesComponent } from './roles/roles/roles.component';
 import { AccountExecutivesComponent } from './account-executives/account-executives/account-executives.component';
+import { UsersComponent } from './users/users/users.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
       {
         path: 'account-executives',
         component: AccountExecutivesComponent,
+      },
+      {
+        path: 'users',
+        component: UsersComponent,
       },
     ],
   },
