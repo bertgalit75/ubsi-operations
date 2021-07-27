@@ -10,7 +10,6 @@ namespace UBSI_Ops.server.Data.Configuration
         {
             builder.ToTable("EZ_USER_ROLES");
 
-
             builder.Property(t => t.UserRoleId).HasColumnType("NUMBER").HasColumnName("USER_ROLE_ID").HasMaxLength(11);
 
             builder.Property(t => t.RoleId).HasColumnType("VARCHAR2").HasColumnName("ROLE_ID").HasMaxLength(11);

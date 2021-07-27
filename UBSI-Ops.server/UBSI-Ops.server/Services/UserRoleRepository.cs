@@ -13,7 +13,6 @@ namespace UBSI_Ops.server.Services
     {
         public UserRoleRepository(OperationContext context) : base(context)
         {
-
         }
 
         public async Task<IEnumerable<UserRole>> GetUserRolesByUsers(IEnumerable<User> users)

@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
 namespace UBSI_Ops.server.Migrations
@@ -7,14 +7,12 @@ namespace UBSI_Ops.server.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
             migrationBuilder.AddColumn<string>(
               name: "CREATED_BY_CODE",
               table: "EZ_ROLES",
               type: "VARCHAR2(50)",
               nullable: true,
               maxLength: 50);
-
 
             migrationBuilder.AddColumn<DateTime>(
             name: "UPDATED_AT",
@@ -23,14 +21,12 @@ namespace UBSI_Ops.server.Migrations
             nullable: false,
             defaultValueSql: "CURRENT_TIMESTAMP");
 
-
             migrationBuilder.AddColumn<DateTime?>(
               name: "CREATED_AT",
               table: "EZ_ROLES",
               type: "TIMESTAMP(7)",
               nullable: false,
               defaultValueSql: "CURRENT_TIMESTAMP");
-
 
             migrationBuilder.AddColumn<string>(
               name: "UPDATED_BY_CODE",
@@ -47,7 +43,6 @@ namespace UBSI_Ops.server.Migrations
 
             migrationBuilder.RenameColumn(name: "ConcurrencyStamp", table: "EZ_ROLES", newName: "CONCURRENCY_TIMESTAMP");
 
-
             migrationBuilder.AlterColumn<string>(
                 name: "ID",
                 table: "EZ_ROLES",
@@ -56,7 +51,6 @@ namespace UBSI_Ops.server.Migrations
                 oldClrType: typeof(int),
                 oldType: "NUMBER");
 
-
             migrationBuilder.AlterColumn<string>(
               name: "ROLE_ID",
               table: "EZ_USER_ROLES",
@@ -64,7 +58,6 @@ namespace UBSI_Ops.server.Migrations
               nullable: false,
               oldClrType: typeof(int),
               oldType: "NUMBER");
-
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -100,7 +93,6 @@ namespace UBSI_Ops.server.Migrations
                 nullable: false,
                 oldClrType: typeof(int),
                 oldType: "VARCHAR2(20)");
-
 
             migrationBuilder.AlterColumn<int>(
               name: "ROLE_ID",

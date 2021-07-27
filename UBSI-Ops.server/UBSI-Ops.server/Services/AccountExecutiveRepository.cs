@@ -20,7 +20,6 @@ namespace UBSI_Ops.server.Services
             string direction = null;
 
             if (options.Direction == "ascend") { direction = "asc"; }
-
             else if (options.Direction == "descend") { direction = "desc"; }
 
             var query = _context.AccountExecutives.AsQueryable();

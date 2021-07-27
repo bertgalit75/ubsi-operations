@@ -1,5 +1,6 @@
 using FluentAssertions;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Roles.Models;

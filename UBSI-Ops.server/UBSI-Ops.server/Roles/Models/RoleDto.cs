@@ -1,4 +1,4 @@
- namespace UBSI_Ops.server.Roles.Models
+namespace UBSI_Ops.server.Roles.Models
 {
     public class RoleDto
     {

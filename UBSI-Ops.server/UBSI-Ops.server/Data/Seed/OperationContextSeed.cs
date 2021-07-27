@@ -128,6 +128,7 @@ namespace UBSI_Ops.server.Data.Seed
                 }
             };
         }
+
         private Collection<Role> GetRoles()
         {
             return new Collection<Role>()

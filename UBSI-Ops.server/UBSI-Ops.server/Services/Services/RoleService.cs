@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -15,12 +15,14 @@ namespace UBSI_Ops.server.Services.Services
         private readonly OperationContext _operationContext;
         private readonly IMapper _mapper;
         private readonly ILogger _logger;
+
         public RoleService(OperationContext operationContext, IMapper mapper, ILogger<RoleService> logger)
         {
             _operationContext = operationContext;
             _mapper = mapper;
             _logger = logger;
         }
+
         public async Task<ActionResult<RoleDto>> Create(CreateRoleDto roleDto)
         {
             int lastRoleId = 1;

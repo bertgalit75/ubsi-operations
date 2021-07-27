@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Paging;
-using UBSI_Ops.server.Services.Intefaces;
-using UBSI_Ops.server.UserRoles.Models;
 using UBSI_Ops.server.Users.Models;
 using UBSI_Ops.server.Users.Services;
 
@@ -42,7 +40,5 @@ namespace UBSI_Ops.server.Controllers
 
             return users;
         }
-
-
     }
 }
