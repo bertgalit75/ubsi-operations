@@ -10,6 +10,20 @@ namespace UBSI_Ops.server
     {
         public static IServiceCollection AddHangfireService(this IServiceCollection services, IConfiguration configuration)
         {
+            switch (configuration["Hangfire:Type"])
+            {
+                case "oracle":
+                    {
+                        UseOracle(services, configuration);
+                        break;
+                    }
+            }
+
+            return services;
+        }
+
+        private static void UseOracle(IServiceCollection services, IConfiguration configuration)
+        {
             GlobalConfiguration.Configuration.UseStorage(new OracleStorage(
                 configuration.GetConnectionString("hangfire"),
                 new OracleStorageOptions
@@ -25,8 +39,6 @@ namespace UBSI_Ops.server
                 }));
 
             services.AddHangfire(config => { });
-
-            return services;
         }
     }
 }
