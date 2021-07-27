@@ -1,5 +1,6 @@
 using System;
 using System.Collections.ObjectModel;
+using UBSI_Ops.server.CertificateOfPerformances;
 using UBSI_Ops.server.Entities;
 
 namespace UBSI_Ops.server.ImplementationOrders
@@ -35,5 +36,7 @@ namespace UBSI_Ops.server.ImplementationOrders
         public string UpdatedByCode { get; }
 
         public Collection<ImplementationOrderBooking> Bookings { get; set; }
+
+        public Collection<CertificateOfPerformance> Certifications { get; set; }
     }
 }
