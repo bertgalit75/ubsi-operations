@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
 using UBSI_Ops.server.ImplementationOrders;
+using UBSI_Ops.server.SalesInvoices;
 
 namespace UBSI_Ops.server.Data
 {
@@ -29,6 +30,8 @@ namespace UBSI_Ops.server.Data
         public DbSet<MediaAgency> MediaAgencies { get; set; }
 
         public DbSet<ImplementationOrder> ImplementationOrders { get; set; }
+
+        public DbSet<SalesInvoice> SalesInvoices { get; set; }
 
         public OperationContext(DbContextOptions options) : base(options)
         {
