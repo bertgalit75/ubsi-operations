@@ -40,6 +40,6 @@ export class RolesComponent implements OnInit {
     const currentSort = sort.find((item) => item.value !== null);
     const sortField = (currentSort && currentSort.key) || null;
     const sortOrder = (currentSort && currentSort.value) || null;
-    this.list(pageIndex, pageSize, sortField, sortOrder);
+    this.list(pageIndex - 1, pageSize, sortField, sortOrder);
   }
 }

@@ -12,27 +12,49 @@
   >
     New
   </button>
-  <nz-table #basicTable [nzData]="dataSet">
+  <nz-table
+    #basicTable
+    nzShowSizeChanger
+    [nzData]="dataSet"
+    [nzFrontPagination]="false"
+    [nzTotal]="total"
+    [nzPageSize]="pageSize"
+    [nzPageIndex]="pageIndex"
+    (nzQueryParams)="onQueryParamsChange($event)"
+  >
     <thead>
       <tr>
-        <th>IO#</th>
-        <th>Client</th>
-        <th>Agency</th>
+        <th nzColumnKey="code" [nzSortFn]="true">Code</th>
+        <th nzColumnKey="client" [nzSortFn]="true">Client</th>
+        <th nzColumnKey="agency" [nzSortFn]="true">Agency</th>
+        <th nzColumnKey="date" [nzSortFn]="true">Date</th>
+
+        <th nzColumnKey="product" [nzSortFn]="true">Product</th>
         <th>Station</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let io of basicTable.data">
-        <td>{{ io.ioNo }}</td>
+        <td>{{ io.code }}</td>
+        <td>{{ io.customer?.name }}</td>
+        <td>{{ io.mediaAgency?.name }}</td>
+        <td>{{ io.date | date: "longDate" }}</td>
+        <td>{{ io.product }}</td>
         <td>
-          <a>{{ io.client }}</a>
+          <ng-container *ngFor="let booking of io.bookings; let last = last">
+            <ion-label *ngIf="!last">{{ booking.stationCode }},</ion-label>
+            <ion-label *ngIf="last">
+              {{ booking.stationCode }}
+            </ion-label>
+          </ng-container>
         </td>
-        <td>{{ io.agency }}</td>
+
         <td>
           <a
             nz-button
             nzShape="circle"
-            [routerLink]="['/implementation-orders', '1']"
+            [routerLink]="['/implementation-orders', io.code]"
           >
             <i nz-icon nzType="search"></i>
           </a>
