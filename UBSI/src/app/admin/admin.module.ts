@@ -13,6 +13,7 @@ import { AccountExecutivesComponent } from './account-executives/account-executi
 import { UsersComponent } from './users/users/users.component';
 import { NewRoleComponent } from './roles/new-role/new-role.component';
 import { RolesComponent } from './roles/roles/roles.component';
+import { RadioStationsComponent } from './radio-stations/radio-stations/radio-stations.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RolesComponent } from './roles/roles/roles.component';
     AccountExecutivesComponent,
     RolesComponent,
     UsersComponent,
-    NewRoleComponent
+    NewRoleComponent,
+    RadioStationsComponent,
   ],
   imports: [SharedModule, LayoutModule, AdminRoutingModule],
 })

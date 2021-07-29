@@ -12,6 +12,7 @@ import { RolesComponent } from './roles/roles/roles.component';
 import { AccountExecutivesComponent } from './account-executives/account-executives/account-executives.component';
 import { UsersComponent } from './users/users/users.component';
 import { NewRoleComponent } from './roles/new-role/new-role.component';
+import { RadioStationsComponent } from './radio-stations/radio-stations/radio-stations.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,10 @@ const routes: Routes = [
       {
         path: 'users',
         component: UsersComponent,
+      },
+      {
+        path: 'radio-stations',
+        component: RadioStationsComponent,
       },
     ],
   },
