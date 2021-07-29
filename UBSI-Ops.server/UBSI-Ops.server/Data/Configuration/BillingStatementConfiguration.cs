@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UBSI_Ops.server.SalesInvoices;
+using UBSI_Ops.server.BillingStatements;
 
 namespace UBSI_Ops.server.Data.Configuration
 {
-    public class SaleInvoiceConfiguration : IEntityTypeConfiguration<SalesInvoice>
+    public class SaleInvoiceConfiguration : IEntityTypeConfiguration<BillingStatement>
     {
-        public void Configure(EntityTypeBuilder<SalesInvoice> builder)
+        public void Configure(EntityTypeBuilder<BillingStatement> builder)
         {
             builder.ToTable("UBSI_INVOICE_HDR");
 

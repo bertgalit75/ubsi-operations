@@ -1,8 +1,8 @@
 using System;
 
-namespace UBSI_Ops.server.SalesInvoices
+namespace UBSI_Ops.server.BillingStatements
 {
-    public class SalesInvoice
+    public class BillingStatement
     {
         public int Code { get; set; }
 
