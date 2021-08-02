@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using UBSI_Ops.server.BillingStatements;
 using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
 
@@ -16,6 +17,7 @@ namespace UBSI_Ops.server.Data.Seed
             context.Users.AddRange(GetUsers());
             context.MediaAgencies.AddRange(GetMediaAgencies());
             context.Roles.AddRange(GetRoles());
+            context.BillingStatements.AddRange(GetBillingStatements());
 
             await context.SaveChangesAsync();
         }
@@ -138,6 +140,28 @@ namespace UBSI_Ops.server.Data.Seed
                     Id = "1",
                     Name = "admin",
                     NormalizedName = "admin",
+                }
+            };
+        }
+
+        private Collection<BillingStatement> GetBillingStatements()
+        {
+            return new Collection<BillingStatement>()
+            {
+                new BillingStatement()
+                {
+                    Code =1,
+                    CustomerCode="#100",
+                    Encoder="encoder",
+                    Printed="printed",
+                    FormNumber=1,
+                    Frequency="frequency",
+                    ContractNo="#101",
+                    CPNO="#101",
+                    BONO="#102",
+                    CENO="#103",
+                    ImplmentationOrderCode="#104",
+                    AgencyCode="#105",
                 }
             };
         }
