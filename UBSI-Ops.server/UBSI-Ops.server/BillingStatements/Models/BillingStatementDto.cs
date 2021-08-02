@@ -23,6 +23,8 @@ namespace UBSI_Ops.server.BillingStatements.Models
 
         public string ContractNo { get; set; }
 
+        public int TotalAmount { get; set; }
+
         public string ImplmentationOrderCode { get; set; }
 
         public CustomerDto Customer { get; set; }

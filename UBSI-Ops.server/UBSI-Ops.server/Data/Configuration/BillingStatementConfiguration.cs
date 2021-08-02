@@ -4,7 +4,7 @@ using UBSI_Ops.server.BillingStatements;
 
 namespace UBSI_Ops.server.Data.Configuration
 {
-    public class SaleInvoiceConfiguration : IEntityTypeConfiguration<BillingStatement>
+    public class BillingStatementConfiguration : IEntityTypeConfiguration<BillingStatement>
     {
         public void Configure(EntityTypeBuilder<BillingStatement> builder)
         {
@@ -49,6 +49,7 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.HasOne(t => t.ImplementationOrder)
                .WithMany()
                .HasForeignKey(t => t.ImplmentationOrderCode);
+
         }
     }
 }

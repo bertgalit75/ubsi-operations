@@ -117,7 +117,7 @@ namespace UBSI_Ops.server.Migrations
                         .HasAnnotation("Oracle:ValueGenerationStrategy", OracleValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AgencyCode")
-                        .HasColumnType("VARCHAR(40)")
+                        .HasColumnType("NVARCHAR2(40)")
                         .HasColumnName("AGENCY_CODE");
 
                     b.Property<string>("BONO")
@@ -157,7 +157,7 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnName("UIH_FREQUENCY");
 
                     b.Property<string>("ImplmentationOrderCode")
-                        .HasColumnType("VARCHAR(20)")
+                        .HasColumnType("VARCHAR2(10)")
                         .HasColumnName("IMPLEMENTATION_ORDER_CODE");
 
                     b.Property<string>("Printed")
@@ -173,6 +173,41 @@ namespace UBSI_Ops.server.Migrations
                     b.HasIndex("ImplmentationOrderCode");
 
                     b.ToTable("UBSI_INVOICE_HDR");
+                });
+
+            modelBuilder.Entity("UBSI_Ops.server.BillingStatements.BillingStatementItem", b =>
+                {
+                    b.Property<int>("DNO")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(2)")
+                        .HasColumnName("UID_DNO")
+                        .HasAnnotation("Oracle:ValueGenerationStrategy", OracleValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BillingStatementCode")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("UID_UIH_NBR");
+
+                    b.Property<int>("Discount")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("UID_DISCOUNT");
+
+                    b.Property<int>("Gross")
+                        .HasColumnType("NUMBER(12)")
+                        .HasColumnName("UID_GROSS_PRICE");
+
+                    b.Property<int>("NetPrice")
+                        .HasColumnType("NUMBER(12)")
+                        .HasColumnName("UID_NET_PRICE");
+
+                    b.Property<string>("Particular")
+                        .HasColumnType("VARCHAR2(500)")
+                        .HasColumnName("UID_PARTIC");
+
+                    b.HasKey("DNO");
+
+                    b.HasIndex("BillingStatementCode");
+
+                    b.ToTable("UBSI_INVOICE_DTL");
                 });
 
             modelBuilder.Entity("UBSI_Ops.server.CertificateOfPerformances.CertificateOfPerformance", b =>
@@ -963,15 +998,26 @@ namespace UBSI_Ops.server.Migrations
                         .WithMany()
                         .HasForeignKey("CustomerCode");
 
-                    b.HasOne("UBSI_Ops.server.ImplementationOrders.ImplementationOrder", "ImplementationOrders")
+                    b.HasOne("UBSI_Ops.server.ImplementationOrders.ImplementationOrder", "ImplementationOrder")
                         .WithMany()
                         .HasForeignKey("ImplmentationOrderCode");
 
                     b.Navigation("Customer");
 
-                    b.Navigation("ImplementationOrders");
+                    b.Navigation("ImplementationOrder");
 
                     b.Navigation("MediaAgency");
+                });
+
+            modelBuilder.Entity("UBSI_Ops.server.BillingStatements.BillingStatementItem", b =>
+                {
+                    b.HasOne("UBSI_Ops.server.BillingStatements.BillingStatement", "BillingStatement")
+                        .WithMany("BillingStatementItems")
+                        .HasForeignKey("BillingStatementCode")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BillingStatement");
                 });
 
             modelBuilder.Entity("UBSI_Ops.server.CertificateOfPerformances.CertificateOfPerformance", b =>
@@ -1027,6 +1073,11 @@ namespace UBSI_Ops.server.Migrations
                         .HasForeignKey("ImplementationOrderCode");
 
                     b.Navigation("ImplementationOrder");
+                });
+
+            modelBuilder.Entity("UBSI_Ops.server.BillingStatements.BillingStatement", b =>
+                {
+                    b.Navigation("BillingStatementItems");
                 });
 
             modelBuilder.Entity("UBSI_Ops.server.CertificateOfPerformances.CertificateOfPerformance", b =>

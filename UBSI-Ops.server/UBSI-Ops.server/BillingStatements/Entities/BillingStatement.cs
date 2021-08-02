@@ -1,4 +1,6 @@
 using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.ImplementationOrders;
 
@@ -37,5 +39,10 @@ namespace UBSI_Ops.server.BillingStatements
         public MediaAgency MediaAgency { get; set; }
 
         public ImplementationOrder ImplementationOrder { get; set; }
+
+        public Collection<BillingStatementItem> BillingStatementItems { get; set; }
+
+        [NotMapped]
+        public int TotalAmount { get; set; }
     }
 }
