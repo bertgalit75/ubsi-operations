@@ -35,6 +35,8 @@ namespace UBSI_Ops.server.Data
 
         public DbSet<BillingStatementItem> BillingStatementItems { get; set; }
 
+        public DbSet<FileEntry> FileEntries { get; set; }
+
         public OperationContext(DbContextOptions options) : base(options)
         {
         }
