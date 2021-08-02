@@ -48,5 +48,10 @@ namespace UBSI_Ops.server.Services
 
             return new PaginatedList<MediaAgency>(mediaAgencies, total);
         }
+
+        public async Task<MediaAgency> View(string code)
+        {
+            return await _context.MediaAgencies.Where(x => x.Code == code).FirstOrDefaultAsync();
+        }
     }
 }

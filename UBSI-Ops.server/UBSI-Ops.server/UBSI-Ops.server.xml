@@ -59,6 +59,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:UBSI_Ops.server.Controllers.MediaAgencyController.View(System.String)">
+            <summary>
+            Return Specific Agency
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:UBSI_Ops.server.Controllers.RadioStationController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
             <summary>
             List all RadioStations

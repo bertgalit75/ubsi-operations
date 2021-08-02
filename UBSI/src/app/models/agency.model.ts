@@ -4,5 +4,8 @@ export interface IAgency {
   contactNo: string;
   fax: string;
   email: string;
-  remakrs: string;
+  remarks: string;
+  addressLine: string;
+  city: string;
+  province: string;
 }

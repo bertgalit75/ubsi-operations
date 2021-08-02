@@ -9,5 +9,7 @@ namespace UBSI_Ops.server.Services.Intefaces
         Task<MediaAgency> CreateMediaAgency(MediaAgency mediaAgency);
 
         Task<PaginatedList<MediaAgency>> List(PageOptions options);
+
+        Task<MediaAgency> View(string code);
     }
 }

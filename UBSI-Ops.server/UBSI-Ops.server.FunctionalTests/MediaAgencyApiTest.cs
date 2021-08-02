@@ -64,5 +64,24 @@ namespace UBSI_Ops.server.FunctionalTests
 
             mediaAgencies.Items.Should().NotBeEmpty();
         }
+
+        [Fact]
+        public async Task ShouldRetrieveSpecificAgency()
+        {
+            // Arrange
+            var client = _factory.CreateClient();
+
+            // Act
+            var response = await client.GetAsync("/api/agencies/2");
+
+            // Assert
+            response.EnsureSuccessStatusCode();
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var mediaAgency = JsonSerializer.Deserialize<MediaAgencyDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+
+            mediaAgency.Name.Should().Be("MediaCom");
+            mediaAgency.Province.Should().Be("Isabela");
+        }
     }
 }

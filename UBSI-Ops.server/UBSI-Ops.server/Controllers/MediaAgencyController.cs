@@ -56,5 +56,19 @@ namespace UBSI_Ops.server.Controllers
 
             return customers.Select(r => _mapper.Map<MediaAgencyDto>(r));
         }
+
+        /// <summary>
+        /// Return Specific Agency
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("{code}")]
+        public async Task<ActionResult<MediaAgencyDto>> View(string code)
+        {
+            _logger.LogInformation("Get Customer #" + code);
+
+            var customer = await _mediaAgencyRepository.View(code);
+
+            return _mapper.Map<MediaAgencyDto>(customer);
+        }
     }
 }
