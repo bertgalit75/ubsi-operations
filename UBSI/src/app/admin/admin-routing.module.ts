@@ -13,6 +13,7 @@ import { AccountExecutivesComponent } from './account-executives/account-executi
 import { UsersComponent } from './users/users/users.component';
 import { NewRoleComponent } from './roles/new-role/new-role.component';
 import { RadioStationsComponent } from './radio-stations/radio-stations/radio-stations.component';
+import { BillingStatementsComponent } from './billing-statements/billing-statements/billing-statements.component';
 
 const routes: Routes = [
   {
@@ -70,6 +71,10 @@ const routes: Routes = [
       {
         path: 'radio-stations',
         component: RadioStationsComponent,
+      },
+      {
+        path: 'billing-statements',
+        component: BillingStatementsComponent,
       },
     ],
   },

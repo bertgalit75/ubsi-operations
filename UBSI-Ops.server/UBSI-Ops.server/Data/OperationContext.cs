@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using UBSI_Ops.server.BillingStatements;
 using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
 using UBSI_Ops.server.ImplementationOrders;
@@ -29,6 +30,8 @@ namespace UBSI_Ops.server.Data
         public DbSet<MediaAgency> MediaAgencies { get; set; }
 
         public DbSet<ImplementationOrder> ImplementationOrders { get; set; }
+
+        public DbSet<BillingStatement> BillingStatements { get; set; }
 
         public OperationContext(DbContextOptions options) : base(options)
         {

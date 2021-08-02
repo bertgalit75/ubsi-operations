@@ -14,6 +14,7 @@ import { UsersComponent } from './users/users/users.component';
 import { NewRoleComponent } from './roles/new-role/new-role.component';
 import { RolesComponent } from './roles/roles/roles.component';
 import { RadioStationsComponent } from './radio-stations/radio-stations/radio-stations.component';
+import { BillingStatementsComponent } from './billing-statements/billing-statements/billing-statements.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { RadioStationsComponent } from './radio-stations/radio-stations/radio-st
     UsersComponent,
     NewRoleComponent,
     RadioStationsComponent,
+    BillingStatementsComponent,
   ],
   imports: [SharedModule, LayoutModule, AdminRoutingModule],
 })

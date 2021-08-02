@@ -1,0 +1,48 @@
+<nz-page-header [nzGhost]="false">
+  <nz-page-header-title>Billing Statements</nz-page-header-title>
+  <nz-page-header-extra> </nz-page-header-extra>
+</nz-page-header>
+
+<nz-card class="m-4">
+  <nz-table
+    #basicTable
+    nzShowSizeChanger
+    [nzData]="dataSet"
+    [nzFrontPagination]="false"
+    [nzTotal]="total"
+    [nzPageSize]="pageSize"
+    [nzPageIndex]="pageIndex"
+    (nzQueryParams)="onQueryParamsChange($event)"
+  >
+    <thead>
+      <tr>
+        <th nzColumnKey="customerCode" [nzSortFn]="true">No</th>
+        <th nzColumnKey="customerName" [nzSortFn]="true">IO No.</th>
+        <th nzColumnKey="regionCode" [nzSortFn]="true">Client</th>
+        <th nzColumnKey="areaCode" [nzSortFn]="true">Agency</th>
+        <th nzColumnKey="ae" [nzSortFn]="true">Total Amount</th>
+        <th nzColumnKey="creditTerms" [nzSortFn]="true">Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of basicTable.data">
+        <td>{{ customer.code }}</td>
+        <td>{{ customer.implementationOrderCode }}</td>
+        <td>{{ customer.customer?.name }}</td>
+        <td>{{ customer.mediaAgency?.name }}</td>
+        <td>{{ customer.aeName }}</td>
+        <td>{{ customer.date }}</td>
+        <td>
+          <a
+            nz-button
+            nzShape="circle"
+            [routerLink]="['/customers', customer.code]"
+          >
+            <i nz-icon nzType="search"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

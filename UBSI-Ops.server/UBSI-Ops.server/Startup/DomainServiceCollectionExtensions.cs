@@ -1,6 +1,7 @@
 using HashidsNet;
 using Microsoft.Extensions.DependencyInjection;
 using UBSI_Ops.server.Auth;
+using UBSI_Ops.server.BillingStatements;
 using UBSI_Ops.server.Core.View;
 using UBSI_Ops.server.Data.Configuration;
 using UBSI_Ops.server.MediaAgencies.Services;
@@ -27,6 +28,7 @@ namespace UBSI_Ops.server
             services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<IImplementationOrderRepository, ImplementationOrderRepository>();
             services.AddTransient<IRoleRepository, RoleRepository>();
+            services.AddTransient<IBillingStatementRepository, BillingStatementRepository>();
 
             services.AddScoped<LoginService>();
             services.AddScoped<JwtConfiguration>();
