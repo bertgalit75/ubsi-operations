@@ -32,8 +32,8 @@
         <td>{{ customer.implementationOrderCode }}</td>
         <td>{{ customer.customer?.name }}</td>
         <td>{{ customer.mediaAgency?.name }}</td>
-        <td>{{ customer.totalAmount | number }}</td>
         <td>{{ customer.date | date: "longDate" }}</td>
+        <td>{{ customer.totalAmount | number }}</td>
         <td>
           <a
             nz-button
