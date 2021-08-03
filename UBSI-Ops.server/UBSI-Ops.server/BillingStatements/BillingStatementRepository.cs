@@ -42,7 +42,6 @@ namespace UBSI_Ops.server.BillingStatements
                 "io" => query.OrderBy(t => t.ImplmentationOrderCode, direction),
                 "client" => query.OrderBy(t => t.Customer.Name, direction),
                 "agency" => query.OrderBy(t => t.MediaAgency.Name, direction),
-                "totalAmount" => query.OrderBy(t => t.TotalAmount, direction),
                 "date" => query.OrderBy(t => t.Date, direction),
                 _ => query
             };
