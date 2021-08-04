@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IImplementationOrder } from 'src/app/models/implementation-order.model';
+import { PageOptions } from '../core/pageoptions/PageOptions';
 import { PaginatedList } from '../core/paging/PaginatedList';
 
 @Injectable({
@@ -21,11 +22,18 @@ export class ImplementationOrderService {
       implementationOrder
     );
   }
-  getIOFromDate(form) {
-    const dateFilter = {
-      year: form.year.getFullYear(),
-      month: form.month,
-    };
-    console.log(dateFilter);
+
+  getIOFromDate(
+    options: PageOptions,
+    year: number,
+    month: number
+  ): Observable<PaginatedList<IImplementationOrder>> {
+    const params = options.toObject();
+    return this.httpClient.get<PaginatedList<IImplementationOrder>>(
+      `${this.api}/${month}/${year}/filter`,
+      {
+        params,
+      }
+    );
   }
 }

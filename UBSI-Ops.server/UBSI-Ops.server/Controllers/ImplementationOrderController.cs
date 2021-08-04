@@ -1,6 +1,7 @@
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using UBSI_Ops.server.Core.Paging;
 using UBSI_Ops.server.ImplementationOrders;
 using UBSI_Ops.server.ImplementationOrders.Models;
 using UBSI_Ops.server.Services.Intefaces;
@@ -36,6 +37,19 @@ namespace UBSI_Ops.server.Controllers
             var resultDto = _mapper.Map<ImplementationOrderDto>(implementationOrder);
 
             return resultDto;
+        }
+
+        /// <summary>
+        /// List of implementation Order filtered by month and year
+        /// </summary>
+        /// <param name="ImplementationOrderDto"></param>
+        /// <returns></returns>
+        [HttpGet("{year}/{month}/filter")]
+        public async Task<ActionResult<PaginatedList<ImplementationOrderDto>>> FilterByDate([FromQuery] PageOptions pageOptions, int year, int month)
+        {
+            var implementationOrders = await _repository.Filter(pageOptions, year, month);
+
+            return implementationOrders.Select(r => _mapper.Map<ImplementationOrderDto>(r));
         }
     }
 }

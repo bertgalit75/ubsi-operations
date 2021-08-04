@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using UBSI_Ops.server.CertificateOfPerformances;
 using UBSI_Ops.server.Entities;
@@ -38,5 +38,9 @@ namespace UBSI_Ops.server.ImplementationOrders
         public Collection<ImplementationOrderBooking> Bookings { get; set; }
 
         public Collection<CertificateOfPerformance> Certifications { get; set; }
+
+        public Customer Customer { get; set; }
+
+        public MediaAgency MediaAgency { get; set; }
     }
 }

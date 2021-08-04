@@ -1,5 +1,7 @@
 using System;
 using System.Collections.ObjectModel;
+using UBSI_Ops.server.Customers.Models;
+using UBSI_Ops.server.MediaAgencies.Models;
 
 namespace UBSI_Ops.server.ImplementationOrders.Models
 {
@@ -24,6 +26,10 @@ namespace UBSI_Ops.server.ImplementationOrders.Models
         public string PurchaseOrderNo { get; set; }
 
         public string ReferenceCENo { get; set; }
+
+        public CustomerDto Customer { get; set; }
+
+        public MediaAgencyDto MediaAgency { get; set; }
 
         public Collection<BookingDto> Bookings { get; set; }
 

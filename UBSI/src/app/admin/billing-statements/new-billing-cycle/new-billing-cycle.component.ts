@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {
   NzDateMode,
   NzDatePickerComponent,
   NzDatePickerModule,
 } from 'ng-zorro-antd/date-picker';
+import { NzTableQueryParams } from 'ng-zorro-antd/table';
+import { markAllAsDirty } from 'src/app/core/functions';
+import { PageOptions } from 'src/app/core/pageoptions/PageOptions';
 import { IImplementationOrder } from 'src/app/models/implementation-order.model';
 import { ImplementationOrderService } from 'src/app/services/implementation-order.service';
 
@@ -21,13 +24,24 @@ export class NewBillingCycleComponent implements OnInit {
     private implementationOrderService: ImplementationOrderService
   ) {}
   form: FormGroup = this.fb.group({
-    year: [null],
-    month: [null],
+    year: [null, Validators.required],
+    month: [null, Validators.required],
   });
-  isSaving: boolean = false;
+  isSearching: boolean = false;
 
   displayIO: boolean = false;
 
+  isSaving: boolean = false;
+
+  total: number;
+  loading = true;
+  pageSize = 10;
+  pageIndex = 0;
+
+  sortField: string = null;
+  sortOrder: string = null;
+
+  dataSet: IImplementationOrder[];
   months = [
     { id: 1, name: 'January' },
     { id: 2, name: 'February' },
@@ -50,8 +64,44 @@ export class NewBillingCycleComponent implements OnInit {
   }
 
   search() {
-    this.isSaving = true;
+    markAllAsDirty(this.form);
+    if (!this.form.valid) return;
+    this.isSearching = true;
     this.displayIO = true;
-    this.implementationOrderService.getIOFromDate(this.form.value);
+    const options = new PageOptions(
+      this.pageIndex,
+      this.pageSize,
+      this.sortOrder,
+      this.sortField
+    );
+    this.filter(options);
+  }
+
+  onQueryParamsChange(params: NzTableQueryParams): void {
+    const { pageSize, pageIndex, sort, filter } = params;
+    const currentSort = sort.find((item) => item.value !== null);
+    const sortField = (currentSort && currentSort.key) || null;
+    const sortOrder = (currentSort && currentSort.value) || null;
+    const options = new PageOptions(
+      pageIndex - 1,
+      pageSize,
+      sortField,
+      sortOrder
+    );
+    this.filter(options);
+  }
+  filter(options: PageOptions) {
+    this.implementationOrderService
+      .getIOFromDate(
+        options,
+        this.form.value.month,
+        this.form.value.year.getFullYear()
+      )
+      .subscribe((data) => {
+        this.loading = false;
+        this.total = data.totalCount; // mock the total data here
+        this.dataSet = data.items;
+        this.isSearching = false;
+      });
   }
 }

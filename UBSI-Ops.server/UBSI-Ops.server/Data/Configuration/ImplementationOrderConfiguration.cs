@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UBSI_Ops.server.Core.Extensions;
 using UBSI_Ops.server.ImplementationOrders;
@@ -59,6 +59,14 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.UpdatedByCode)
                 .HasColumnName("UPDATED_BY_CODE")
                 .HasColumnType("VARCHAR2(20)");
+
+            builder.HasOne(t => t.MediaAgency)
+                .WithMany()
+                .HasForeignKey(t => t.AgencyCode);
+
+            builder.HasOne(t => t.Customer)
+                .WithMany()
+                .HasForeignKey(t => t.ClientCode);
 
             builder.HasBaseEntityProperties();
         }
