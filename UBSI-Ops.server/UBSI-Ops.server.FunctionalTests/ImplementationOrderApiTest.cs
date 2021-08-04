@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+using FluentAssertions;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text.Json;
@@ -29,7 +29,7 @@ namespace UBSI_Ops.server.FunctionalTests
                 ClientCode = "001",
                 AccountExecutiveCode = "001",
                 Tagline = "Surf Detergent Bili Na",
-                IODate = new System.DateTime(2020, 1, 1),
+                Date = new System.DateTime(2020, 1, 1),
                 Product = "Surf Detergent",
                 BookingOrderNo = "BO#102391023",
                 PurchaseOrderNo = "2340A9812031",

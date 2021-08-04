@@ -18,7 +18,7 @@ namespace UBSI_Ops.server.ImplementationOrders.Models
         public string ClientCode { get; set; }
 
         [Required]
-        public DateTime IODate { get; set; }
+        public DateTime Date { get; set; }
 
         public string Product { get; set; }
 
