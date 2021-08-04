@@ -1,0 +1,59 @@
+<nz-page-header [nzGhost]="false" (nzBack)="goToBack()" nzBackIcon>
+  <nz-page-header-title>New Billing Cycle</nz-page-header-title>
+</nz-page-header>
+
+<form nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="search()">
+  <nz-card nzTitle="Filter Billing Statements" class="m-4">
+    <div nz-row nzGutter="24">
+      <div nz-col nzSpan="11">
+        <nz-form-item>
+          <nz-form-label>Year</nz-form-label>
+          <nz-form-control nzErrorTip="Year is required">
+            <nz-date-picker
+              class="w-full"
+              nzMode="year"
+              nzPlaceHolder="Select a year"
+              formControlName="year"
+            ></nz-date-picker>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="11">
+        <nz-form-item>
+          <nz-form-label>Month</nz-form-label>
+          <nz-form-control nzErrorTip="Month is required">
+            <nz-select
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Select a Month"
+              formControlName="month"
+            >
+              <nz-option
+                *ngFor="let month of months"
+                [nzLabel]="month.name"
+                [nzValue]="month.id"
+              ></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="2">
+        <nz-form-item>
+          <nz-form-label></nz-form-label>
+          <button
+            nz-button
+            type="submit"
+            nzSize="medium"
+            nzType="primary"
+            class="w-full"
+            [nzLoading]="isSaving"
+          >
+            <i nz-icon nzType="search" nzTheme="outline"></i> Search
+          </button>
+        </nz-form-item>
+      </div>
+    </div>
+  </nz-card>
+</form>
+<nz-card nzTitle="Implementation Order" class="m-4" *ngIf="displayIO">
+</nz-card>

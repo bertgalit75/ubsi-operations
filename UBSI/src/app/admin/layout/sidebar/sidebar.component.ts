@@ -52,6 +52,11 @@ const menuItems: MenuItem[] = [
     label: 'Radio Stations',
     icon: 'team',
   },
+  {
+    route: 'billing-statements',
+    label: 'Billing Statements',
+    icon: 'team',
+  },
 ];
 
 @Component({
