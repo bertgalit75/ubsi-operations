@@ -60,6 +60,14 @@ namespace UBSI_Ops.server.Data.Configuration
                 .HasColumnName("UPDATED_BY_CODE")
                 .HasColumnType("VARCHAR2(20)");
 
+            builder.HasOne(t => t.MediaAgency)
+                .WithMany()
+                .HasForeignKey(t => t.AgencyCode);
+
+            builder.HasOne(t => t.Customer)
+                .WithMany()
+                .HasForeignKey(t => t.ClientCode);
+
             builder.HasBaseEntityProperties();
         }
     }
