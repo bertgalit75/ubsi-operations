@@ -10,7 +10,7 @@ using UBSI_Ops.server.Data;
 namespace UBSI_Ops.server.Migrations
 {
     [DbContext(typeof(OperationContext))]
-    [Migration("20210802032710_CreateFileEntryTable")]
+    [Migration("20210805035956_CreateFileEntryTable")]
     partial class CreateFileEntryTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -322,7 +322,9 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnType("TIMESTAMP(7)");
 
                     b.Property<string>("CreatedByCode")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR2(50)")
+                        .HasColumnName("CREATED_BY_CODE");
 
                     b.Property<string>("Filename")
                         .IsRequired()
@@ -349,7 +351,9 @@ namespace UBSI_Ops.server.Migrations
                         .HasColumnType("TIMESTAMP(7)");
 
                     b.Property<string>("UpdatedByCode")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR2(50)")
+                        .HasColumnName("UPDATED_BY_CODE");
 
                     b.HasKey("Id");
 

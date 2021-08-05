@@ -18,9 +18,9 @@ namespace UBSI_Ops.server.Migrations
                     LENGTH = table.Column<long>(type: "NUMBER(19)", nullable: false),
                     PATH = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
-                    CreatedByCode = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    CREATED_BY_CODE = table.Column<string>(type: "VARCHAR2(50)", maxLength: 50, nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
-                    UpdatedByCode = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    UPDATED_BY_CODE = table.Column<string>(type: "VARCHAR2(50)", maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
