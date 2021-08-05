@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using UBSI_Ops.server.Core.Paging;
 using UBSI_Ops.server.ImplementationOrders;
 using UBSI_Ops.server.ImplementationOrders.Models;
 using UBSI_Ops.server.Services.Intefaces;
@@ -36,6 +37,19 @@ namespace UBSI_Ops.server.Controllers
             var resultDto = _mapper.Map<ImplementationOrderDto>(implementationOrder);
 
             return resultDto;
+        }
+
+        /// <summary>
+        /// List All Implementation Order
+        /// </summary>
+        /// <param name="ImplentationOrderDto"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<PaginatedList<ImplementationOrderDto>>> List([FromQuery] PageOptions options)
+        {
+            var implementationOrders = await _repository.List(options);
+
+            return implementationOrders.Select(r => _mapper.Map<ImplementationOrderDto>(r));
         }
     }
 }
