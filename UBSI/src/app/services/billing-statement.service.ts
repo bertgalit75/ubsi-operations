@@ -29,4 +29,8 @@ export class BillingStatementService {
       params,
     });
   }
+
+  createBilling(ioIds: Array<string>): Observable<any> {
+    return this.http.post<any>(`${this.api}/createBills`, ioIds);
+  }
 }

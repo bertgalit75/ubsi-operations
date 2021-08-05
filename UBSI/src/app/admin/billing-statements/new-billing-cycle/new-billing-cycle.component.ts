@@ -10,6 +10,7 @@ import { NzTableQueryParams } from 'ng-zorro-antd/table';
 import { markAllAsDirty } from 'src/app/core/functions';
 import { PageOptions } from 'src/app/core/pageoptions/PageOptions';
 import { IImplementationOrder } from 'src/app/models/implementation-order.model';
+import { BillingStatementService } from 'src/app/services/billing-statement.service';
 import { ImplementationOrderService } from 'src/app/services/implementation-order.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class NewBillingCycleComponent implements OnInit {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private implementationOrderService: ImplementationOrderService
+    private implementationOrderService: ImplementationOrderService,
+    private billingStatementService: BillingStatementService
   ) {}
   form: FormGroup = this.fb.group({
     year: [null, Validators.required],
@@ -37,11 +39,14 @@ export class NewBillingCycleComponent implements OnInit {
   loading = true;
   pageSize = 10;
   pageIndex = 0;
-
   sortField: string = null;
   sortOrder: string = null;
 
   dataSet: IImplementationOrder[];
+  showCheckBox: boolean = true;
+  indeterminate = false;
+  checked = false;
+
   months = [
     { id: 1, name: 'January' },
     { id: 2, name: 'February' },
@@ -57,6 +62,7 @@ export class NewBillingCycleComponent implements OnInit {
     { id: 12, name: 'December' },
   ];
 
+  setOfCheckedId = new Set<string>();
   ngOnInit(): void {}
 
   goToBack(): void {
@@ -103,5 +109,35 @@ export class NewBillingCycleComponent implements OnInit {
         this.dataSet = data.items;
         this.isSearching = false;
       });
+  }
+  onAllChecked(value: boolean): void {
+    this.dataSet.forEach((item) => this.updateCheckedSet(item.code, value));
+    this.refreshCheckedStatus();
+  }
+  updateCheckedSet(code: string, checked: boolean): void {
+    if (checked) {
+      this.setOfCheckedId.add(code);
+    } else {
+      this.setOfCheckedId.delete(code);
+    }
+  }
+  onItemChecked(code: string, checked: boolean): void {
+    this.updateCheckedSet(code, checked);
+    this.refreshCheckedStatus();
+  }
+  refreshCheckedStatus(): void {
+    this.checked = this.dataSet.every((item) =>
+      this.setOfCheckedId.has(item.code)
+    );
+    this.indeterminate =
+      this.dataSet.some((item) => this.setOfCheckedId.has(item.code)) &&
+      !this.checked;
+  }
+  createBills() {
+    let setToArray = Array.from(this.setOfCheckedId);
+    console.log(setToArray);
+    this.billingStatementService.createBilling(setToArray).subscribe((data) => {
+      console.log(data);
+    });
   }
 }
