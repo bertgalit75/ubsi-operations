@@ -1,5 +1,7 @@
 using AutoMapper;
 using UBSI_Ops.server.AccountExecutives.Models;
+using UBSI_Ops.server.BillingStatements;
+using UBSI_Ops.server.BillingStatements.Models;
 using UBSI_Ops.server.Customers.Models;
 using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
@@ -42,6 +44,8 @@ namespace UBSI_Ops.server.AutoMapperProfile
 
             CreateMap<Role, RoleDto>();
             CreateMap<Role, CreateRoleDto>();
+
+            CreateMap<BillingStatement, BillingStatementDto>();
         }
     }
 }

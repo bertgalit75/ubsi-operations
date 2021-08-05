@@ -1,6 +1,10 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Billing.Models;
+using UBSI_Ops.server.BillingStatements;
+using UBSI_Ops.server.BillingStatements.Models;
+using UBSI_Ops.server.Core.Paging;
 
 namespace UBSI_Ops.server.Controllers
 {
@@ -9,8 +13,13 @@ namespace UBSI_Ops.server.Controllers
     [Produces("application/json")]
     public class BillingStatementController
     {
-        public BillingStatementController()
+        private readonly IBillingStatementRepository _repository;
+        private readonly IMapper _mapper;
+
+        public BillingStatementController(IBillingStatementRepository repository, IMapper mapper)
         {
+            _repository = repository;
+            _mapper = mapper;
         }
 
         /// <summary>
@@ -21,6 +30,18 @@ namespace UBSI_Ops.server.Controllers
         public Task<ActionResult> Generate([FromBody] NewBillingCycleDto dto)
         {
             throw new System.Exception("TODO");
+        }
+
+        /// <summary>
+        /// List of Billing Statements
+        /// </summary>
+        /// <param name="BillingStatementDto"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<PaginatedList<BillingStatementDto>>> List([FromQuery] PageOptions options)
+        {
+            var billingStatements = await _repository.List(options);
+            return billingStatements.Select(r => _mapper.Map<BillingStatementDto>(r));
         }
     }
 }

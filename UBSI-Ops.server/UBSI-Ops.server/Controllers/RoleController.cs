@@ -28,6 +28,7 @@ namespace UBSI_Ops.server.Controllers
             _roleRepository = roleRepository;
             _mapper = mapper;
             _logger = logger;
+            _roleService = roleService;
         }
 
         /// <summary>

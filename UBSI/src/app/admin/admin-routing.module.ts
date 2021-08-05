@@ -14,6 +14,7 @@ import { UsersComponent } from './users/users/users.component';
 import { NewRoleComponent } from './roles/new-role/new-role.component';
 import { RadioStationsComponent } from './radio-stations/radio-stations/radio-stations.component';
 import { ViewAgencyComponent } from './agencies/view-agency/view-agency.component';
+import { BillingStatementsComponent } from './billing-statements/billing-statements/billing-statements.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,10 @@ const routes: Routes = [
       {
         path: 'agencies/:code',
         component: ViewAgencyComponent,
+      },
+      {
+        path: 'billing-statements',
+        component: BillingStatementsComponent,
       },
     ],
   },

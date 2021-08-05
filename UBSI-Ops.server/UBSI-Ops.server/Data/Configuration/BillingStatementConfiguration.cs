@@ -4,7 +4,7 @@ using UBSI_Ops.server.BillingStatements;
 
 namespace UBSI_Ops.server.Data.Configuration
 {
-    public class SaleInvoiceConfiguration : IEntityTypeConfiguration<BillingStatement>
+    public class BillingStatementConfiguration : IEntityTypeConfiguration<BillingStatement>
     {
         public void Configure(EntityTypeBuilder<BillingStatement> builder)
         {
@@ -33,6 +33,23 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.BONO).HasColumnName("UIH_BONO").HasColumnType("VARCHAR(50)");
 
             builder.Property(t => t.CENO).HasColumnName("UIH_CENO").HasColumnType("VARCHAR(50)");
+
+            builder.Property(t => t.ImplmentationOrderCode).HasColumnName("IMPLEMENTATION_ORDER_CODE").HasColumnType("VARCHAR2(10)");
+
+            builder.Property(t => t.AgencyCode).HasColumnName("AGENCY_CODE").HasColumnType("NVARCHAR2(40)");
+
+            builder.HasOne(t => t.MediaAgency)
+                .WithMany()
+                .HasForeignKey(t => t.AgencyCode);
+
+            builder.HasOne(t => t.Customer)
+                .WithMany()
+                .HasForeignKey(t => t.CustomerCode);
+
+            builder.HasOne(t => t.ImplementationOrder)
+               .WithMany()
+               .HasForeignKey(t => t.ImplmentationOrderCode);
+
         }
     }
 }
