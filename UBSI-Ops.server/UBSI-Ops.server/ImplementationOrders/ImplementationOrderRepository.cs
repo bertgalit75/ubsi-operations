@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Extensions;
@@ -11,31 +11,15 @@ namespace UBSI_Ops.server.Services
 {
     public class ImplementationOrderRepository : Repository, IImplementationOrderRepository
     {
-        private readonly IMediaAgencyRepository _mediaAgencyRepository;
-
-        public ImplementationOrderRepository(OperationContext context, IMediaAgencyRepository mediaAgencyRepository)
+        public ImplementationOrderRepository(OperationContext context)
             : base(context)
         {
-            _mediaAgencyRepository = mediaAgencyRepository;
         }
 
         public async Task Add(ImplementationOrder implementationOrder)
         {
-            if (implementationOrder.AgencyCode != null)
-            {
-                var agency = await _mediaAgencyRepository.View(implementationOrder.AgencyCode);
-
-                if (agency != null)
-                {
-                    _context.ImplementationOrders.Add(implementationOrder);
-                    await _context.SaveChangesAsync();
-                }
-            }
-            else
-            {
-                _context.ImplementationOrders.Add(implementationOrder);
-                await _context.SaveChangesAsync();
-            }
+            _context.ImplementationOrders.Add(implementationOrder);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<PaginatedList<ImplementationOrder>> List(PageOptions options)
