@@ -22,10 +22,6 @@ namespace UBSI_Ops.server.Data.Configuration
             builder.Property(t => t.Discount).HasColumnName("UID_DISCOUNT").HasColumnType("NUMBER(10)");
 
             builder.Property(t => t.NetPrice).HasColumnName("UID_NET_PRICE").HasColumnType("NUMBER(12)");
-
-            builder.HasOne(t => t.BillingStatement)
-                .WithMany(t => t.BillingStatementItems)
-                .HasForeignKey(t => t.BillingStatementCode);
         }
     }
 }
