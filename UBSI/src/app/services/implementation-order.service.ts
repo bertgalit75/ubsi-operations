@@ -1,7 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { IImplementationOrder } from 'src/app/models/implementation-order.model';
+import { PageOptions } from '../core/pageoptions/PageOptions';
 import { PaginatedList } from '../core/paging/PaginatedList';
 
 @Injectable({
@@ -34,6 +36,20 @@ export class ImplementationOrderService {
       .append('direction', `${sortOrder}`);
     return this.httpClient.get<PaginatedList<IImplementationOrder>>(
       `${this.api}`,
+      {
+        params,
+      }
+    );
+  }
+
+  getIOFromDate(
+    options: PageOptions,
+    year: number,
+    month: number
+  ): Observable<PaginatedList<IImplementationOrder>> {
+    const params = options.toObject();
+    return this.httpClient.get<PaginatedList<IImplementationOrder>>(
+      `${this.api}/${month}/${year}/filter`,
       {
         params,
       }

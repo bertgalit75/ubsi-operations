@@ -35,6 +35,12 @@
             <param name="BillingStatementDto"></param>
             <returns></returns>
         </member>
+        <member name="M:UBSI_Ops.server.Controllers.BillingStatementController.CreateBills(System.Collections.Generic.List{System.String})">
+            <summary>
+            Creare Bills from IO
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:UBSI_Ops.server.Controllers.CustomerController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
             <summary>
             List all customers
@@ -60,11 +66,18 @@
             <param name="createDto"></param>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.ImplementationOrderController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+        <member name="M:UBSI_Ops.server.Controllers.ImplementationOrderController.FilterByDate(UBSI_Ops.server.Core.Paging.PageOptions,System.Int32,System.Int32)">
             <summary>
+            List of implementation Order filtered by month and year
+            </summary>
+            <param name="ImplementationOrderDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UBSI_Ops.server.Controllers.ImplementationOrderController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+            /// <summary>
             List All Implementation Order
             </summary>
-            <param name="ImplentationOrderDto"></param>
+            <param name="ImplementationOrderDto"></param>
             <returns></returns>
         </member>
         <member name="M:UBSI_Ops.server.Controllers.MediaAgencyController.Create(UBSI_Ops.server.MediaAgencies.Models.MediaAgencyDto)">

@@ -9,10 +9,12 @@ import { IBillingStatement } from '../models/billing-statement.model';
 })
 export class BillingStatementService {
   readonly api: string = 'api/billing-statements';
+
   constructor(
     private http: HttpClient,
     @Inject('BASE_URL') public baseUrl: string
   ) {}
+
   getBillingStatements(
     pageIndex: number,
     pageSize: number,
@@ -27,5 +29,9 @@ export class BillingStatementService {
     return this.http.get<PaginatedList<IBillingStatement>>(`${this.api}`, {
       params,
     });
+  }
+
+  createBilling(ioIds: Array<string>): Observable<any> {
+    return this.http.post<any>(`${this.api}/createBills`, ioIds);
   }
 }

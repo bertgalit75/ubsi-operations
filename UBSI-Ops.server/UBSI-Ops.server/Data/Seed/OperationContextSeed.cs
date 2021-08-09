@@ -1,8 +1,9 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using UBSI_Ops.server.BillingStatements;
 using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
+using UBSI_Ops.server.ImplementationOrders;
 
 namespace UBSI_Ops.server.Data.Seed
 {
@@ -18,6 +19,7 @@ namespace UBSI_Ops.server.Data.Seed
             context.MediaAgencies.AddRange(GetMediaAgencies());
             context.Roles.AddRange(GetRoles());
             context.BillingStatements.AddRange(GetBillingStatements());
+            context.ImplementationOrders.AddRange(GetImplementationOrders());
 
             await context.SaveChangesAsync();
         }
@@ -140,6 +142,45 @@ namespace UBSI_Ops.server.Data.Seed
                     Id = "1",
                     Name = "admin",
                     NormalizedName = "admin",
+                }
+            };
+        }
+
+        private Collection<ImplementationOrder> GetImplementationOrders()
+        {
+            return new Collection<ImplementationOrder>()
+            {
+                new ImplementationOrder()
+                {
+                    Code = "M200",
+                    AgencyCode = "002",
+                    ClientCode = "002",
+                    AccountExecutiveCode = "002",
+                    Tagline = "Masarap kahit walang sauce",
+                    Date = new System.DateTime(2020, 1, 1),
+                    Product = "Chooks to go",
+                    BookingOrderNo = "BO#1023910234",
+                    PurchaseOrderNo = "2340A98120313",
+                    ReferenceCENo = "1092301239012311",
+                    Bookings = new Collection<ImplementationOrderBooking>()
+                    {
+                        new ImplementationOrderBooking()
+                        {
+                            StationCode = "002",
+                            PeriodStart = new System.DateTime(2020, 1, 1),
+                            PeriodEnd = new System.DateTime(2020, 1, 31),
+                            Monday = true,
+                            Tuesday = true,
+                            Wednesday = true,
+                            Thursday = true,
+                            Friday = true,
+                            Saturday = false,
+                            Sunday = false,
+                            Duration = 30,
+                            NoOfSpots = 4,
+                            GrossAmount = 10000
+                        }
+                    }
                 }
             };
         }

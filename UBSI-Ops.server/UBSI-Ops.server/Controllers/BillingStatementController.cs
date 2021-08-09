@@ -1,5 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Billing.Models;
 using UBSI_Ops.server.BillingStatements;
@@ -42,6 +44,20 @@ namespace UBSI_Ops.server.Controllers
         {
             var billingStatements = await _repository.List(options);
             return billingStatements.Select(r => _mapper.Map<BillingStatementDto>(r));
+        }
+
+        /// <summary>
+        /// Creare Bills from IO
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("createBills")]
+        public List<string> CreateBills([FromBody] List<string> code)
+        {
+            code.ForEach(x =>
+            {
+                Console.WriteLine(x);
+            });
+            return code;
         }
     }
 }

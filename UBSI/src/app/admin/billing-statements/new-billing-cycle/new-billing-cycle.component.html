@@ -1,0 +1,143 @@
+<nz-page-header [nzGhost]="false" (nzBack)="goToBack()" nzBackIcon>
+  <nz-page-header-title>New Billing Cycle</nz-page-header-title>
+</nz-page-header>
+
+<form nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="search()">
+  <nz-card nzTitle="Filter Billing Statements" class="m-4">
+    <div nz-row nzGutter="24">
+      <div nz-col nzSpan="11">
+        <nz-form-item>
+          <nz-form-label>Year</nz-form-label>
+          <nz-form-control nzErrorTip="Year is required">
+            <nz-date-picker
+              class="w-full"
+              nzMode="year"
+              nzPlaceHolder="Select a year"
+              formControlName="year"
+              #year
+            ></nz-date-picker>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="11">
+        <nz-form-item>
+          <nz-form-label>Month</nz-form-label>
+          <nz-form-control nzErrorTip="Month is required">
+            <nz-select
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Select a Month"
+              formControlName="month"
+              #month
+            >
+              <nz-option
+                *ngFor="let month of months"
+                [nzLabel]="month.name"
+                [nzValue]="month.id"
+              ></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="2">
+        <nz-form-item>
+          <nz-form-label></nz-form-label>
+          <button
+            nz-button
+            type="submit"
+            nzSize="medium"
+            nzType="primary"
+            class="w-full"
+            [nzLoading]="isSearching"
+          >
+            <i nz-icon nzType="search" nzTheme="outline"></i> Search
+          </button>
+        </nz-form-item>
+      </div>
+    </div>
+  </nz-card>
+</form>
+<div *ngIf="displayIO">
+  <nz-card nzTitle="Implementation Order" class="m-4">
+    <nz-table
+      #basicTable
+      nzShowSizeChanger
+      [nzData]="dataSet"
+      [nzFrontPagination]="false"
+      [nzTotal]="total"
+      [nzPageSize]="pageSize"
+      [nzPageIndex]="pageIndex"
+      (nzQueryParams)="onQueryParamsChange($event)"
+    >
+      <thead>
+        <tr>
+          <th nzColumnKey="code" [nzSortFn]="true">Code</th>
+          <th nzColumnKey="client" [nzSortFn]="true">Client</th>
+          <th nzColumnKey="agency" [nzSortFn]="true">Agency</th>
+          <th nzColumnKey="date" [nzSortFn]="true">Date</th>
+          <th nzColumnKey="product" [nzSortFn]="true">Product</th>
+          <th>Station</th>
+          <th>Booking Period</th>
+          <th
+            [nzShowCheckbox]="showCheckBox"
+            [(nzChecked)]="checked"
+            [nzIndeterminate]="indeterminate"
+            (nzCheckedChange)="onAllChecked($event)"
+          ></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let io of basicTable.data">
+          <td>{{ io.code }}</td>
+          <td>{{ io.customer?.name }}</td>
+          <td>{{ io.mediaAgency?.name }}</td>
+          <td>{{ io.date | date: "longDate" }}</td>
+          <td>{{ io.product }}</td>
+          <td>
+            <ng-container *ngFor="let booking of io.bookings; let last = last">
+              <ion-label *ngIf="!last">{{ booking.stationCode }},</ion-label>
+              <ion-label *ngIf="last">
+                {{ booking.stationCode }}
+              </ion-label>
+            </ng-container>
+          </td>
+          <td>
+            <ng-container *ngFor="let booking of io.bookings; let last = last">
+              <div *ngIf="io.bookings.length == 1">
+                {{ booking.periodStart | date: "longDate" }} -
+                {{ booking.periodEnd | date: "longDate" }}
+              </div>
+              <div *ngIf="io.bookings.length != 1">
+                <small
+                  >{{ booking.periodStart | date: "longDate" }} -
+                  {{ booking.periodEnd | date: "longDate" }}</small
+                >
+              </div>
+            </ng-container>
+          </td>
+
+          <td
+            [nzChecked]="setOfCheckedId.has(io.code)"
+            (nzCheckedChange)="onItemChecked(io.code, $event)"
+          ></td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </nz-card>
+
+  <div class="m-4">
+    <button
+      nz-button
+      type="submit"
+      nzSize="large"
+      nzType="primary"
+      [nzLoading]="isSaving"
+      (click)="createBills()"
+    >
+      Create Bills
+    </button>
+    <button nz-button type="button" nzSize="large" (click)="goToBack()">
+      Cancel
+    </button>
+  </div>
+</div>

@@ -8,6 +8,8 @@ namespace UBSI_Ops.server.Services.Intefaces
     {
         Task Add(ImplementationOrder implementationOrder);
 
+        Task<PaginatedList<ImplementationOrder>> Filter(PageOptions pageOptions, int year, int month);
+
         Task<PaginatedList<ImplementationOrder>> List(PageOptions options);
     }
 }

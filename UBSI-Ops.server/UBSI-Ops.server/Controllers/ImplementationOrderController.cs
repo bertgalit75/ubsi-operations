@@ -40,9 +40,22 @@ namespace UBSI_Ops.server.Controllers
         }
 
         /// <summary>
+        /// List of implementation Order filtered by month and year
+        /// </summary>
+        /// <param name="ImplementationOrderDto"></param>
+        /// <returns></returns>
+        [HttpGet("{year}/{month}/filter")]
+        public async Task<ActionResult<PaginatedList<ImplementationOrderDto>>> FilterByDate([FromQuery] PageOptions pageOptions, int year, int month)
+        {
+            var implementationOrders = await _repository.Filter(pageOptions, year, month);
+
+            return implementationOrders.Select(r => _mapper.Map<ImplementationOrderDto>(r));
+        }
+
+        /// /// <summary>
         /// List All Implementation Order
         /// </summary>
-        /// <param name="ImplentationOrderDto"></param>
+        /// <param name="ImplementationOrderDto"></param>
         /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<PaginatedList<ImplementationOrderDto>>> List([FromQuery] PageOptions options)

@@ -4,6 +4,14 @@
 </nz-page-header>
 
 <nz-card class="m-4">
+  <button
+    nz-button
+    nzType="primary"
+    [routerLink]="['/billing-statements', 'new']"
+    class="mb-2"
+  >
+    New Billing Cycle
+  </button>
   <nz-table
     #basicTable
     nzShowSizeChanger
@@ -20,7 +28,6 @@
         <th nzColumnKey="io" [nzSortFn]="true">IO No.</th>
         <th nzColumnKey="client" [nzSortFn]="true">Client</th>
         <th nzColumnKey="agency" [nzSortFn]="true">Agency</th>
-
         <th nzColumnKey="date" [nzSortFn]="true">Date</th>
         <th>Total Amount</th>
         <th>Action</th>

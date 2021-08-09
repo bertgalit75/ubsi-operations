@@ -70,5 +70,23 @@ namespace UBSI_Ops.server.FunctionalTests
             implementationOrer.Code.Should().Be("M100");
             implementationOrer.Bookings.Should().NotBeEmpty();
         }
+
+        [Fact]
+        public async Task ShouldRetrieveIOFilteredByDate()
+        {
+            // Arrange
+            var client = _factory.CreateClient();
+
+            // Act
+            var response = await client.GetAsync("/api/implementation-orders/2020/1/filter");
+
+            // Assert
+            response.EnsureSuccessStatusCode();
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var filteredImplemetationOrder = JsonSerializer.Deserialize<PaginatedListTest<ImplementationOrderDto>>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+
+            filteredImplemetationOrder.Items.Should().NotBeEmpty();
+        }
     }
 }
