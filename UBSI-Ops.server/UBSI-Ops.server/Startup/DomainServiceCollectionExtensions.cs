@@ -29,6 +29,7 @@ namespace UBSI_Ops.server
             services.AddTransient<IImplementationOrderRepository, ImplementationOrderRepository>();
             services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<IBillingStatementRepository, BillingStatementRepository>();
+            services.AddTransient<IFileEntryRepository, FileEntryRepository>();
 
             services.AddScoped<LoginService>();
             services.AddScoped<JwtConfiguration>();
