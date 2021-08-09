@@ -15,7 +15,6 @@ import { NewRoleComponent } from './roles/new-role/new-role.component';
 import { RadioStationsComponent } from './radio-stations/radio-stations/radio-stations.component';
 import { ViewAgencyComponent } from './agencies/view-agency/view-agency.component';
 import { BillingStatementsComponent } from './billing-statements/billing-statements/billing-statements.component';
-import { BillingStatementsComponent } from './billing-statements/billing-statements/billing-statements.component';
 import { NewBillingCycleComponent } from './billing-statements/new-billing-cycle/new-billing-cycle.component';
 
 const routes: Routes = [
@@ -78,10 +77,6 @@ const routes: Routes = [
       {
         path: 'agencies/:code',
         component: ViewAgencyComponent,
-      },
-      {
-        path: 'billing-statements',
-        component: BillingStatementsComponent,
       },
       {
         path: 'billing-statements',
