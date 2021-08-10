@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UBSI_Ops.server.CertificateOfPerformances;
-using UBSI_Ops.server.Core.Extensions;
+using Ropes.API.CertificateOfPerformances;
+using Ropes.API.Core.Extensions;
 
-namespace UBSI_Ops.server.Data.Configuration
+namespace Ropes.API.Data.Configuration
 {
     public class CertificateOfPerformanceConfiguration : IEntityTypeConfiguration<CertificateOfPerformance>
     {

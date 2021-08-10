@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace UBSI_Ops.server.Core.Emails
+namespace Ropes.API.Core.Emails
 {
     public class Email
     {

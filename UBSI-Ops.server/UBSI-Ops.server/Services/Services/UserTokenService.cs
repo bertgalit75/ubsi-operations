@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using UBSI_Ops.server.Entities.Identity;
+using Ropes.API.Entities.Identity;
 
-namespace UBSI_Ops.server.Services.Services
+namespace Ropes.API.Services.Services
 {
     public class UserTokenService
     {

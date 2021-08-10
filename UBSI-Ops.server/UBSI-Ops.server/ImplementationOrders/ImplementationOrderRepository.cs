@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Extensions;
-using UBSI_Ops.server.Core.Paging;
-﻿using System.Threading.Tasks;
-using UBSI_Ops.server.Data;
-using UBSI_Ops.server.ImplementationOrders;
-using UBSI_Ops.server.Services.Intefaces;
+using Ropes.API.Core.Extensions;
+using Ropes.API.Core.Paging;
+using System.Threading.Tasks;
 
-namespace UBSI_Ops.server.Services
+using Ropes.API.Data;
+using Ropes.API.ImplementationOrders;
+using Ropes.API.Services.Intefaces;
+
+namespace Ropes.API.Services
 {
     public class ImplementationOrderRepository : Repository, IImplementationOrderRepository
     {

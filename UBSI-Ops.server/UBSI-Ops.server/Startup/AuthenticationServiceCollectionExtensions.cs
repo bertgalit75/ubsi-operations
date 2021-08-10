@@ -6,12 +6,12 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
-using UBSI_Ops.server.Auth;
-using UBSI_Ops.server.Data;
-using UBSI_Ops.server.Data.Configuration;
-using UBSI_Ops.server.Entities.Identity;
+using Ropes.API.Auth;
+using Ropes.API.Data;
+using Ropes.API.Data.Configuration;
+using Ropes.API.Entities.Identity;
 
-namespace UBSI_Ops.server
+namespace Ropes.API
 {
     public static class AuthenticationServiceCollectionExtensions
     {

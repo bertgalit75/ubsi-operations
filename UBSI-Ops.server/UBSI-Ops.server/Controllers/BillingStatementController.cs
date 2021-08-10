@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Billing.Models;
-using UBSI_Ops.server.BillingStatements;
-using UBSI_Ops.server.BillingStatements.Models;
-using UBSI_Ops.server.Core.Paging;
+using Ropes.API.Billing.Models;
+using Ropes.API.BillingStatements;
+using Ropes.API.BillingStatements.Models;
+using Ropes.API.Core.Paging;
 
-namespace UBSI_Ops.server.Controllers
+namespace Ropes.API.Controllers
 {
     [Route("api/billing-statements")]
     [ApiController]

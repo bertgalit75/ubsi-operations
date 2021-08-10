@@ -2,11 +2,11 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Paging;
-using UBSI_Ops.server.Services.Intefaces;
-using UBSI_Ops.server.Vendors.Models;
+using Ropes.API.Core.Paging;
+using Ropes.API.Services.Intefaces;
+using Ropes.API.Vendors.Models;
 
-namespace UBSI_Ops.server.Controllers
+namespace Ropes.API.Controllers
 {
     [Route("api/vendors")]
     [ApiController]

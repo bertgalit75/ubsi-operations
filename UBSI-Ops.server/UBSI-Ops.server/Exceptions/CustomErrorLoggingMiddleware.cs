@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace UBSI_Ops.server.Exceptions
+namespace Ropes.API.Exceptions
 {
     public class CustomErrorLoggingMiddleware
     {

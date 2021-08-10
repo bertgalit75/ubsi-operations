@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Configuration;
 
-namespace UBSI_Ops.server.Core.Configuration
+namespace Ropes.API.Core.Configuration
 {
     public class EmailConfiguration
     {

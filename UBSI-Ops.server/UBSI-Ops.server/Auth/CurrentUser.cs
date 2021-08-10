@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Http;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace UBSI_Ops.server.Auth
+namespace Ropes.API.Auth
 {
     public class CurrentUser : ICurrentUser
     {

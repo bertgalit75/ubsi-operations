@@ -1,4 +1,4 @@
-namespace UBSI_Ops.server.BillingStatements
+namespace Ropes.API.BillingStatements
 {
     public class BillingStatementItem
     {

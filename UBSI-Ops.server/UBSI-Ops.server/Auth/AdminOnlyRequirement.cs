@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 
-namespace UBSI_Ops.server.Auth
+namespace Ropes.API.Auth
 {
     public class AdminOnlyRequirement : IAuthorizationRequirement
     {

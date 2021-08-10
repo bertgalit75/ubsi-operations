@@ -1,4 +1,4 @@
-namespace UBSI_Ops.server.AccountExecutives.Models
+namespace Ropes.API.AccountExecutives.Models
 {
     public class AccountExecutiveDto
     {

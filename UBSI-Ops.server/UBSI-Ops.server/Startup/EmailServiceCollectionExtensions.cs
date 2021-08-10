@@ -1,10 +1,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using UBSI_Ops.server.Core.Configuration;
-using UBSI_Ops.server.Core.Emails;
+using Ropes.API.Core.Configuration;
+using Ropes.API.Core.Emails;
 
-namespace UBSI_Ops.server
+namespace Ropes.API
 {
     public static class EmailServiceCollectionExtensions
     {

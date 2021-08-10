@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace UBSI_Ops.server.Core.Files
+namespace Ropes.API.Core.Files
 {
     /// <summary>
     /// This is only for testing. Do not use in production.

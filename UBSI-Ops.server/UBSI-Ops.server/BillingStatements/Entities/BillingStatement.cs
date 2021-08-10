@@ -1,10 +1,10 @@
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations.Schema;
-using UBSI_Ops.server.Entities;
-using UBSI_Ops.server.ImplementationOrders;
+using Ropes.API.Entities;
+using Ropes.API.ImplementationOrders;
 
-namespace UBSI_Ops.server.BillingStatements
+namespace Ropes.API.BillingStatements
 {
     public class BillingStatement
     {

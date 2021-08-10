@@ -1,6 +1,6 @@
-using UBSI_Ops.server.UserRoles.Models;
+using Ropes.API.UserRoles.Models;
 
-namespace UBSI_Ops.server.Users.Models
+namespace Ropes.API.Users.Models
 {
     public class UserDto
     {

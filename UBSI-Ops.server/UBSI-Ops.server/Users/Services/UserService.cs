@@ -2,13 +2,13 @@ using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Paging;
-using UBSI_Ops.server.Roles.Models;
-using UBSI_Ops.server.Services.Intefaces;
-using UBSI_Ops.server.UserRoles.Models;
-using UBSI_Ops.server.Users.Models;
+using Ropes.API.Core.Paging;
+using Ropes.API.Roles.Models;
+using Ropes.API.Services.Intefaces;
+using Ropes.API.UserRoles.Models;
+using Ropes.API.Users.Models;
 
-namespace UBSI_Ops.server.Users.Services
+namespace Ropes.API.Users.Services
 {
     public class UserService
     {

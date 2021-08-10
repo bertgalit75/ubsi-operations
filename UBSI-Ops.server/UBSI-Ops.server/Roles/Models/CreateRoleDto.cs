@@ -1,4 +1,4 @@
-namespace UBSI_Ops.server.Roles.Models
+namespace Ropes.API.Roles.Models
 {
     public class CreateRoleDto
     {

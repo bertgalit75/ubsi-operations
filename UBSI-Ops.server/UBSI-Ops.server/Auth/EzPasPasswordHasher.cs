@@ -3,7 +3,7 @@ using System;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace UBSI_Ops.server.Auth
+namespace Ropes.API.Auth
 {
     public class EzPasPasswordHasher<TUser> : PasswordHasher<TUser> where TUser : class
     {

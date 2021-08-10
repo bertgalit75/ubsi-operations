@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using UBSI_Ops.server.CertificateOfPerformances;
-using UBSI_Ops.server.Entities;
+using Ropes.API.CertificateOfPerformances;
+using Ropes.API.Entities;
 
-namespace UBSI_Ops.server.ImplementationOrders
+namespace Ropes.API.ImplementationOrders
 {
     public class ImplementationOrder : IBaseEntity
     {

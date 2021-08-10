@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace UBSI_Ops.server
+namespace Ropes.API
 {
     public static class HangfireServiceCollectionExtensions
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace UBSI_Ops.server.FunctionalTests
+namespace Ropes.API.FunctionalTests
 {
     public class PaginatedListTest<T>
     {

@@ -1,4 +1,4 @@
-namespace UBSI_Ops.server.Entities
+namespace Ropes.API.Entities
 {
     public class UserOrganization : BaseEntity
     {

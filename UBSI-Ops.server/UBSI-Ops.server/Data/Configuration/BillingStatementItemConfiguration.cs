@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UBSI_Ops.server.BillingStatements;
+using Ropes.API.BillingStatements;
 
-namespace UBSI_Ops.server.Data.Configuration
+namespace Ropes.API.Data.Configuration
 {
     public class BillingStatementItemConfiguration : IEntityTypeConfiguration<BillingStatementItem>
     {

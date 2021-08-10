@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UBSI_Ops.server.CertificateOfPerformances;
+using Ropes.API.CertificateOfPerformances;
 
-namespace UBSI_Ops.server.Data.Configuration
+namespace Ropes.API.Data.Configuration
 {
     public class CertificateOfPerformanceTimelogConfiguration : IEntityTypeConfiguration<CertificateOfPerformanceTimelog>
     {

@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Data;
-using UBSI_Ops.server.Entities.Identity;
-using UBSI_Ops.server.Exceptions;
-using UBSI_Ops.server.Services.Services;
+using Ropes.API.Data;
+using Ropes.API.Entities.Identity;
+using Ropes.API.Exceptions;
+using Ropes.API.Services.Services;
 
-namespace UBSI_Ops.server.Services
+namespace Ropes.API.Services
 {
     public class LoginService
     {

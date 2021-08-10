@@ -2,10 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using UBSI_Ops.server.Data;
-using UBSI_Ops.server.Data.Seed;
+using Ropes.API.Data;
+using Ropes.API.Data.Seed;
 
-namespace UBSI_Ops.server
+namespace Ropes.API
 {
     public static class DatabaseServiceCollectionExtensions
     {

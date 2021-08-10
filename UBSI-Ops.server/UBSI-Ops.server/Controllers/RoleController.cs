@@ -2,12 +2,12 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Paging;
-using UBSI_Ops.server.Roles.Models;
-using UBSI_Ops.server.Services.Intefaces;
-using UBSI_Ops.server.Services.Services;
+using Ropes.API.Core.Paging;
+using Ropes.API.Roles.Models;
+using Ropes.API.Services.Intefaces;
+using Ropes.API.Services.Services;
 
-namespace UBSI_Ops.server.Controllers
+namespace Ropes.API.Controllers
 {
     [Route("api/roles")]
     [ApiController]

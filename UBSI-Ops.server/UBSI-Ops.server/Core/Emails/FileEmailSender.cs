@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UBSI_Ops.server.Core.Emails
+namespace Ropes.API.Core.Emails
 {
     public class FileEmailSender : IEmailSender
     {

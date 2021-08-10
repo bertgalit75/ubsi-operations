@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
 
-namespace UBSI_Ops.server.Auth
+namespace Ropes.API.Auth
 {
     public class AdminOnlyPolicyProvider : IAuthorizationPolicyProvider
     {

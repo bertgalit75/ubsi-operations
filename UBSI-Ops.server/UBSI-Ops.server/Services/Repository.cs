@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Data;
+using Ropes.API.Data;
 
-namespace UBSI_Ops.server.Services
+namespace Ropes.API.Services
 {
     public abstract class Repository
     {

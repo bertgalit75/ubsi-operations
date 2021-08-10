@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Routing;
 using System;
 using System.Globalization;
 
-namespace UBSI_Ops.server.Core.Hashids
+namespace Ropes.API.Core.Hashids
 {
     public class HashidsRouteConstraint
         : IRouteConstraint

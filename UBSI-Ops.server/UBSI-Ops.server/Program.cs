@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 
-namespace UBSI_Ops.server
+namespace Ropes.API
 {
     public class Program
     {

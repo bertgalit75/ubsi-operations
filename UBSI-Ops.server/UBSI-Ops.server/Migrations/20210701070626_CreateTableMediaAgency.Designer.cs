@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
-using UBSI_Ops.server.Data;
+using Ropes.API.Data;
 
-namespace UBSI_Ops.server.Migrations
+namespace Ropes.API.Migrations
 {
     [DbContext(typeof(OperationContext))]
     [Migration("20210701070626_CreateTableMediaAgency")]

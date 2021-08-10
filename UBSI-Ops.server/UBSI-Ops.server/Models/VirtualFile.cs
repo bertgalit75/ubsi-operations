@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace UBSI_Ops.server.Models
+namespace Ropes.API.Models
 {
     public class VirtualFile : IDisposable
     {

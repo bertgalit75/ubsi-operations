@@ -1,9 +1,9 @@
 using System;
-using UBSI_Ops.server.Customers.Models;
-using UBSI_Ops.server.ImplementationOrders;
-using UBSI_Ops.server.MediaAgencies.Models;
+using Ropes.API.Customers.Models;
+using Ropes.API.ImplementationOrders;
+using Ropes.API.MediaAgencies.Models;
 
-namespace UBSI_Ops.server.BillingStatements.Models
+namespace Ropes.API.BillingStatements.Models
 {
     public class BillingStatementDto
     {

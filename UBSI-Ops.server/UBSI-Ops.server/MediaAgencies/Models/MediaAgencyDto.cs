@@ -1,4 +1,4 @@
-namespace UBSI_Ops.server.MediaAgencies.Models
+namespace Ropes.API.MediaAgencies.Models
 {
     public class MediaAgencyDto
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace UBSI_Ops.server.Billing.Models
+namespace Ropes.API.Billing.Models
 {
     public class NewBillingCycleDto
     {

@@ -6,7 +6,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace UBSI_Ops.server.Core.Files
+namespace Ropes.API.Core.Files
 {
     /// <summary>
     /// File service used to connect to AWS S3 service.

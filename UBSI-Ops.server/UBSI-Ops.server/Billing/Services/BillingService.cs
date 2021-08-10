@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using UBSI_Ops.server.ImplementationOrders;
+using Ropes.API.ImplementationOrders;
 
-namespace UBSI_Ops.server.Billing.Services
+namespace Ropes.API.Billing.Services
 {
     public class BillingService
     {

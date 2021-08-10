@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
-using UBSI_Ops.server.AutoMapperProfile;
+using Ropes.API.AutoMapperProfile;
 
-namespace UBSI_Ops.server
+namespace Ropes.API
 {
     public static class AutoMapperServiceCollectionExtensions
     {

@@ -1,20 +1,20 @@
 using AutoMapper;
-using UBSI_Ops.server.AccountExecutives.Models;
-using UBSI_Ops.server.BillingStatements;
-using UBSI_Ops.server.BillingStatements.Models;
-using UBSI_Ops.server.Customers.Models;
-using UBSI_Ops.server.Entities;
-using UBSI_Ops.server.Entities.Identity;
-using UBSI_Ops.server.ImplementationOrders;
-using UBSI_Ops.server.ImplementationOrders.Models;
-using UBSI_Ops.server.MediaAgencies.Models;
-using UBSI_Ops.server.RadioStations.Models;
-using UBSI_Ops.server.Roles.Models;
-using UBSI_Ops.server.UserRoles.Models;
-using UBSI_Ops.server.Users.Models;
-using UBSI_Ops.server.Vendors.Models;
+using Ropes.API.AccountExecutives.Models;
+using Ropes.API.BillingStatements;
+using Ropes.API.BillingStatements.Models;
+using Ropes.API.Customers.Models;
+using Ropes.API.Entities;
+using Ropes.API.Entities.Identity;
+using Ropes.API.ImplementationOrders;
+using Ropes.API.ImplementationOrders.Models;
+using Ropes.API.MediaAgencies.Models;
+using Ropes.API.RadioStations.Models;
+using Ropes.API.Roles.Models;
+using Ropes.API.UserRoles.Models;
+using Ropes.API.Users.Models;
+using Ropes.API.Vendors.Models;
 
-namespace UBSI_Ops.server.AutoMapperProfile
+namespace Ropes.API.AutoMapperProfile
 {
     public class AutoMapperProfileConfiguration : Profile
     {

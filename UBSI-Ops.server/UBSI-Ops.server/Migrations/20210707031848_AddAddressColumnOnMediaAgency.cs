@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace UBSI_Ops.server.Migrations
+namespace Ropes.API.Migrations
 {
     public partial class AddAddressColumnOnMediaAgency : Migration
     {

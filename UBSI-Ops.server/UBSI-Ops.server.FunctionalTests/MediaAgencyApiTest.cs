@@ -3,10 +3,10 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using UBSI_Ops.server.MediaAgencies.Models;
+using Ropes.API.MediaAgencies.Models;
 using Xunit;
 
-namespace UBSI_Ops.server.FunctionalTests
+namespace Ropes.API.FunctionalTests
 {
     public class MediaAgencyApiTest : IClassFixture<CustomWebApplicationFactory>
     {

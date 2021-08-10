@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Exceptions;
-using UBSI_Ops.server.Models.Request;
-using UBSI_Ops.server.Services;
+using Ropes.API.Exceptions;
+using Ropes.API.Models.Request;
+using Ropes.API.Services;
 
-namespace UBSI_Ops.server.Controllers
+namespace Ropes.API.Controllers
 {
     [Route("api/account")]
     [ApiController]

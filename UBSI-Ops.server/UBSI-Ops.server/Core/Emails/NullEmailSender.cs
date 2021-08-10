@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace UBSI_Ops.server.Core.Emails
+namespace Ropes.API.Core.Emails
 {
     public class NullEmailSender : IEmailSender
     {

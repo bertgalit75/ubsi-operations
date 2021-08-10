@@ -1,4 +1,4 @@
-namespace UBSI_Ops.server.Customers.Models
+namespace Ropes.API.Customers.Models
 {
     public class CustomerDto
 

@@ -2,12 +2,12 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Extensions;
-using UBSI_Ops.server.Core.Paging;
-using UBSI_Ops.server.Data;
-using UBSI_Ops.server.Services;
+using Ropes.API.Core.Extensions;
+using Ropes.API.Core.Paging;
+using Ropes.API.Data;
+using Ropes.API.Services;
 
-namespace UBSI_Ops.server.BillingStatements
+namespace Ropes.API.BillingStatements
 {
     public class BillingStatementRepository : Repository, IBillingStatementRepository
     {

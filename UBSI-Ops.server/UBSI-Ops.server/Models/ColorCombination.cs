@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UBSI_Ops.server.Models
+namespace Ropes.API.Models
 {
     public class ColorCombination
     {

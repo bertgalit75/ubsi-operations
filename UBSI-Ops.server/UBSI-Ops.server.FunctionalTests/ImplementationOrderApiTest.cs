@@ -3,10 +3,10 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
-using UBSI_Ops.server.ImplementationOrders.Models;
+using Ropes.API.ImplementationOrders.Models;
 using Xunit;
 
-namespace UBSI_Ops.server.FunctionalTests
+namespace Ropes.API.FunctionalTests
 {
     public class ImplementationOrderApiTest : IClassFixture<CustomWebApplicationFactory>
     {

@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using System;
 
-namespace UBSI_Ops.server.Data.Configuration
+namespace Ropes.API.Data.Configuration
 {
     [Obsolete("This should not be here")]
     public class JwtConfiguration

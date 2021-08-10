@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using System;
 
-namespace UBSI_Ops.server.Entities.Identity
+namespace Ropes.API.Entities.Identity
 {
     public class Role : IdentityRole<string>, IBaseEntity
     {

@@ -1,4 +1,4 @@
-namespace UBSI_Ops.server.Core.Hashids
+namespace Ropes.API.Core.Hashids
 {
     public struct HashidInt
     {

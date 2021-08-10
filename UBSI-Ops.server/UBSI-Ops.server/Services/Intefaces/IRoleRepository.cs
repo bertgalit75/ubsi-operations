@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Paging;
-using UBSI_Ops.server.Entities.Identity;
+using Ropes.API.Core.Paging;
+using Ropes.API.Entities.Identity;
 
-namespace UBSI_Ops.server.Services.Intefaces
+namespace Ropes.API.Services.Intefaces
 {
     public interface IRoleRepository
     {

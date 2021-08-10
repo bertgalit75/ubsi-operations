@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using UBSI_Ops.server.Data.Configuration;
+using Ropes.API.Data.Configuration;
 
-namespace UBSI_Ops.server.Services.Services
+namespace Ropes.API.Services.Services
 {
     public class TokenService
     {

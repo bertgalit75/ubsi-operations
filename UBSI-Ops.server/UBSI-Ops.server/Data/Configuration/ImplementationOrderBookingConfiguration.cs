@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UBSI_Ops.server.Core.Extensions;
-using UBSI_Ops.server.ImplementationOrders;
+using Ropes.API.Core.Extensions;
+using Ropes.API.ImplementationOrders;
 
-namespace UBSI_Ops.server.Data.Configuration
+namespace Ropes.API.Data.Configuration
 {
     public class ImplementationOrderBookingConfiguration : IEntityTypeConfiguration<ImplementationOrderBooking>
     {

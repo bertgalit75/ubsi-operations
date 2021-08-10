@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Extensions;
-using UBSI_Ops.server.Core.Paging;
-using UBSI_Ops.server.Data;
-using UBSI_Ops.server.Entities;
-using UBSI_Ops.server.Services.Intefaces;
+using Ropes.API.Core.Extensions;
+using Ropes.API.Core.Paging;
+using Ropes.API.Data;
+using Ropes.API.Entities;
+using Ropes.API.Services.Intefaces;
 
-namespace UBSI_Ops.server.Services
+namespace Ropes.API.Services
 {
     public class RadioStationRepository : Repository, IRadioStationRepository
     {

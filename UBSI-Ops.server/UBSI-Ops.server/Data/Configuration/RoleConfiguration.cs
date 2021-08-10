@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UBSI_Ops.server.Core.Extensions;
-using UBSI_Ops.server.Entities.Identity;
+using Ropes.API.Core.Extensions;
+using Ropes.API.Entities.Identity;
 
-namespace UBSI_Ops.server.Data.Configuration
+namespace Ropes.API.Data.Configuration
 {
     public class RoleConfiguration : IEntityTypeConfiguration<Role>
     {

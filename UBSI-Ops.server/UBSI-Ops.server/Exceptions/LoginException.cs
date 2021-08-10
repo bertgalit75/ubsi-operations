@@ -1,6 +1,6 @@
 using System;
 
-namespace UBSI_Ops.server.Exceptions
+namespace Ropes.API.Exceptions
 {
     public class LoginException : Exception
     {

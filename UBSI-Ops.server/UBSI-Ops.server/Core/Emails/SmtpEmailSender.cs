@@ -4,7 +4,7 @@ using System.Net.Mail;
 using System.Net.Mime;
 using System.Threading.Tasks;
 
-namespace UBSI_Ops.server.Core.Emails
+namespace Ropes.API.Core.Emails
 {
     public class SmtpEmailSender : IEmailSender
     {

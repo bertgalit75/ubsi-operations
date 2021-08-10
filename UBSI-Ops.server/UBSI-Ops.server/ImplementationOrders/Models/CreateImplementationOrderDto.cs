@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace UBSI_Ops.server.ImplementationOrders.Models
+namespace Ropes.API.ImplementationOrders.Models
 {
     public class CreateImplementationOrderDto
     {

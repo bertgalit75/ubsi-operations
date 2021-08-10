@@ -1,4 +1,4 @@
-namespace UBSI_Ops.server.FileEntries.Models
+namespace Ropes.API.FileEntries.Models
 {
     public class FileEntryDto
     {

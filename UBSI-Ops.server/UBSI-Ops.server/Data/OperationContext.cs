@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using UBSI_Ops.server.BillingStatements;
-using UBSI_Ops.server.Entities;
-using UBSI_Ops.server.Entities.Identity;
-using UBSI_Ops.server.ImplementationOrders;
+using Ropes.API.BillingStatements;
+using Ropes.API.Entities;
+using Ropes.API.Entities.Identity;
+using Ropes.API.ImplementationOrders;
 
-namespace UBSI_Ops.server.Data
+namespace Ropes.API.Data
 {
     public class OperationContext
         : IdentityDbContext<

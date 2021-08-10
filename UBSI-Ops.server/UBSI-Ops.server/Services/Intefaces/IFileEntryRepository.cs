@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Entities;
+using Ropes.API.Entities;
 
-namespace UBSI_Ops.server.Services.Intefaces
+namespace Ropes.API.Services.Intefaces
 {
     public interface IFileEntryRepository
     {

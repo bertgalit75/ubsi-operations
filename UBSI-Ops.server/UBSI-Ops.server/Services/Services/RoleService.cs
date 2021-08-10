@@ -4,11 +4,11 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Data;
-using UBSI_Ops.server.Entities.Identity;
-using UBSI_Ops.server.Roles.Models;
+using Ropes.API.Data;
+using Ropes.API.Entities.Identity;
+using Ropes.API.Roles.Models;
 
-namespace UBSI_Ops.server.Services.Services
+namespace Ropes.API.Services.Services
 {
     public class RoleService
     {

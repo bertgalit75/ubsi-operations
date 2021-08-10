@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using UBSI_Ops.server.Core.Hashids;
-using UBSI_Ops.server.Data.Configuration;
-using UBSI_Ops.server.Entities.Identity;
+using Ropes.API.Core.Hashids;
+using Ropes.API.Data.Configuration;
+using Ropes.API.Entities.Identity;
 
-namespace UBSI_Ops.server
+namespace Ropes.API
 {
     public class Startup
     {

@@ -3,7 +3,7 @@ using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace UBSI_Ops.server.Core.Hashids
+namespace Ropes.API.Core.Hashids
 {
     public class HashidsJsonConverter : JsonConverter<HashidInt>
     {

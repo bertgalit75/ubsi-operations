@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Files;
-using UBSI_Ops.server.Entities;
-using UBSI_Ops.server.FileEntries.Models;
-using UBSI_Ops.server.Services.Intefaces;
+using Ropes.API.Core.Files;
+using Ropes.API.Entities;
+using Ropes.API.FileEntries.Models;
+using Ropes.API.Services.Intefaces;
 
-namespace UBSI_Ops.server.Controllers
+namespace Ropes.API.Controllers
 {
     [Route("api/file")]
     [ApiController]

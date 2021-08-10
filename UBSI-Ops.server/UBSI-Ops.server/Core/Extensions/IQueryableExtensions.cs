@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using UBSI_Ops.server.Core.Paging;
+using Ropes.API.Core.Paging;
 
-namespace UBSI_Ops.server.Core.Extensions
+namespace Ropes.API.Core.Extensions
 {
     public static class IQueryableExtensions
     {

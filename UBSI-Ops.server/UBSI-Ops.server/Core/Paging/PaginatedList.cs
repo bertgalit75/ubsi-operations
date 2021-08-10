@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UBSI_Ops.server.UserRoles.Models;
-using UBSI_Ops.server.Users.Models;
+using Ropes.API.UserRoles.Models;
+using Ropes.API.Users.Models;
 
-namespace UBSI_Ops.server.Core.Paging
+namespace Ropes.API.Core.Paging
 {
     public class PaginatedList<T>
     {

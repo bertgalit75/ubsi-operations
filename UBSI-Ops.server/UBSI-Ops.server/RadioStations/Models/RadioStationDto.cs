@@ -1,4 +1,4 @@
-namespace UBSI_Ops.server.RadioStations.Models
+namespace Ropes.API.RadioStations.Models
 {
     public class RadioStationDto
     {

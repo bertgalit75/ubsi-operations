@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace UBSI_Ops.server.Migrations
+namespace Ropes.API.Migrations
 {
     public partial class alterRoles : Migration
     {

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace UBSI_Ops.server.Models.Request
+namespace Ropes.API.Models.Request
 {
     public class LoginModel
     {

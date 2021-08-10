@@ -5,9 +5,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Auth;
+using Ropes.API.Auth;
 
-namespace UBSI_Ops.server.FunctionalTests
+namespace Ropes.API.FunctionalTests
 {
     public class TestAuthHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {

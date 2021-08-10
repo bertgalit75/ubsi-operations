@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UBSI_Ops.server.Entities;
+using Ropes.API.Entities;
 
-namespace UBSI_Ops.server.Core.Extensions
+namespace Ropes.API.Core.Extensions
 {
     public static class EntityTypeBuilderExtension
     {

@@ -4,160 +4,160 @@
         <name>UBSI-Ops.server</name>
     </assembly>
     <members>
-        <member name="M:UBSI_Ops.server.Controllers.AccountController.login(UBSI_Ops.server.Models.Request.LoginModel)">
+        <member name="M:Ropes.API.Controllers.AccountController.login(Ropes.API.Models.Request.LoginModel)">
             <summary>
             User Authentication
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.AccountExecutiveController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+        <member name="M:Ropes.API.Controllers.AccountExecutiveController.List(Ropes.API.Core.Paging.PageOptions)">
             <summary>
             List all Account Executives
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.AccountExecutiveController.View(System.String)">
+        <member name="M:Ropes.API.Controllers.AccountExecutiveController.View(System.String)">
             <summary>
             View Account Executive
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.BillingStatementController.Generate(UBSI_Ops.server.Billing.Models.NewBillingCycleDto)">
+        <member name="M:Ropes.API.Controllers.BillingStatementController.Generate(Ropes.API.Billing.Models.NewBillingCycleDto)">
             <summary>
             Generate billing statements
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.BillingStatementController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+        <member name="M:Ropes.API.Controllers.BillingStatementController.List(Ropes.API.Core.Paging.PageOptions)">
             <summary>
             List of Billing Statements
             </summary>
             <param name="BillingStatementDto"></param>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.BillingStatementController.CreateBills(System.Collections.Generic.List{System.String})">
+        <member name="M:Ropes.API.Controllers.BillingStatementController.CreateBills(System.Collections.Generic.List{System.String})">
             <summary>
             Creare Bills from IO
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.CustomerController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+        <member name="M:Ropes.API.Controllers.CustomerController.List(Ropes.API.Core.Paging.PageOptions)">
             <summary>
             List all customers
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.CustomerController.SearchList(UBSI_Ops.server.Core.Paging.PageOptions,System.String)">
+        <member name="M:Ropes.API.Controllers.CustomerController.SearchList(Ropes.API.Core.Paging.PageOptions,System.String)">
             <summary>
             List all customers that matches the search
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.CustomerController.View(System.String)">
+        <member name="M:Ropes.API.Controllers.CustomerController.View(System.String)">
             <summary>
             Return Specific Customer
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.ImplementationOrderController.Create(UBSI_Ops.server.ImplementationOrders.Models.CreateImplementationOrderDto)">
+        <member name="M:Ropes.API.Controllers.ImplementationOrderController.Create(Ropes.API.ImplementationOrders.Models.CreateImplementationOrderDto)">
             <summary>
             Create an implementation order
             </summary>
             <param name="createDto"></param>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.ImplementationOrderController.FilterByDate(UBSI_Ops.server.Core.Paging.PageOptions,System.Int32,System.Int32)">
+        <member name="M:Ropes.API.Controllers.ImplementationOrderController.FilterByDate(Ropes.API.Core.Paging.PageOptions,System.Int32,System.Int32)">
             <summary>
             List of implementation Order filtered by month and year
             </summary>
             <param name="ImplementationOrderDto"></param>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.ImplementationOrderController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+        <member name="M:Ropes.API.Controllers.ImplementationOrderController.List(Ropes.API.Core.Paging.PageOptions)">
             /// <summary>
             List All Implementation Order
             </summary>
             <param name="ImplementationOrderDto"></param>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.MediaAgencyController.Create(UBSI_Ops.server.MediaAgencies.Models.MediaAgencyDto)">
+        <member name="M:Ropes.API.Controllers.MediaAgencyController.Create(Ropes.API.MediaAgencies.Models.MediaAgencyDto)">
             <summary>
             Create new agency
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.MediaAgencyController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+        <member name="M:Ropes.API.Controllers.MediaAgencyController.List(Ropes.API.Core.Paging.PageOptions)">
             <summary>
             List all agencies
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.MediaAgencyController.View(System.String)">
+        <member name="M:Ropes.API.Controllers.MediaAgencyController.View(System.String)">
             <summary>
             Return Specific Agency
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.RadioStationController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+        <member name="M:Ropes.API.Controllers.RadioStationController.List(Ropes.API.Core.Paging.PageOptions)">
             <summary>
             List all RadioStations
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.RadioStationController.View(System.String)">
+        <member name="M:Ropes.API.Controllers.RadioStationController.View(System.String)">
             <summary>
             View RadioStation
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.RoleController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+        <member name="M:Ropes.API.Controllers.RoleController.List(Ropes.API.Core.Paging.PageOptions)">
             <summary>
             List all Roles
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.RoleController.CreateRole(UBSI_Ops.server.Roles.Models.CreateRoleDto)">
+        <member name="M:Ropes.API.Controllers.RoleController.CreateRole(Ropes.API.Roles.Models.CreateRoleDto)">
             <summary>
             Insert New Role
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.UserController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+        <member name="M:Ropes.API.Controllers.UserController.List(Ropes.API.Core.Paging.PageOptions)">
             <summary>
             List all Users
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.VendorController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+        <member name="M:Ropes.API.Controllers.VendorController.List(Ropes.API.Core.Paging.PageOptions)">
             <summary>
             List all Vendors
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Controllers.VendorController.View(System.String)">
+        <member name="M:Ropes.API.Controllers.VendorController.View(System.String)">
             <summary>
             View Vendor
             </summary>
             <returns></returns>
         </member>
-        <member name="T:UBSI_Ops.server.Core.Files.MemoryFileSystem">
+        <member name="T:Ropes.API.Core.Files.MemoryFileSystem">
             <summary>
             This is only for testing. Do not use in production.
             </summary>
         </member>
-        <member name="T:UBSI_Ops.server.Core.Files.S3Filesystem">
+        <member name="T:Ropes.API.Core.Files.S3Filesystem">
             <summary>
             File service used to connect to AWS S3 service.
             </summary>
         </member>
-        <member name="M:UBSI_Ops.server.Services.Services.TokenService.Serialize(System.IdentityModel.Tokens.Jwt.JwtSecurityToken)">
+        <member name="M:Ropes.API.Services.Services.TokenService.Serialize(System.IdentityModel.Tokens.Jwt.JwtSecurityToken)">
             <summary>
             Serializes a JwtSecurityToken object into an encoded jwt token string.
             </summary>
             <param name="token"></param>
             <returns></returns>
         </member>
-        <member name="M:UBSI_Ops.server.Services.Services.UserTokenService.CreateAccessToken(UBSI_Ops.server.Entities.Identity.User)">
+        <member name="M:Ropes.API.Services.Services.UserTokenService.CreateAccessToken(Ropes.API.Entities.Identity.User)">
             <summary>
             Create a token from a user.
             The token service does not ensure that user is to be given a token.

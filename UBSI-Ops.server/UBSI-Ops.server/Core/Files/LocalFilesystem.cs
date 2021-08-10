@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace UBSI_Ops.server.Core.Files
+namespace Ropes.API.Core.Files
 {
     public class LocalFilesystem : IFilesystem
     {

@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Identity;
-using UBSI_Ops.server.Auth;
-using UBSI_Ops.server.Core.Files;
-using UBSI_Ops.server.Data;
-using UBSI_Ops.server.Entities.Identity;
+using Ropes.API.Auth;
+using Ropes.API.Core.Files;
+using Ropes.API.Data;
+using Ropes.API.Entities.Identity;
 
-namespace UBSI_Ops.server.Services.Services
+namespace Ropes.API.Services.Services
 {
     public class AccountService
     {

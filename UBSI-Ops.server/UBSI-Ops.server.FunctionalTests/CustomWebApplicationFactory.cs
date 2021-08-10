@@ -5,10 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
-using UBSI_Ops.server.Data;
-using UBSI_Ops.server.Data.Seed;
+using Ropes.API.Data;
+using Ropes.API.Data.Seed;
 
-namespace UBSI_Ops.server.FunctionalTests
+namespace Ropes.API.FunctionalTests
 {
     public class CustomWebApplicationFactory : WebApplicationFactory<Startup>
     {

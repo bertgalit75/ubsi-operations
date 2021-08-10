@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace UBSI_Ops.server.Core.Hashids
+namespace Ropes.API.Core.Hashids
 {
     public class HashidsModelBinder : IModelBinder
     {

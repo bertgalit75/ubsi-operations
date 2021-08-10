@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using UBSI_Ops.server.Core.Files;
+using Ropes.API.Core.Files;
 
-namespace UBSI_Ops.server
+namespace Ropes.API
 {
     public static class FilesystemServiceCollectionExtensions
     {

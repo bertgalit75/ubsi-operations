@@ -1,10 +1,10 @@
 using FluentAssertions;
 using System.Text.Json;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Vendors.Models;
+using Ropes.API.Vendors.Models;
 using Xunit;
 
-namespace UBSI_Ops.server.FunctionalTests
+namespace Ropes.API.FunctionalTests
 {
     public class VendorApiTest : IClassFixture<CustomWebApplicationFactory>
     {

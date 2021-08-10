@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Paging;
+using Ropes.API.Core.Paging;
 
-namespace UBSI_Ops.server.BillingStatements
+namespace Ropes.API.BillingStatements
 {
     public interface IBillingStatementRepository
     {

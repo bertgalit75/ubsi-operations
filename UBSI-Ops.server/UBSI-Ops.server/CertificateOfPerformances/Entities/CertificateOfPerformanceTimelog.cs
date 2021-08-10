@@ -1,6 +1,6 @@
 using System;
 
-namespace UBSI_Ops.server.CertificateOfPerformances
+namespace Ropes.API.CertificateOfPerformances
 {
     public class CertificateOfPerformanceTimelog
     {

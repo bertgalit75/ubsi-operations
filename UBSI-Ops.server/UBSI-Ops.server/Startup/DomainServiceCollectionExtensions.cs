@@ -1,16 +1,16 @@
 using HashidsNet;
 using Microsoft.Extensions.DependencyInjection;
-using UBSI_Ops.server.Auth;
-using UBSI_Ops.server.BillingStatements;
-using UBSI_Ops.server.Core.View;
-using UBSI_Ops.server.Data.Configuration;
-using UBSI_Ops.server.MediaAgencies.Services;
-using UBSI_Ops.server.Services;
-using UBSI_Ops.server.Services.Intefaces;
-using UBSI_Ops.server.Services.Services;
-using UBSI_Ops.server.Users.Services;
+using Ropes.API.Auth;
+using Ropes.API.BillingStatements;
+using Ropes.API.Core.View;
+using Ropes.API.Data.Configuration;
+using Ropes.API.MediaAgencies.Services;
+using Ropes.API.Services;
+using Ropes.API.Services.Intefaces;
+using Ropes.API.Services.Services;
+using Ropes.API.Users.Services;
 
-namespace UBSI_Ops.server
+namespace Ropes.API
 {
     public static class DomainServiceCollectionExtensions
     {

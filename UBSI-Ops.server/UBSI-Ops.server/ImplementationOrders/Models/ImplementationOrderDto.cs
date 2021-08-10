@@ -1,9 +1,9 @@
 using System;
 using System.Collections.ObjectModel;
-using UBSI_Ops.server.Customers.Models;
-using UBSI_Ops.server.MediaAgencies.Models;
+using Ropes.API.Customers.Models;
+using Ropes.API.MediaAgencies.Models;
 
-namespace UBSI_Ops.server.ImplementationOrders.Models
+namespace Ropes.API.ImplementationOrders.Models
 {
     public class ImplementationOrderDto
     {

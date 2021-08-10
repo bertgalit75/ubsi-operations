@@ -7,10 +7,10 @@ using System.IO;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
-using UBSI_Ops.server.Entities.Identity;
-using UBSI_Ops.server.Models;
+using Ropes.API.Entities.Identity;
+using Ropes.API.Models;
 
-namespace UBSI_Ops.server.Services.Services
+namespace Ropes.API.Services.Services
 {
     public class GenerateDefaultImageService
     {

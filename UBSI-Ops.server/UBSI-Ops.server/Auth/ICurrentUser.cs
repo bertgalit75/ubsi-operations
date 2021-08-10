@@ -1,4 +1,4 @@
-namespace UBSI_Ops.server.Auth
+namespace Ropes.API.Auth
 {
     public interface ICurrentUser
     {

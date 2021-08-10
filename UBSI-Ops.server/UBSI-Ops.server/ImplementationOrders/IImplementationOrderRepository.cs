@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
-using UBSI_Ops.server.Core.Paging;
-using UBSI_Ops.server.ImplementationOrders;
+using Ropes.API.Core.Paging;
+using Ropes.API.ImplementationOrders;
 
-namespace UBSI_Ops.server.Services.Intefaces
+namespace Ropes.API.Services.Intefaces
 {
     public interface IImplementationOrderRepository
     {

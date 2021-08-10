@@ -1,10 +1,10 @@
 using AutoMapper;
 using System.Threading.Tasks;
-using UBSI_Ops.server.Entities;
-using UBSI_Ops.server.MediaAgencies.Models;
-using UBSI_Ops.server.Services.Intefaces;
+using Ropes.API.Entities;
+using Ropes.API.MediaAgencies.Models;
+using Ropes.API.Services.Intefaces;
 
-namespace UBSI_Ops.server.MediaAgencies.Services
+namespace Ropes.API.MediaAgencies.Services
 {
     public class MediaAgencyService
     {
