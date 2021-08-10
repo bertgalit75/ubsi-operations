@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Paging;
@@ -15,11 +15,22 @@ namespace UBSI_Ops.server.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IImplementationOrderRepository _repository;
+        private readonly IMediaAgencyRepository _mediaAgencyRepository;
+        private readonly ICustomerRepository _customerRepository;
+        private readonly IAccountExecutiveRepository _accountExecutiveRepository;
 
-        public ImplementationOrderController(IMapper mapper, IImplementationOrderRepository repository)
+        public ImplementationOrderController(
+            IMapper mapper,
+            IImplementationOrderRepository repository,
+            IMediaAgencyRepository mediaAgencyRepository,
+            ICustomerRepository customerRepository,
+            IAccountExecutiveRepository accountExecutiveRepository)
         {
             _mapper = mapper;
             _repository = repository;
+            _mediaAgencyRepository = mediaAgencyRepository;
+            _customerRepository = customerRepository;
+            _accountExecutiveRepository = accountExecutiveRepository;
         }
 
         /// <summary>
@@ -31,6 +42,30 @@ namespace UBSI_Ops.server.Controllers
         public async Task<ActionResult<ImplementationOrderDto>> Create([FromBody] CreateImplementationOrderDto createDto)
         {
             var implementationOrder = _mapper.Map<ImplementationOrder>(createDto);
+
+            if (implementationOrder.AgencyCode != null)
+            {
+                var agency = await _mediaAgencyRepository.View(implementationOrder.AgencyCode);
+
+                if (agency == null)
+                {
+                    throw new System.Exception("No Agency for Code " + implementationOrder.AgencyCode);
+                }
+            }
+
+            var customer = await _customerRepository.View(implementationOrder.ClientCode);
+
+            if (customer == null)
+            {
+                throw new System.Exception("No Customer for Code" + implementationOrder.ClientCode);
+            }
+
+            var accountExecutive = await _accountExecutiveRepository.View(implementationOrder.AccountExecutiveCode);
+
+            if (accountExecutive == null)
+            {
+                throw new System.Exception("No AccountExecutive for Code" + implementationOrder.AccountExecutiveCode);
+            }
 
             await _repository.Add(implementationOrder);
 
