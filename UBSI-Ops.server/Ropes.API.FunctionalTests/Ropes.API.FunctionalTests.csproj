@@ -2,9 +2,11 @@
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>UBSI_Ops.server.FunctionalTests</RootNamespace>
+		<RootNamespace>Ropes.API.FunctionalTests</RootNamespace>
 
 		<IsPackable>false</IsPackable>
+
+		<AssemblyName>Ropes.API.FunctionalTests</AssemblyName>
 	</PropertyGroup>
 
 	<ItemGroup>
