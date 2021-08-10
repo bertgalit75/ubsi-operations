@@ -1,5 +1,21 @@
 <ul nz-menu nzTheme="dark" nzMode="inline">
   <ng-container *ngFor="let menuItem of menuItems">
-    <li nz-menu-item [routerLink]="menuItem.route">{{ menuItem.label }}</li>
+    <!-- Submenus -->
+    <ng-container *ngIf="menuItem.subItems; else singleItem">
+      <li nz-submenu [nzTitle]="menuItem.label" nzOpen>
+        <ul>
+          <ng-container *ngFor="let subItem of menuItem.subItems">
+            <li nz-menu-item [routerLink]="subItem.route">
+              {{ subItem.label }}
+            </li>
+          </ng-container>
+        </ul>
+      </li>
+    </ng-container>
+
+    <!-- Single items -->
+    <ng-template #singleItem>
+      <li nz-menu-item [routerLink]="menuItem.route">{{ menuItem.label }}</li>
+    </ng-template>
   </ng-container>
 </ul>
