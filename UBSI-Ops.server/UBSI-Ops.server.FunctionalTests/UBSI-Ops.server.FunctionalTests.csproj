@@ -17,7 +17,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\UBSI-Ops.server\UBSI-Ops.server.csproj" />
+		<ProjectReference Include="..\Ropes.API\Ropes.API.csproj" />
 	</ItemGroup>
-
 </Project>

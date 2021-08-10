@@ -2,12 +2,13 @@
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>UBSI_Ops.server</RootNamespace>
+		<RootNamespace>Ropes.API</RootNamespace>
 		<TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+		<AssemblyName>Ropes.API</AssemblyName>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<DocumentationFile>.\UBSI-Ops.server.xml</DocumentationFile>
+		<DocumentationFile>.\Ropes.API.xml</DocumentationFile>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="10.1.1" />
