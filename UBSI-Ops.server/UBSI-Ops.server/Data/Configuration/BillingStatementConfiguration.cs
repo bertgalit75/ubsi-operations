@@ -50,6 +50,9 @@ namespace UBSI_Ops.server.Data.Configuration
                .WithMany()
                .HasForeignKey(t => t.ImplmentationOrderCode);
 
+            builder.HasMany(t => t.BillingStatementItems)
+             .WithOne(t => t.BillingStatement)
+             .HasForeignKey(t => t.BillingStatementCode);
         }
     }
 }

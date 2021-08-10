@@ -30,5 +30,7 @@ namespace UBSI_Ops.server.Customers.Models
         public string CreditTermsCode { get; set; }
 
         public string TIN { get; set; }
+
+        public string AECode { get; set; }
     }
 }

@@ -39,10 +39,13 @@ namespace UBSI_Ops.server.BillingStatements
             query = options.Sort switch
             {
                 "code" => query.OrderBy(t => t.Code, direction),
-                "io" => query.OrderBy(t => t.ImplmentationOrderCode, direction),
-                "client" => query.OrderBy(t => t.Customer.Name, direction),
-                "agency" => query.OrderBy(t => t.MediaAgency.Name, direction),
                 "date" => query.OrderBy(t => t.Date, direction),
+                "perno" => query.OrderBy(t => t.Date.Year + t.Date.Month, direction),
+                "formNumber" => query.OrderBy(t => t.FormNumber, direction),
+                "aeCode" => query.OrderBy(t => t.Customer.AECode, direction),
+                "aeName" => query.OrderBy(t => t.Customer.AEName, direction),
+                "customerCode" => query.OrderBy(t => t.Customer.Code, direction),
+                "customerName" => query.OrderBy(t => t.Customer.Name, direction),
                 _ => query
             };
 

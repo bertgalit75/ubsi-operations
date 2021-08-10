@@ -29,18 +29,28 @@
         <th nzColumnKey="client" [nzSortFn]="true">Client</th>
         <th nzColumnKey="agency" [nzSortFn]="true">Agency</th>
         <th nzColumnKey="date" [nzSortFn]="true">Date</th>
-        <th>Total Amount</th>
+        <th nzColumnKey="perno" [nzSortFn]="true">Period No</th>
+        <th nzColumnKey="formNumber" [nzSortFn]="true">Form Number</th>
+        <th nzColumnKey="aeCode" [nzSortFn]="true">Sales Rep. Code</th>
+        <th nzColumnKey="aeName" [nzSortFn]="true">Sales Rep. Name</th>
+        <th nzColumnKey="customerCode" [nzSortFn]="true">Costumer Code</th>
+        <th nzColumnKey="customer" [nzSortFn]="true">Customer Name</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let customer of basicTable.data">
         <td>{{ customer.code }}</td>
-        <td>{{ customer.implementationOrderCode }}</td>
-        <td>{{ customer.customer?.name }}</td>
-        <td>{{ customer.mediaAgency?.name }}</td>
         <td>{{ customer.date | date: "longDate" }}</td>
-        <td>{{ customer.totalAmount | number }}</td>
+        <td>
+          {{ customer.date | date: "YY" }}{{ customer.date | date: "MM" }}
+        </td>
+        <td>{{ customer.formNumber }}</td>
+        <td>{{ customer.customer?.aeCode }}</td>
+        <td>{{ customer.customer?.aeName }}</td>
+        <td>{{ customer.customer?.code }}</td>
+
+        <td>{{ customer.customer?.name }}</td>
         <td>
           <a
             nz-button
