@@ -68,6 +68,11 @@ const menuItems: MenuItem[] = [
       },
     ],
   },
+  {
+    route: 'certificates-of-performance',
+    label: 'Certificates of Performance',
+    icon: 'team',
+  },
 ];
 
 @Component({

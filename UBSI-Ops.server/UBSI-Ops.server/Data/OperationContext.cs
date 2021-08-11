@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using UBSI_Ops.server.BillingStatements;
+using UBSI_Ops.server.CertificateOfPerformances;
 using UBSI_Ops.server.Entities;
 using UBSI_Ops.server.Entities.Identity;
 using UBSI_Ops.server.ImplementationOrders;
@@ -36,6 +37,8 @@ namespace UBSI_Ops.server.Data
         public DbSet<BillingStatementItem> BillingStatementItems { get; set; }
 
         public DbSet<FileEntry> FileEntries { get; set; }
+
+        public DbSet<CertificateOfPerformance> CertificateOfPerformances { get; set; }
 
         public OperationContext(DbContextOptions options) : base(options)
         {

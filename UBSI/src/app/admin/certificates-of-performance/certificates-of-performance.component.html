@@ -1,0 +1,42 @@
+<nz-page-header [nzGhost]="false">
+  <nz-page-header-title>Certificates Of Performace</nz-page-header-title>
+  <nz-page-header-extra> </nz-page-header-extra>
+</nz-page-header>
+
+<nz-card class="m-4">
+  <nz-table
+    #basicTable
+    nzShowSizeChanger
+    [nzData]="dataSet"
+    [nzFrontPagination]="false"
+    [nzTotal]="total"
+    [nzPageSize]="pageSize"
+    [nzPageIndex]="pageIndex"
+    (nzQueryParams)="onQueryParamsChange($event)"
+  >
+    <thead>
+      <tr>
+        <th nzColumnKey="code" [nzSortFn]="true">Code</th>
+        <th nzColumnKey="implementationOrderCode" [nzSortFn]="true">
+          Implementaion Order Code
+        </th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cp of basicTable.data">
+        <td>{{ cp.code }}</td>
+        <td>{{ cp.implementationOrderCode }}</td>
+        <td>
+          <a
+            nz-button
+            nzShape="circle"
+            [routerLink]="['/certificates-of-performace', cp.userId]"
+          >
+            <i nz-icon nzType="search"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

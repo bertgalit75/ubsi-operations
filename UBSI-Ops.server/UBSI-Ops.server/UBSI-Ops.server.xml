@@ -41,6 +41,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:UBSI_Ops.server.Controllers.CertificateOfPerformanceController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+            <summary>
+            List all CP
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:UBSI_Ops.server.Controllers.CustomerController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
             <summary>
             List all customers

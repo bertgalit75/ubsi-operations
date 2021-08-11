@@ -16,6 +16,7 @@ import { RadioStationsComponent } from './radio-stations/radio-stations/radio-st
 import { ViewAgencyComponent } from './agencies/view-agency/view-agency.component';
 import { BillingStatementsComponent } from './billing-statements/billing-statements/billing-statements.component';
 import { NewBillingCycleComponent } from './billing-statements/new-billing-cycle/new-billing-cycle.component';
+import { CertificatesOfPerformanceComponent } from './certificates-of-performance/certificates-of-performance.component';
 
 const routes: Routes = [
   {
@@ -85,6 +86,10 @@ const routes: Routes = [
       {
         path: 'billing-statements/new',
         component: NewBillingCycleComponent,
+      },
+      {
+        path: 'certificates-of-performance',
+        component: CertificatesOfPerformanceComponent,
       },
     ],
   },
