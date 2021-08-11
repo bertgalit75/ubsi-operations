@@ -98,6 +98,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:UBSI_Ops.server.Controllers.PermissionController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
+            <summary>
+            List all Permissions
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:UBSI_Ops.server.Controllers.RadioStationController.List(UBSI_Ops.server.Core.Paging.PageOptions)">
             <summary>
             List all RadioStations

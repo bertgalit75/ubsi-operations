@@ -14,6 +14,38 @@
         </nz-form-item>
       </div>
     </div>
+    <nz-table #basicTable [nzData]="dataSet" [nzFrontPagination]="false">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th><div class="text-center">Read</div></th>
+          <th><div class="text-center">Create</div></th>
+          <th><div class="text-center">Edit</div></th>
+          <th><div class="text-center">Delete</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let permission of basicTable.data">
+          <td>{{ permission.name }}</td>
+          <td
+            [nzChecked]="permission.view"
+            (nzCheckedChange)="onViewChecked(permission, $event)"
+          ></td>
+          <td
+            [nzChecked]="permission.add"
+            (nzCheckedChange)="onCreateChecked(permission, $event)"
+          ></td>
+          <td
+            [nzChecked]="permission.edit"
+            (nzCheckedChange)="onEditChecked(permission, $event)"
+          ></td>
+          <td
+            [nzChecked]="permission.delete"
+            (nzCheckedChange)="onDeleteChecked(permission, $event)"
+          ></td>
+        </tr>
+      </tbody>
+    </nz-table>
   </nz-card>
 
   <div class="m-4">

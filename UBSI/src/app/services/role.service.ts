@@ -9,14 +9,14 @@ import { IRole } from '../models/role.model';
 })
 export class RoleService {
   readonly api: string = 'api/roles';
-  
+
   constructor(
     private http: HttpClient,
     @Inject('BASE_URL') public baseUrl: string
   ) {}
 
   create(role): Observable<IRole> {
-    return this.http.post<IRole>(`${this.api}/new`, role);
+    return this.http.post<IRole>(`${this.api}`, role);
   }
 
   getRoles(
@@ -34,5 +34,4 @@ export class RoleService {
       params,
     });
   }
-
 }

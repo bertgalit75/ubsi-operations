@@ -8,6 +8,7 @@ using UBSI_Ops.server.Entities.Identity;
 using UBSI_Ops.server.ImplementationOrders;
 using UBSI_Ops.server.ImplementationOrders.Models;
 using UBSI_Ops.server.MediaAgencies.Models;
+using UBSI_Ops.server.Permissions.Models;
 using UBSI_Ops.server.RadioStations.Models;
 using UBSI_Ops.server.Roles.Models;
 using UBSI_Ops.server.UserRoles.Models;
@@ -42,10 +43,14 @@ namespace UBSI_Ops.server.AutoMapperProfile
             CreateMap<ImplementationOrder, ImplementationOrderDto>();
             CreateMap<ImplementationOrderBooking, ImplementationOrderDto.BookingDto>();
 
+            CreateMap<CreateRoleDto, Role>();
+            CreateMap<CreateRoleDto.RolePermissionDto, RolePermission>();
             CreateMap<Role, RoleDto>();
-            CreateMap<Role, CreateRoleDto>();
+            CreateMap<RolePermission, RoleDto.RolePermissionDto>();
 
             CreateMap<BillingStatement, BillingStatementDto>();
+
+            CreateMap<Permission, PermissionDto>();
         }
     }
 }

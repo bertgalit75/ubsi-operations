@@ -5,6 +5,7 @@ using UBSI_Ops.server.BillingStatements;
 using UBSI_Ops.server.Core.View;
 using UBSI_Ops.server.Data.Configuration;
 using UBSI_Ops.server.MediaAgencies.Services;
+using UBSI_Ops.server.Permissions;
 using UBSI_Ops.server.Services;
 using UBSI_Ops.server.Services.Intefaces;
 using UBSI_Ops.server.Services.Services;
@@ -30,6 +31,7 @@ namespace UBSI_Ops.server
             services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<IBillingStatementRepository, BillingStatementRepository>();
             services.AddTransient<IFileEntryRepository, FileEntryRepository>();
+            services.AddTransient<IPermissionRepository, PermissionRepository>();
 
             services.AddScoped<LoginService>();
             services.AddScoped<JwtConfiguration>();

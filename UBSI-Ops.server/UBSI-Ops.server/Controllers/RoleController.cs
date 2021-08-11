@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using UBSI_Ops.server.Core.Paging;
+using UBSI_Ops.server.Entities.Identity;
 using UBSI_Ops.server.Roles.Models;
 using UBSI_Ops.server.Services.Intefaces;
 using UBSI_Ops.server.Services.Services;
@@ -49,10 +50,16 @@ namespace UBSI_Ops.server.Controllers
         /// Insert New Role
         /// </summary>
         /// <returns></returns>
-        [HttpPost("new")]
+        [HttpPost]
         public async Task<ActionResult<RoleDto>> CreateRole([FromBody] CreateRoleDto model)
         {
-            return await _roleService.Create(model);
+            var role = _mapper.Map<Role>(model);
+
+            await _roleService.Create(role);
+
+            var resultDto = _mapper.Map<RoleDto>(role);
+
+            return resultDto;
         }
     }
 }

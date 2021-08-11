@@ -23,6 +23,10 @@ namespace UBSI_Ops.server.Data.Configuration
 
             builder.Property(t => t.UpdatedByCode).HasColumnType("VARCHAR2").HasColumnName("UPDATED_BY_CODE").HasMaxLength(50);
 
+            builder.HasMany(t => t.RolePermissions)
+              .WithOne(t => t.Role)
+              .HasForeignKey(t => t.RoleId);
+
             builder.HasBaseEntityProperties();
         }
     }

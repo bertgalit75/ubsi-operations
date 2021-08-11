@@ -37,6 +37,8 @@ namespace UBSI_Ops.server.Data
 
         public DbSet<FileEntry> FileEntries { get; set; }
 
+        public DbSet<Permission> Permissions { get; set; }
+
         public OperationContext(DbContextOptions options) : base(options)
         {
         }

@@ -16,6 +16,8 @@ namespace UBSI_Ops.server.Data.Configuration
 
             builder.Property(t => t.PermissionCode).HasColumnName("PERMISSION_CODE").HasColumnType("NUMBER(10)");
 
+            builder.Property(t => t.RoleId).HasColumnType("VARCHAR2(20)").HasColumnName("ROLE_ID");
+
             builder.HasOne(t => t.Permission)
              .WithMany()
              .HasForeignKey(t => t.PermissionCode);
