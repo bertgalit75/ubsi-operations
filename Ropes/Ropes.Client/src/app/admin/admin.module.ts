@@ -17,6 +17,7 @@ import { RadioStationsComponent } from './radio-stations/radio-stations/radio-st
 import { ViewAgencyComponent } from './agencies/view-agency/view-agency.component';
 import { BillingStatementsComponent } from './billing-statements/billing-statements/billing-statements.component';
 import { NewBillingCycleComponent } from './billing-statements/new-billing-cycle/new-billing-cycle.component';
+import { CertificatesOfPerformanceComponent } from './certificates-of-performance/certificates-of-performance.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NewBillingCycleComponent } from './billing-statements/new-billing-cycle
     RadioStationsComponent,
     BillingStatementsComponent,
     NewBillingCycleComponent,
+    CertificatesOfPerformanceComponent,
   ],
   imports: [SharedModule, LayoutModule, AdminRoutingModule],
 })
