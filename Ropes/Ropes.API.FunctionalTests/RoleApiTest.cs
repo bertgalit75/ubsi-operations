@@ -1,4 +1,5 @@
 using FluentAssertions;
+using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -41,22 +42,33 @@ namespace Ropes.API.FunctionalTests
             var createRole = new CreateRoleDto()
             {
                 Name = "User",
+                RolePermissions = new Collection<CreateRoleDto.RolePermissionDto>()
+                {
+                    new CreateRoleDto.RolePermissionDto()
+                    {
+                        Code= 1,
+                        Add= true,
+                        Delete=true,
+                        Edit =true,
+                        View = true
+                    }
+                }
             };
 
             // Arrange
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.PostAsync("/api/roles/new", new StringContent(JsonSerializer.Serialize(createRole), Encoding.UTF8, "application/json"));
+            var response = await client.PostAsync("/api/roles", new StringContent(JsonSerializer.Serialize(createRole), Encoding.UTF8, "application/json"));
 
             response.EnsureSuccessStatusCode();
 
             var responseContent = await response.Content.ReadAsStringAsync();
             var newRole = JsonSerializer.Deserialize<RoleDto>(responseContent, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
-            newRole.Id.Should().Be("2");
-            newRole.NormalizedName.Should().Be("User");
             newRole.Name.Should().Be("User");
+
+            newRole.RolePermissions.Should().NotBeNull();
         }
     }
 }

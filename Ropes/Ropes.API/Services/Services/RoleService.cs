@@ -1,12 +1,10 @@
 using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Ropes.API.Data;
+using Ropes.API.Entities.Identity;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Ropes.API.Data;
-using Ropes.API.Entities.Identity;
-using Ropes.API.Roles.Models;
 
 namespace Ropes.API.Services.Services
 {
@@ -23,7 +21,7 @@ namespace Ropes.API.Services.Services
             _logger = logger;
         }
 
-        public async Task<ActionResult<RoleDto>> Create(CreateRoleDto roleDto)
+        public async Task Create(Role roleDto)
         {
             int lastRoleId = 1;
 
@@ -31,6 +29,7 @@ namespace Ropes.API.Services.Services
             {
                 lastRoleId = Int32.Parse(_operationContext.Roles.OrderBy(x => x.CreatedAt).LastOrDefault().Id) + 1;
             }
+
             var role = new Role()
             {
                 Id = lastRoleId.ToString(),
@@ -40,9 +39,12 @@ namespace Ropes.API.Services.Services
 
             _operationContext.Roles.Add(role);
 
-            await _operationContext.SaveChangesAsync();
+            if (roleDto.RolePermissions != null)
+            {
+                roleDto.RolePermissions.ToList().ForEach(x => role.AddRolesPermission(x));
+            }
 
-            return _mapper.Map<RoleDto>(role);
+            await _operationContext.SaveChangesAsync();
         }
     }
 }

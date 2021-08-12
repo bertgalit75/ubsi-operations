@@ -1,18 +1,17 @@
 using HashidsNet;
 using Microsoft.Extensions.DependencyInjection;
-using Ropes.API.Auth;
-using Ropes.API.BillingStatements;
-using Ropes.API.CertificatesofPerformance.Services;
-using Ropes.API.Core.View;
-using Ropes.API.Data.Configuration;
-using Ropes.API.MediaAgencies.Services;
-using Ropes.API.Permissions;
-using Ropes.API.Services;
-using Ropes.API.Services.Intefaces;
-using Ropes.API.Services.Services;
-using Ropes.API.Users.Services;
+using UBSI_Ops.server.Auth;
+using UBSI_Ops.server.BillingStatements;
+using UBSI_Ops.server.Core.View;
+using UBSI_Ops.server.Data.Configuration;
+using UBSI_Ops.server.MediaAgencies.Services;
+using UBSI_Ops.server.Permissions;
+using UBSI_Ops.server.Services;
+using UBSI_Ops.server.Services.Intefaces;
+using UBSI_Ops.server.Services.Services;
+using UBSI_Ops.server.Users.Services;
 
-namespace Ropes.API
+namespace UBSI_Ops.server
 {
     public static class DomainServiceCollectionExtensions
     {
@@ -32,7 +31,6 @@ namespace Ropes.API
             services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<IBillingStatementRepository, BillingStatementRepository>();
             services.AddTransient<IFileEntryRepository, FileEntryRepository>();
-            services.AddTransient<ICertificateOfPerformance, CertificateOfPerformanceRepository>();
             services.AddTransient<IPermissionRepository, PermissionRepository>();
 
             services.AddScoped<LoginService>();
@@ -44,7 +42,6 @@ namespace Ropes.API
             services.AddScoped<TokenService>();
             services.AddScoped<GenerateDefaultImageService>();
             services.AddScoped<RoleService>();
-            services.AddScoped<CertificateOfPerformanceService>();
 
             services.AddScoped<ViewRenderService>();
 

@@ -6,6 +6,7 @@ using Ropes.API.Core.Paging;
 using Ropes.API.Roles.Models;
 using Ropes.API.Services.Intefaces;
 using Ropes.API.Services.Services;
+using Ropes.API.Entities.Identity;
 
 namespace Ropes.API.Controllers
 {
@@ -49,10 +50,16 @@ namespace Ropes.API.Controllers
         /// Insert New Role
         /// </summary>
         /// <returns></returns>
-        [HttpPost("new")]
+        [HttpPost]
         public async Task<ActionResult<RoleDto>> CreateRole([FromBody] CreateRoleDto model)
         {
-            return await _roleService.Create(model);
+            var role = _mapper.Map<Role>(model);
+
+            await _roleService.Create(role);
+
+            var resultDto = _mapper.Map<RoleDto>(role);
+
+            return resultDto;
         }
     }
 }

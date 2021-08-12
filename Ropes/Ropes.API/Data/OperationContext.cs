@@ -40,6 +40,8 @@ namespace Ropes.API.Data
 
         public DbSet<FileEntry> FileEntries { get; set; }
 
+        public DbSet<Permission> Permissions { get; set; }
+
         public OperationContext(DbContextOptions options) : base(options)
         {
         }
