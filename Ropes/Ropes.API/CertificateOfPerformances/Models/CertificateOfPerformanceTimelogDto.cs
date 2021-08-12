@@ -1,10 +1,7 @@
+using Ropes.API.CertificatesofPerformance.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using UBSI_Ops.server.CertificatesofPerformance.Models;
 
-namespace UBSI_Ops.server.CertificatesofPerformanceTimeLogs.Models
+namespace Ropes.API.CertificatesofPerformanceTimeLogs.Models
 {
     public class CertificateOfPerformanceTimeLogDto
     {

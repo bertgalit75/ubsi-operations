@@ -2,6 +2,8 @@ using AutoMapper;
 using Ropes.API.AccountExecutives.Models;
 using Ropes.API.BillingStatements;
 using Ropes.API.BillingStatements.Models;
+using Ropes.API.CertificateOfPerformances;
+using Ropes.API.CertificatesofPerformance.Models;
 using Ropes.API.Customers.Models;
 using Ropes.API.Entities;
 using Ropes.API.Entities.Identity;
@@ -46,6 +48,8 @@ namespace Ropes.API.AutoMapperProfile
             CreateMap<Role, CreateRoleDto>();
 
             CreateMap<BillingStatement, BillingStatementDto>();
+
+            CreateMap<CertificateOfPerformance, CertificateOfPerformanceDto>();
         }
     }
 }

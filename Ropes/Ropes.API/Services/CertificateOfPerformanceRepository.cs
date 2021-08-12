@@ -1,20 +1,18 @@
 using Microsoft.EntityFrameworkCore;
-using System;
+using Ropes.API.CertificateOfPerformances;
+using Ropes.API.Core.Extensions;
+using Ropes.API.Core.Paging;
+using Ropes.API.Data;
+using Ropes.API.Services.Intefaces;
 using System.Linq;
 using System.Threading.Tasks;
-using UBSI_Ops.server.CertificateOfPerformances;
-using UBSI_Ops.server.Core.Extensions;
-using UBSI_Ops.server.Core.Paging;
-using UBSI_Ops.server.Data;
-using UBSI_Ops.server.Services.Intefaces;
 
-namespace UBSI_Ops.server.Services
+namespace Ropes.API.Services
 {
     public class CertificateOfPerformanceRepository : Repository, ICertificateOfPerformance
     {
         public CertificateOfPerformanceRepository(OperationContext context) : base(context)
         {
-
         }
 
         public async Task<PaginatedList<CertificateOfPerformance>> ListCP(PageOptions options)

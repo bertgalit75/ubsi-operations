@@ -1,12 +1,12 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Ropes.API.CertificatesofPerformance.Models;
+using Ropes.API.CertificatesofPerformance.Services;
+using Ropes.API.Core.Paging;
 using System.Threading.Tasks;
-using UBSI_Ops.server.CertificatesofPerformance.Models;
-using UBSI_Ops.server.CertificatesofPerformance.Services;
-using UBSI_Ops.server.Core.Paging;
 
-namespace UBSI_Ops.server.Controllers
+namespace Ropes.API.Controllers
 {
     [Route("api/certificate-of-performance")]
     [ApiController]
@@ -16,7 +16,9 @@ namespace UBSI_Ops.server.Controllers
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
         private readonly CertificateOfPerformanceService _certificateOfPerformanceService;
-        public CertificateOfPerformanceController(ILogger<UserController> logger,
+
+        public CertificateOfPerformanceController(
+            ILogger<UserController> logger,
             IMapper mapper,
             CertificateOfPerformanceService certificateOfPerformanceService)
         {

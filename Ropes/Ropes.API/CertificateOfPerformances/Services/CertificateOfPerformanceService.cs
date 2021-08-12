@@ -1,21 +1,19 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Ropes.API.CertificatesofPerformance.Models;
+using Ropes.API.Core.Paging;
+using Ropes.API.Services.Intefaces;
 using System.Threading.Tasks;
-using UBSI_Ops.server.CertificatesofPerformance.Models;
-using UBSI_Ops.server.Core.Paging;
-using UBSI_Ops.server.Services.Intefaces;
 
-namespace UBSI_Ops.server.CertificatesofPerformance.Services
+namespace Ropes.API.CertificatesofPerformance.Services
 {
     public class CertificateOfPerformanceService
     {
         private readonly IMapper _mapper;
         private readonly ICertificateOfPerformance _certificateOfPerformance;
 
-        public CertificateOfPerformanceService(IMapper mapper,
+        public CertificateOfPerformanceService(
+            IMapper mapper,
             ICertificateOfPerformance certificateOfPerformance)
         {
             _mapper = mapper;
@@ -27,7 +25,6 @@ namespace UBSI_Ops.server.CertificatesofPerformance.Services
             var cps = await _certificateOfPerformance.ListCP(options);
 
             return cps.Select(r => _mapper.Map<CertificateOfPerformanceDto>(r));
-
         }
     }
 }

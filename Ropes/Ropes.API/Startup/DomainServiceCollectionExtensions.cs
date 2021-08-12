@@ -2,6 +2,7 @@ using HashidsNet;
 using Microsoft.Extensions.DependencyInjection;
 using Ropes.API.Auth;
 using Ropes.API.BillingStatements;
+using Ropes.API.CertificatesofPerformance.Services;
 using Ropes.API.Core.View;
 using Ropes.API.Data.Configuration;
 using Ropes.API.MediaAgencies.Services;
@@ -30,6 +31,7 @@ namespace Ropes.API
             services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<IBillingStatementRepository, BillingStatementRepository>();
             services.AddTransient<IFileEntryRepository, FileEntryRepository>();
+            services.AddTransient<ICertificateOfPerformance, CertificateOfPerformanceRepository>();
 
             services.AddScoped<LoginService>();
             services.AddScoped<JwtConfiguration>();
@@ -40,6 +42,7 @@ namespace Ropes.API
             services.AddScoped<TokenService>();
             services.AddScoped<GenerateDefaultImageService>();
             services.AddScoped<RoleService>();
+            services.AddScoped<CertificateOfPerformanceService>();
 
             services.AddScoped<ViewRenderService>();
 

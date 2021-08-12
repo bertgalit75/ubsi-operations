@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Ropes.API.BillingStatements;
+using Ropes.API.CertificateOfPerformances;
 using Ropes.API.Entities;
 using Ropes.API.Entities.Identity;
 using Ropes.API.ImplementationOrders;
@@ -20,6 +21,8 @@ namespace Ropes.API.Data
             IdentityUserToken<string>>
     {
         public DbSet<RadioStation> RadioStations { get; set; }
+
+        public DbSet<CertificateOfPerformance> CertificateOfPerformances { get; set; }
 
         public DbSet<Customer> Customers { get; set; }
 
