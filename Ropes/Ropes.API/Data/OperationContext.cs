@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Ropes.API.BillingStatements;
 using Ropes.API.CertificateOfPerformances;
+using Ropes.API.ChartOfAccounts;
+using Ropes.API.Companies;
+using Ropes.API.ConsolidationAccounts;
 using Ropes.API.Entities;
 using Ropes.API.Entities.Identity;
 using Ropes.API.ImplementationOrders;
@@ -23,6 +26,12 @@ namespace Ropes.API.Data
         public DbSet<RadioStation> RadioStations { get; set; }
 
         public DbSet<CertificateOfPerformance> CertificateOfPerformances { get; set; }
+
+        public DbSet<ChartOfAccount> ChartOfAccounts { get; set; }
+
+        public DbSet<Company> Companies { get; set; }
+
+        public DbSet<ConsolidationAccount> ConsolidationAccounts { get; set; }
 
         public DbSet<Customer> Customers { get; set; }
 
