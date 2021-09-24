@@ -4,6 +4,12 @@ using Ropes.API.BillingStatements;
 using Ropes.API.BillingStatements.Models;
 using Ropes.API.CertificateOfPerformances;
 using Ropes.API.CertificatesofPerformance.Models;
+using Ropes.API.ChartOfAccounts;
+using Ropes.API.ChartOfAccounts.Models;
+using Ropes.API.Companies;
+using Ropes.API.Companies.Models;
+using Ropes.API.ConsolidationAccounts;
+using Ropes.API.ConsolidationAccounts.Models;
 using Ropes.API.Customers.Models;
 using Ropes.API.Entities;
 using Ropes.API.Entities.Identity;
@@ -50,6 +56,10 @@ namespace Ropes.API.AutoMapperProfile
             CreateMap<BillingStatement, BillingStatementDto>();
 
             CreateMap<CertificateOfPerformance, CertificateOfPerformanceDto>();
+
+            CreateMap<ChartOfAccount, ChartOfAccountDto>();
+            CreateMap<Company, CompanyDto>();
+            CreateMap<ConsolidationAccount, ConsolidationAccountDto>();
         }
     }
 }
